@@ -1099,3 +1099,70 @@ body.dealifly-solutions-page .dealifly-footer .container {
         grid-template-columns: 1fr;
     }
 }
+
+/* ================================================================
+   FAQ Accordion Custom Down Arrow (Prominent & High Contrast)
+   ================================================================ */
+.dealifly-solution-faq .accordion-item {
+    background: rgba(18, 18, 26, 0.6) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 14px !important;
+    margin-bottom: 0.85rem !important;
+    overflow: hidden !important;
+    transition: border-color 200ms ease, background-color 200ms ease !important;
+}
+
+.dealifly-solution-faq .accordion-item:hover {
+    border-color: rgba(155, 130, 232, 0.3) !important;
+}
+
+.dealifly-solution-faq .accordion-button {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    background: transparent !important;
+    color: #FFFFFF !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    padding: 1.25rem 1.6rem !important;
+    box-shadow: none !important;
+    border: none !important;
+    text-align: left !important;
+    cursor: pointer !important;
+}
+
+.dealifly-solution-faq .accordion-button:not(.collapsed) {
+    color: #B7A5F5 !important;
+    background: rgba(118, 87, 217, 0.12) !important;
+}
+
+.dealifly-solution-faq .accordion-button::after {
+    content: "" !important;
+    display: inline-block !important;
+    width: 1.35rem !important;
+    height: 1.35rem !important;
+    margin-left: auto !important;
+    flex-shrink: 0 !important;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23B7A5F5'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
+    background-repeat: no-repeat !important;
+    background-size: 1.25rem !important;
+    background-position: center !important;
+    filter: none !important;
+    opacity: 0.95 !important;
+    transition: transform 250ms ease, opacity 250ms ease !important;
+    transform: rotate(0deg) !important;
+}
+
+.dealifly-solution-faq .accordion-button:not(.collapsed)::after {
+    transform: rotate(180deg) !important;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23FFFFFF'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
+    opacity: 1 !important;
+}
+
+.dealifly-solution-faq .accordion-body {
+    padding: 1.15rem 1.6rem 1.5rem !important;
+    color: rgba(245, 245, 247, 0.82) !important;
+    font-size: 0.95rem !important;
+    line-height: 1.7 !important;
+}
