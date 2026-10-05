@@ -589,7 +589,8 @@ body.dealifly-solutions-page .dealifly-footer .container {
     padding: 0.28rem 0.8rem !important;
     border-radius: 9999px !important;
     background: rgba(18, 17, 26, 0.75) !important;
-    border: 1px solid rgba(143, 122, 232, 0.28) !important;
+    border: none !important;
+    box-shadow: none !important;
     backdrop-filter: blur(12px) !important;
     -webkit-backdrop-filter: blur(12px) !important;
     font-family: var(--dealifly-font-sans, "Plus Jakarta Sans", sans-serif) !important;
