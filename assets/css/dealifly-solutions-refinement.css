@@ -573,6 +573,7 @@ body.dealifly-solutions-page .dealifly-footer .container {
     margin-bottom: clamp(1.75rem, 3vw, 2.75rem);
 }
 
+.dealifly-b2b-kicker-heading,
 .dealifly-solution-section-header .dealifly-kicker,
 .dealifly-solution-section-header .dealifly-cap-badge,
 .dealifly-b2b-section-header .dealifly-kicker,
@@ -592,12 +593,12 @@ body.dealifly-solutions-page .dealifly-footer .container {
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
     font-family: var(--dealifly-font-sans, "Plus Jakarta Sans", sans-serif) !important;
-    font-size: 0.85rem !important;
+    font-size: clamp(1.05rem, 1.6vw, 1.25rem) !important;
     font-weight: 700 !important;
     text-transform: uppercase !important;
-    letter-spacing: 0.08em !important;
+    letter-spacing: 0.07em !important;
     color: #8F7AE8 !important;
-    line-height: 1.4 !important;
+    line-height: 1.35 !important;
     margin-bottom: 0.75rem !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
