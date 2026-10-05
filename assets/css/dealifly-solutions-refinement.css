@@ -573,7 +573,7 @@ body.dealifly-solutions-page .dealifly-footer .container {
     margin-bottom: clamp(1.75rem, 3vw, 2.75rem);
 }
 
-.dealifly-b2b-kicker-heading,
+.dealifly-b2b-kicker,
 .dealifly-solution-section-header .dealifly-kicker,
 .dealifly-solution-section-header .dealifly-cap-badge,
 .dealifly-b2b-section-header .dealifly-kicker,
@@ -584,7 +584,7 @@ body.dealifly-solutions-page .dealifly-footer .container {
 .dealifly-pricing-banner .dealifly-cap-badge,
 .dealifly-cap-badge,
 .dealifly-kicker {
-    display: inline-block !important;
+    display: block !important;
     padding: 0 !important;
     border-radius: 0 !important;
     background: transparent !important;
@@ -593,16 +593,15 @@ body.dealifly-solutions-page .dealifly-footer .container {
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
     font-family: var(--dealifly-font-sans, "Plus Jakarta Sans", sans-serif) !important;
-    font-size: clamp(1.05rem, 1.6vw, 1.25rem) !important;
+    font-size: 0.8125rem !important;
     font-weight: 700 !important;
     text-transform: uppercase !important;
-    letter-spacing: 0.07em !important;
+    letter-spacing: 0.08em !important;
     color: #8F7AE8 !important;
     line-height: 1.35 !important;
-    margin-bottom: 0.75rem !important;
+    margin-bottom: 0.5rem !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
-    vertical-align: middle !important;
 }
 
 .dealifly-cap-badge__dot,
@@ -613,21 +612,21 @@ body.dealifly-solutions-page .dealifly-footer .container {
 
 .dealifly-solution-section-header .dealifly-heading-lg,
 .dealifly-b2b-section-header .dealifly-heading-lg {
-    font-size: clamp(1.75rem, 2.8vw, 2.35rem);
-    font-weight: 700;
-    color: #FFFFFF;
-    letter-spacing: -0.025em;
-    line-height: 1.2;
-    margin-bottom: 0.75rem;
+    font-size: clamp(2rem, 3.2vw, 2.75rem) !important;
+    font-weight: 700 !important;
+    color: #FFFFFF !important;
+    letter-spacing: -0.03em !important;
+    line-height: 1.15 !important;
+    margin-bottom: 0.75rem !important;
 }
 
 .dealifly-solution-section-header .dealifly-copy-lead,
 .dealifly-b2b-section-header .dealifly-copy-lead {
-    font-size: clamp(1rem, 1.2vw, 1.125rem);
-    color: rgba(245, 245, 247, 0.78);
-    line-height: 1.65;
-    max-width: 68ch;
-    margin-bottom: 0;
+    font-size: clamp(1rem, 1.25vw, 1.125rem) !important;
+    color: rgba(245, 245, 247, 0.78) !important;
+    line-height: 1.65 !important;
+    max-width: 68ch !important;
+    margin-bottom: 0 !important;
 }
 
 /* Service Overview Card */
