@@ -1183,30 +1183,33 @@ body.dealifly-solutions-page .dealifly-footer .container {
     }
 }
 
-/* Customer Journey Steps - High-Contrast Visible Cards */
+/* Customer Journey Steps - Robust Pipeline with Permanent Arrows */
 body .dealifly-journey-wrapper,
 .dealifly-journey-wrapper {
     background: rgba(14, 13, 22, 0.95) !important;
-    border: 1px solid rgba(155, 130, 232, 0.25) !important;
+    border: 1px solid rgba(155, 130, 232, 0.3) !important;
     border-radius: 20px !important;
-    padding: clamp(1.75rem, 3vw, 2.5rem) !important;
+    padding: clamp(1.25rem, 2.5vw, 2.25rem) !important;
     width: 100% !important;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
     position: relative !important;
     z-index: 1 !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
 }
 
 body .dealifly-journey-steps,
 .dealifly-journey-steps {
     display: flex !important;
-    flex-wrap: wrap !important;
+    flex-wrap: nowrap !important;
     align-items: center !important;
     justify-content: space-between !important;
     gap: 0.75rem !important;
     margin: 0 !important;
-    padding: 0 !important;
+    padding: 0.35rem 0 !important;
     list-style: none !important;
     width: 100% !important;
+    min-width: 760px !important;
 }
 
 body .dealifly-journey-step,
@@ -1220,12 +1223,12 @@ body.dealifly-homepage .dealifly-journey-step,
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
-    flex: 1 1 130px !important;
-    min-width: 120px !important;
+    flex: 1 1 0% !important;
+    min-width: 105px !important;
     background: #181528 !important;
     border: 1px solid rgba(155, 130, 232, 0.45) !important;
     border-radius: 14px !important;
-    padding: 1.35rem 0.95rem !important;
+    padding: 1.25rem 0.65rem !important;
     text-align: center !important;
     position: relative !important;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5) !important;
@@ -1247,16 +1250,17 @@ body .dealifly-journey-step__num,
     opacity: 1 !important;
     visibility: visible !important;
     font-family: var(--df-font-mono, monospace) !important;
-    font-size: 0.78rem !important;
+    font-size: 0.75rem !important;
     font-weight: 700 !important;
     color: #E2DAFF !important;
     background: rgba(143, 122, 232, 0.28) !important;
     border: 1px solid rgba(155, 130, 232, 0.5) !important;
-    padding: 0.28rem 0.65rem !important;
+    padding: 0.25rem 0.55rem !important;
     border-radius: 6px !important;
-    margin-bottom: 0.75rem !important;
+    margin-bottom: 0.65rem !important;
     text-transform: uppercase !important;
     letter-spacing: 0.06em !important;
+    white-space: nowrap !important;
 }
 
 body .dealifly-journey-step__name,
@@ -1264,12 +1268,13 @@ body .dealifly-journey-step__name,
     display: block !important;
     opacity: 1 !important;
     visibility: visible !important;
-    font-size: 1.05rem !important;
+    font-size: 0.98rem !important;
     font-weight: 700 !important;
     color: #FFFFFF !important;
     margin: 0 !important;
-    line-height: 1.3 !important;
+    line-height: 1.25 !important;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+    white-space: normal !important;
 }
 
 body .dealifly-journey-arrow,
@@ -1277,38 +1282,23 @@ body .dealifly-journey-arrow,
     opacity: 1 !important;
     visibility: visible !important;
     color: #9B82E8 !important;
-    font-size: 1.5rem !important;
-    font-weight: 700 !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     flex-shrink: 0 !important;
-    margin: 0 0.25rem !important;
+    width: 28px !important;
+    height: 28px !important;
+    margin: 0 !important;
 }
 
-@media (max-width: 991.98px) {
-    body .dealifly-journey-step,
-    .dealifly-journey-step {
-        flex: 1 1 calc(30% - 0.5rem) !important;
-        margin-bottom: 0.5rem !important;
-    }
-    body .dealifly-journey-arrow,
-    .dealifly-journey-arrow {
-        display: flex !important;
-        font-size: 1.25rem !important;
-    }
-}
-
-@media (max-width: 575.98px) {
-    body .dealifly-journey-step,
-    .dealifly-journey-step {
-        flex: 1 1 calc(45% - 0.5rem) !important;
-    }
-    body .dealifly-journey-arrow,
-    .dealifly-journey-arrow {
-        display: flex !important;
-        font-size: 1rem !important;
-    }
+body .dealifly-journey-arrow svg,
+.dealifly-journey-arrow svg {
+    width: 24px !important;
+    height: 24px !important;
+    stroke: #9B82E8 !important;
+    stroke-width: 3px !important;
+    display: block !important;
+    flex-shrink: 0 !important;
 }
 
 /* Content Formats Pills Cloud */
