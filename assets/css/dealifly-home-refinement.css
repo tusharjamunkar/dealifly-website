@@ -1300,8 +1300,9 @@ body.dealifly-homepage .dealifly-journey-line {
     transition: height 900ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Timeline Step (Zero Box / No Card) */
-body.dealifly-homepage .dealifly-journey-step {
+/* Timeline Step (Zero Box / No Card) - Only for Homepage Timeline */
+body.dealifly-homepage:not(.dealifly-solutions-page) .dealifly-journey-timeline .dealifly-journey-step,
+body.dealifly-homepage:not(.dealifly-solutions-page) .dealifly-journey-track .dealifly-journey-step {
     position: relative;
     padding-bottom: 2.5rem;
     opacity: 0;
@@ -1310,12 +1311,14 @@ body.dealifly-homepage .dealifly-journey-step {
                 transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-body.dealifly-homepage .dealifly-journey-step.is-visible {
+body.dealifly-homepage:not(.dealifly-solutions-page) .dealifly-journey-timeline .dealifly-journey-step.is-visible,
+body.dealifly-homepage:not(.dealifly-solutions-page) .dealifly-journey-track .dealifly-journey-step.is-visible {
     opacity: 1;
     transform: translateY(0);
 }
 
-body.dealifly-homepage .dealifly-journey-step:last-child {
+body.dealifly-homepage:not(.dealifly-solutions-page) .dealifly-journey-timeline .dealifly-journey-step:last-child,
+body.dealifly-homepage:not(.dealifly-solutions-page) .dealifly-journey-track .dealifly-journey-step:last-child {
     padding-bottom: 0;
 }
 

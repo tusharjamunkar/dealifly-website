@@ -1183,15 +1183,20 @@ body.dealifly-solutions-page .dealifly-footer .container {
     }
 }
 
-/* Customer Journey Steps */
+/* Customer Journey Steps - High-Contrast Visible Cards */
+body .dealifly-journey-wrapper,
 .dealifly-journey-wrapper {
-    background: rgba(14, 13, 22, 0.85) !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    background: rgba(14, 13, 22, 0.95) !important;
+    border: 1px solid rgba(155, 130, 232, 0.25) !important;
     border-radius: 20px !important;
     padding: clamp(1.75rem, 3vw, 2.5rem) !important;
     width: 100% !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+    position: relative !important;
+    z-index: 1 !important;
 }
 
+body .dealifly-journey-steps,
 .dealifly-journey-steps {
     display: flex !important;
     flex-wrap: wrap !important;
@@ -1201,72 +1206,99 @@ body.dealifly-solutions-page .dealifly-footer .container {
     margin: 0 !important;
     padding: 0 !important;
     list-style: none !important;
+    width: 100% !important;
 }
 
+body .dealifly-journey-step,
+body.dealifly-solutions-page .dealifly-journey-step,
+body.dealifly-homepage .dealifly-journey-step,
 .dealifly-journey-step {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
     flex: 1 1 130px !important;
     min-width: 120px !important;
-    background: #151322 !important;
-    border: 1px solid rgba(155, 130, 232, 0.35) !important;
+    background: #181528 !important;
+    border: 1px solid rgba(155, 130, 232, 0.45) !important;
     border-radius: 14px !important;
-    padding: 1.25rem 0.85rem !important;
+    padding: 1.35rem 0.95rem !important;
     text-align: center !important;
     position: relative !important;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5) !important;
     transition: all 220ms ease !important;
+    z-index: 2 !important;
 }
 
+body .dealifly-journey-step:hover,
 .dealifly-journey-step:hover {
-    border-color: #8F7AE8 !important;
-    background: #1E1A30 !important;
-    transform: translateY(-3px) !important;
-    box-shadow: 0 10px 25px rgba(118, 87, 217, 0.25) !important;
+    border-color: #A28DF7 !important;
+    background: #231E3A !important;
+    transform: translateY(-4px) !important;
+    box-shadow: 0 12px 30px rgba(118, 87, 217, 0.35) !important;
 }
 
+body .dealifly-journey-step__num,
 .dealifly-journey-step__num {
     display: inline-block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
     font-family: var(--df-font-mono, monospace) !important;
-    font-size: 0.75rem !important;
+    font-size: 0.78rem !important;
     font-weight: 700 !important;
-    color: #D3C7FF !important;
-    background: rgba(143, 122, 232, 0.22) !important;
-    border: 1px solid rgba(155, 130, 232, 0.4) !important;
-    padding: 0.25rem 0.6rem !important;
+    color: #E2DAFF !important;
+    background: rgba(143, 122, 232, 0.28) !important;
+    border: 1px solid rgba(155, 130, 232, 0.5) !important;
+    padding: 0.28rem 0.65rem !important;
     border-radius: 6px !important;
-    margin-bottom: 0.6rem !important;
+    margin-bottom: 0.75rem !important;
     text-transform: uppercase !important;
-    letter-spacing: 0.05em !important;
+    letter-spacing: 0.06em !important;
 }
 
+body .dealifly-journey-step__name,
 .dealifly-journey-step__name {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
     font-size: 1.05rem !important;
     font-weight: 700 !important;
     color: #FFFFFF !important;
     margin: 0 !important;
     line-height: 1.3 !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
 }
 
+body .dealifly-journey-arrow,
 .dealifly-journey-arrow {
-    color: #8F7AE8 !important;
-    font-size: 1.35rem !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    color: #9B82E8 !important;
+    font-size: 1.4rem !important;
     font-weight: 700 !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    opacity: 0.95 !important;
+    flex-shrink: 0 !important;
 }
 
 @media (max-width: 991.98px) {
+    body .dealifly-journey-step,
     .dealifly-journey-step {
         flex: 1 1 calc(33.333% - 1rem) !important;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.5rem !important;
     }
+    body .dealifly-journey-arrow,
     .dealifly-journey-arrow {
         display: none !important;
     }
 }
 
 @media (max-width: 575.98px) {
+    body .dealifly-journey-step,
     .dealifly-journey-step {
         flex: 1 1 calc(50% - 0.5rem) !important;
     }
