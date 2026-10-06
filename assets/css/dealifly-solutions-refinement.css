@@ -1352,3 +1352,184 @@ body .dealifly-journey-arrow,
     transform: translateY(-2px);
     color: #FFFFFF;
 }
+
+/* ================================================================
+   UNIVERSAL CONTACT SECTION & FORM CARD (Matches User Design)
+   ================================================================ */
+.dealifly-contact-section {
+    padding: clamp(3rem, 6vw, 5.5rem) 0 !important;
+    background: #07070A !important;
+    position: relative !important;
+}
+
+.dealifly-contact-headline {
+    font-size: clamp(2rem, 3.8vw, 3rem) !important;
+    font-weight: 700 !important;
+    color: #FFFFFF !important;
+    letter-spacing: -0.02em !important;
+    margin-bottom: 1.5rem !important;
+}
+
+.dealifly-contact-benefit-list {
+    margin-bottom: 2rem !important;
+}
+
+.dealifly-contact-benefit-list li {
+    font-size: 1.05rem !important;
+    color: rgba(245, 245, 247, 0.9) !important;
+    line-height: 1.5 !important;
+}
+
+.dealifly-contact-bullet-icon {
+    width: 24px !important;
+    height: 24px !important;
+    border-radius: 50% !important;
+    background: rgba(143, 122, 232, 0.15) !important;
+    border: 1px solid rgba(155, 130, 232, 0.35) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+}
+
+.dealifly-contact-bullet-text {
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+    color: #FFFFFF !important;
+}
+
+.dealifly-contact-editorial {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.dealifly-contact-info-block {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.25rem !important;
+    padding-top: 1.75rem !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    margin-top: 0.5rem !important;
+}
+
+.dealifly-contact-info-item {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.25rem !important;
+}
+
+.dealifly-contact-info-label {
+    font-size: 0.72rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    color: rgba(245, 245, 247, 0.5) !important;
+}
+
+.dealifly-contact-info-value {
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    color: #FFFFFF !important;
+    text-decoration: none !important;
+    transition: color 180ms ease !important;
+}
+
+a.dealifly-contact-info-value:hover {
+    color: #A28DF7 !important;
+}
+
+/* Right Column: Premium Form Card */
+.dealifly-contact-form-card {
+    background: #0D0D12 !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 20px !important;
+    padding: clamp(1.75rem, 3vw, 2.5rem) !important;
+    box-shadow: 0 24px 60px -12px rgba(0, 0, 0, 0.8) !important;
+    position: relative !important;
+}
+
+.dealifly-contact-form-title {
+    font-size: 1.2rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.05em !important;
+    text-transform: uppercase !important;
+    color: #FFFFFF !important;
+}
+
+.dealifly-contact-form-desc {
+    font-size: 0.9rem !important;
+    line-height: 1.5 !important;
+    color: rgba(245, 245, 247, 0.65) !important;
+}
+
+.dealifly-contact-label {
+    display: block !important;
+    font-size: 0.82rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.02em !important;
+    color: rgba(245, 245, 247, 0.85) !important;
+    margin-bottom: 0.4rem !important;
+}
+
+.dealifly-req-star {
+    color: #8F7AE8 !important;
+}
+
+.dealifly-contact-input,
+.dealifly-contact-select,
+.dealifly-contact-textarea {
+    background-color: rgba(255, 255, 255, 0.04) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    border-radius: 10px !important;
+    color: #FFFFFF !important;
+    padding: 0.78rem 1rem !important;
+    font-size: 0.95rem !important;
+    line-height: 1.5 !important;
+    transition: all 200ms ease !important;
+}
+
+.dealifly-contact-input::placeholder,
+.dealifly-contact-textarea::placeholder {
+    color: rgba(255, 255, 255, 0.35) !important;
+}
+
+.dealifly-contact-select option {
+    background-color: #12111A !important;
+    color: #FFFFFF !important;
+}
+
+.dealifly-contact-input:focus,
+.dealifly-contact-select:focus,
+.dealifly-contact-textarea:focus {
+    background-color: rgba(255, 255, 255, 0.06) !important;
+    border-color: #8F7AE8 !important;
+    box-shadow: 0 0 0 3px rgba(118, 87, 217, 0.25) !important;
+    outline: none !important;
+    color: #FFFFFF !important;
+}
+
+.dealifly-contact-submit {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.65rem !important;
+    background: linear-gradient(135deg, #7657D9 0%, #6328FF 100%) !important;
+    color: #FFFFFF !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 12px !important;
+    padding: 0.92rem 1.75rem !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.01em !important;
+    cursor: pointer !important;
+    box-shadow: 0 8px 24px -4px rgba(99, 40, 255, 0.45) !important;
+    transition: transform 200ms ease, box-shadow 200ms ease, filter 200ms ease !important;
+}
+
+.dealifly-contact-submit:hover {
+    transform: translateY(-2px) !important;
+    filter: brightness(1.1) !important;
+    box-shadow: 0 12px 32px -4px rgba(99, 40, 255, 0.6) !important;
+    color: #FFFFFF !important;
+}
+
