@@ -667,109 +667,173 @@
             <!-- ============================================================
                  FOOTER
                  ============================================================ -->
-            <footer class="footer-7 section-space-top">
-                <div class="container">
-                    <div class="section-space-sm-bottom">
-                        <div class="row g-4">
-                            <div class="col-lg-4 col-xxl-3">
-                                <div class="d-flex flex-column h-100 gap-6">
-                                    <a class="logo dealifly-nav-logo" href="../index.html">
-                                        <img src="../assets/img/dealifly-logo.png" alt="Dealifly logo"
-                                            class="dealifly-nav-logo__mark" width="40" height="40">
-                                        <span class="dealifly-nav-logo__name">Dealifly</span>
-                                    </a>
-                                    <p class="mb-0 text-light text-opacity-70 fs-14 max-text-30">Empowering businesses
-                                        with strategic marketing and innovative outreach solutions to attract more
-                                        customers.</p>
+            <footer class="dealifly-footer" data-bs-theme="dark">
+                <div class="dealifly-footer-inner">
+                    <div class="container">
+                        <!-- Main 4 Columns Grid -->
+                        <div class="row g-4 g-lg-5 justify-content-between align-items-start dealifly-footer-main-row">
+                            <!-- Column 1: Brand -->
+                            <div class="col-12 col-md-6 col-lg-3 col-xl-3 dealifly-footer-col-brand">
+                                <a class="logo dealifly-footer__brand" href="../index.html" aria-label="Dealifly home">
+                                    <img src="../assets/img/dealifly-logo.png" alt="Dealifly logo" class="dealifly-footer__brand-mark">
+                                    <span class="dealifly-footer__brand-name">Dealifly</span>
+                                </a>
+                                <p class="dealifly-footer__tagline text-light text-opacity-70">
+                                    Empowering businesses with strategic marketing and innovative outreach solutions to attract more customers.
+                                </p>
+                                <form action="contact.html" method="get" class="dealifly-footer__form d-flex align-items-center gap-2">
+                                    <label for="footer-email" class="visually-hidden"> Enter your email </label>
+                                    <input type="email" name="email" id="footer-email"
+                                        class="form-control form-control-sm bg-dark-subtle border-dark text-light dealifly-footer__input"
+                                        placeholder="Enter your email" autocomplete="email">
+                                    <button type="submit"
+                                        class="btn btn-icon btn-dark-emphasis rounded-circle flex-shrink-0 dealifly-footer__submit"
+                                        aria-label="Contact Dealifly">
+                                        <iconify-icon icon="solar:arrow-right-linear" aria-hidden="true"></iconify-icon>
+                                    </button>
+                                </form>
+                                <a href="https://wa.me/31684986062?text=Hi%2C%20Contacting%20you%20from%20the%20website"
+                                    target="_blank" rel="noopener" class="dealifly-footer__whatsapp">
+                                    <i class="bi bi-whatsapp" aria-hidden="true"></i>
+                                    <span>Chat on WhatsApp</span>
+                                </a>
+                            </div>
+
+                            <!-- Column 2: Services with 2 sub-columns -->
+                            <div class="col-12 col-md-6 col-lg-5 col-xl-4 dealifly-footer-col-services">
+                                <h6 class="dealifly-footer__col-title fs-16 fw-semibold text-light">Services</h6>
+                                <div class="row g-3 g-sm-4">
+                                    <div class="col-6">
+                                        <ul class="list-unstyled d-flex flex-column gap-2 mb-0 dealifly-footer__link-list">
+                                            <li>
+                                                <a href="../linkedin-lead-generation.html" class="dealifly-footer__link">
+                                                    LinkedIn Personal Branding
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="../b2b-marketing.html" class="dealifly-footer__link">
+                                                    Ecommerce Growth Marketing
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="../b2b-marketing.html" class="dealifly-footer__link">
+                                                    B2B Growth Marketing
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="../linkedin-lead-generation.html" class="dealifly-footer__link">
+                                                    LinkedIn Lead Generation
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="../email-marketing-outreach.html" class="dealifly-footer__link">
+                                                    Email Marketing Outreach
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-6">
+                                        <ul class="list-unstyled d-flex flex-column gap-2 mb-0 dealifly-footer__link-list">
+                                            <li>
+                                                <a href="../lead-research.html" class="dealifly-footer__link">
+                                                    Lead Research
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="../seo-geo.html" class="dealifly-footer__link">
+                                                    SEO &amp; GEO
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="../content-marketing.html" class="dealifly-footer__link">
+                                                    Content Marketing
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="../brand-building.html" class="dealifly-footer__link">
+                                                    Brand Identity
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="../brand-building.html" class="dealifly-footer__link">
+                                                    Brand Storytelling
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-lg-8 col-xxl-9">
-                                <div class="row g-4 justify-content-xl-around">
-                                    <div class="col-sm-6 col-md-3">
-                                        <p class="fs-18 fw-semibold text-light mb-4">Services</p>
-                                        <ul class="list gap-2">
-                                            <li><a href="../linkedin-lead-generation.html"
-                                                    class="link d-inline-block text-light text-opacity-70 hover:text-opacity-100 fw-medium fs-14">LinkedIn
-                                                    Personal Branding</a></li>
-                                            <li><a href="../b2b-marketing.html"
-                                                    class="link d-inline-block text-light text-opacity-70 hover:text-opacity-100 fw-medium fs-14">Ecommerce
-                                                    Growth Marketing</a></li>
-                                            <li><a href="../b2b-marketing.html"
-                                                    class="link d-inline-block text-light text-opacity-70 hover:text-opacity-100 fw-medium fs-14">B2B
-                                                    Growth Marketing</a></li>
-                                            <li><a href="../linkedin-lead-generation.html"
-                                                    class="link d-inline-block text-light text-opacity-70 hover:text-opacity-100 fw-medium fs-14">LinkedIn
-                                                    Lead Generation</a></li>
-                                            <li><a href="../email-marketing-outreach.html"
-                                                    class="link d-inline-block text-light text-opacity-70 hover:text-opacity-100 fw-medium fs-14">Email
-                                                    Marketing Outreach</a></li>
-                                        </ul>
+
+                            <!-- Column 3: Company -->
+                            <div class="col-6 col-md-6 col-lg-2 col-xl-2 dealifly-footer-col-company">
+                                <h6 class="dealifly-footer__col-title fs-16 fw-semibold text-light">Company</h6>
+                                <ul class="list-unstyled d-flex flex-column gap-2 mb-0 dealifly-footer__link-list">
+                                    <li>
+                                        <a href="../index.html" class="dealifly-footer__link">Home</a>
+                                    </li>
+                                    <li>
+                                        <a href="../pricing.html" class="dealifly-footer__link">Pricing</a>
+                                    </li>
+                                    <li>
+                                        <a href="../blog.html" class="dealifly-footer__link">Blog</a>
+                                    </li>
+                                    <li>
+                                        <a href="../case-study.html" class="dealifly-footer__link">Case Studies</a>
+                                    </li>
+                                    <li>
+                                        <a href="../contact.html" class="dealifly-footer__link">Contact</a>
+                                    </li>
+                                    <li>
+                                        <a href="../contact.html" class="dealifly-footer__link">Privacy Policy</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Column 4: Contact -->
+                            <div class="col-6 col-md-6 col-lg-2 col-xl-2 dealifly-footer-col-contact">
+                                <h6 class="dealifly-footer__col-title fs-16 fw-semibold text-light">Contact</h6>
+                                <div class="d-flex flex-column gap-3 dealifly-footer__contact-list">
+                                    <div class="dealifly-footer__contact-item">
+                                        <span class="dealifly-footer__contact-label text-light text-opacity-50 fs-13 d-block">Email</span>
+                                        <a href="mailto:contact@dealifly.com" class="dealifly-footer__contact-val dealifly-footer__link">
+                                            contact@dealifly.com
+                                        </a>
                                     </div>
-                                    <div class="col-sm-6 col-md-3">
-                                        <p class="fs-18 fw-semibold text-light mb-4">Industries</p>
-                                        <ul class="list gap-2">
-                                            <li><a href="recruitment-agencies.html"
-                                                    class="link d-inline-block text-light text-opacity-70 hover:text-opacity-100 fw-medium fs-14">Recruitment
-                                                    Agencies</a></li>
-                                            <li><a href="b2b-companies.html"
-                                                    class="link d-inline-block text-light text-opacity-70 hover:text-opacity-100 fw-medium fs-14">B2B
-                                                    Companies</a></li>
-                                            <li><a href="ecommerce.html"
-                                                    class="link d-inline-block text-light text-opacity-70 hover:text-opacity-100 fw-medium fs-14">E-commerce</a>
-                                            </li>
-                                            <li><a href="accounting-firm.html"
-                                                    class="link d-inline-block text-light text-opacity-70 hover:text-opacity-100 fw-medium fs-14">Accounting
-                                                    Firm</a></li>
-                                        </ul>
+                                    <div class="dealifly-footer__contact-item">
+                                        <span class="dealifly-footer__contact-label text-light text-opacity-50 fs-13 d-block">Call us</span>
+                                        <a href="tel:+31684986062" class="dealifly-footer__contact-val dealifly-footer__link">
+                                            06-84986062
+                                        </a>
                                     </div>
-                                    <div class="col-sm-6 col-md-3">
-                                        <p class="fs-18 fw-semibold text-light mb-4">Company</p>
-                                        <ul class="list gap-2">
-                                            <li><a href="../index.html"
-                                                    class="link d-inline-block text-light text-opacity-70 hover:text-opacity-100 fw-medium fs-14">Home</a>
-                                            </li>
-                                            <li><a href="../pricing.html"
-                                                    class="link d-inline-block text-light text-opacity-70 hover:text-opacity-100 fw-medium fs-14">Pricing</a>
-                                            </li>
-                                            <li><a href="../blog.html"
-                                                    class="link d-inline-block text-light text-opacity-70 hover:text-opacity-100 fw-medium fs-14">Blog</a>
-                                            </li>
-                                            <li><a href="../case-study.html"
-                                                    class="link d-inline-block text-light text-opacity-70 hover:text-opacity-100 fw-medium fs-14">Case
-                                                    Studies</a></li>
-                                            <li><a href="../contact.html"
-                                                    class="link d-inline-block text-light text-opacity-70 hover:text-opacity-100 fw-medium fs-14">Contact</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-sm-6 col-md-3">
-                                        <p class="fs-18 fw-semibold text-light mb-4">Contact</p>
-                                        <ul class="list gap-3">
-                                            <li>
-                                                <span class="d-block text-light text-opacity-50 fs-14">Email</span>
-                                                <a href="mailto:contact@dealifly.com"
-                                                    class="link d-inline-block text-light text-opacity-70 hover:text-opacity-100 fw-medium fs-14">contact@dealifly.com</a>
-                                            </li>
-                                            <li>
-                                                <span class="d-block text-light text-opacity-50 fs-14">Call us</span>
-                                                <a href="tel:+31684986062"
-                                                    class="link d-inline-block text-light text-opacity-70 hover:text-opacity-100 fw-medium fs-14">+31684986062</a>
-                                            </li>
-                                            <li>
-                                                <span class="d-block text-light text-opacity-50 fs-14">Location</span>
-                                                <span
-                                                    class="d-inline-block text-light text-opacity-70 fw-medium fs-14">Netherlands</span>
-                                            </li>
-                                        </ul>
+                                    <div class="dealifly-footer__contact-item">
+                                        <span class="dealifly-footer__contact-label text-light text-opacity-50 fs-13 d-block">Address</span>
+                                        <span class="dealifly-footer__contact-val text-light text-opacity-70 fs-14 fw-medium d-block">
+                                            Binnendelta 11M, 1261 WZ Blaricum
+                                        </span>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="text-center overflow-hidden">
-                        <div class="container">
-                            <p class="mb-0 text-wing text-light text-opacity-70">Copyright 2026 All Rights Reserved By
-                                Dealifly | KVK number: 97804444</p>
+
+                        <!-- Thin Clean Full-Width Divider -->
+                        <div class="dealifly-footer__divider"></div>
+
+                        <!-- Bottom Legal & Copyright Row -->
+                        <div class="dealifly-footer__bottom d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
+                            <ul class="list-unstyled d-flex align-items-center flex-wrap gap-4 mb-0 dealifly-footer__legal-list">
+                                <li>
+                                    <a href="../contact.html" class="dealifly-footer__legal-link">Privacy policy</a>
+                                </li>
+                                <li>
+                                    <a href="../contact.html" class="dealifly-footer__legal-link">Terms of use</a>
+                                </li>
+                                <li>
+                                    <a href="../contact.html" class="dealifly-footer__legal-link">Site map</a>
+                                </li>
+                            </ul>
+                            <p class="mb-0 text-light text-opacity-70 fs-14 text-center text-md-end dealifly-footer__copyright">
+                                Copyright 2026 All Rights Reserved By Dealifly | KVK number: 97804444
+                            </p>
                         </div>
                     </div>
                 </div>
