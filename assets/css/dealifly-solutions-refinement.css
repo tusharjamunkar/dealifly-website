@@ -1277,30 +1277,37 @@ body .dealifly-journey-arrow,
     opacity: 1 !important;
     visibility: visible !important;
     color: #9B82E8 !important;
-    font-size: 1.4rem !important;
+    font-size: 1.5rem !important;
     font-weight: 700 !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     flex-shrink: 0 !important;
+    margin: 0 0.25rem !important;
 }
 
 @media (max-width: 991.98px) {
     body .dealifly-journey-step,
     .dealifly-journey-step {
-        flex: 1 1 calc(33.333% - 1rem) !important;
+        flex: 1 1 calc(30% - 0.5rem) !important;
         margin-bottom: 0.5rem !important;
     }
     body .dealifly-journey-arrow,
     .dealifly-journey-arrow {
-        display: none !important;
+        display: flex !important;
+        font-size: 1.25rem !important;
     }
 }
 
 @media (max-width: 575.98px) {
     body .dealifly-journey-step,
     .dealifly-journey-step {
-        flex: 1 1 calc(50% - 0.5rem) !important;
+        flex: 1 1 calc(45% - 0.5rem) !important;
+    }
+    body .dealifly-journey-arrow,
+    .dealifly-journey-arrow {
+        display: flex !important;
+        font-size: 1rem !important;
     }
 }
 
