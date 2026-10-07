@@ -755,51 +755,98 @@
     <!-- ==========================================================================
        9. GLOBAL 4-COLUMN FOOTER
        ========================================================================== -->
-    <footer class="dealifly-footer">
-        <div class="dealifly-footer__container">
-            <div class="dealifly-footer__main">
-                <div class="row g-4 g-lg-5">
+    <footer class="dealifly-footer" data-bs-theme="dark">
+        <div class="dealifly-footer-inner">
+            <div class="container">
+                <!-- Main 4 Columns Grid -->
+                <div class="row g-4 g-lg-5 justify-content-between align-items-start dealifly-footer-main-row">
                     <!-- Column 1: Brand -->
-                    <div class="col-12 col-lg-4 col-xl-4 dealifly-footer-col-brand">
-                        <div class="dealifly-footer__brand-wrapper">
-                            <a class="logo dealifly-footer__brand" href="index.html" aria-label="Dealifly home">
-                                <img src="assets/img/dealifly-logo.png" alt="Dealifly" class="dealifly-footer__logo-img" width="40" height="40">
-                                <span class="dealifly-footer__brand-name">Dealifly</span>
-                            </a>
-                            <p class="dealifly-footer__tagline">
-                                A high-end growth marketing studio helping B2B and tech brands generate qualified pipeline and compound organic authority.
-                            </p>
-                            <div class="dealifly-footer__social-list d-flex align-items-center gap-2">
-                                <a href="https://linkedin.com/company/dealifly" target="_blank" rel="noopener" class="dealifly-footer__social-link" aria-label="LinkedIn">
-                                    <i class="bi bi-linkedin"></i>
-                                </a>
-                                <a href="https://wa.me/31684986062" target="_blank" rel="noopener" class="dealifly-footer__social-link" aria-label="WhatsApp">
-                                    <i class="bi bi-whatsapp"></i>
-                                </a>
-                            </div>
-                        </div>
+                    <div class="col-12 col-md-6 col-lg-3 col-xl-3 dealifly-footer-col-brand">
+                        <a class="logo dealifly-footer__brand" href="index.html" aria-label="Dealifly home">
+                            <img src="assets/img/dealifly-logo.png" alt="Dealifly logo" class="dealifly-footer__brand-mark">
+                            <span class="dealifly-footer__brand-name">Dealifly</span>
+                        </a>
+                        <p class="dealifly-footer__tagline text-light text-opacity-70">
+                            Empowering businesses with strategic marketing and innovative outreach solutions to attract more customers.
+                        </p>
+                        <form action="contact.html" method="get" class="dealifly-footer__form d-flex align-items-center gap-2">
+                            <label for="footer-email" class="visually-hidden"> Enter your email </label>
+                            <input type="email" name="email" id="footer-email"
+                                class="form-control form-control-sm bg-dark-subtle border-dark text-light dealifly-footer__input"
+                                placeholder="Enter your email" autocomplete="email">
+                            <button type="submit"
+                                class="btn btn-icon btn-dark-emphasis rounded-circle flex-shrink-0 dealifly-footer__submit"
+                                aria-label="Contact Dealifly">
+                                <i class="bi bi-arrow-right"></i>
+                            </button>
+                        </form>
+                        <a href="https://wa.me/31684986062?text=Hi%2C%20Contacting%20you%20from%20the%20website"
+                            target="_blank" rel="noopener" class="dealifly-footer__whatsapp">
+                            <i class="bi bi-whatsapp" aria-hidden="true"></i>
+                            <span>Chat on WhatsApp</span>
+                        </a>
                     </div>
 
-                    <!-- Column 2: Solutions -->
-                    <div class="col-12 col-md-12 col-lg-4 col-xl-4 dealifly-footer-col-solutions">
-                        <h6 class="dealifly-footer__col-title fs-16 fw-semibold text-light">Solutions</h6>
-                        <div class="row g-2">
+                    <!-- Column 2: Services with 2 sub-columns -->
+                    <div class="col-12 col-md-6 col-lg-5 col-xl-4 dealifly-footer-col-services">
+                        <h6 class="dealifly-footer__col-title fs-16 fw-semibold text-light">Services</h6>
+                        <div class="row g-3 g-sm-4">
                             <div class="col-6">
                                 <ul class="list-unstyled d-flex flex-column gap-2 mb-0 dealifly-footer__link-list">
-                                    <li><a href="linkedin-lead-generation.html" class="dealifly-footer__link">LinkedIn Personal Branding</a></li>
-                                    <li><a href="b2b-marketing.html" class="dealifly-footer__link">Ecommerce Growth Marketing</a></li>
-                                    <li><a href="b2b-marketing.html" class="dealifly-footer__link">B2B Growth Marketing</a></li>
-                                    <li><a href="linkedin-lead-generation.html" class="dealifly-footer__link">LinkedIn Lead Generation</a></li>
-                                    <li><a href="email-marketing-outreach.html" class="dealifly-footer__link">Email Marketing Outreach</a></li>
+                                    <li>
+                                        <a href="linkedin-lead-generation.html" class="dealifly-footer__link">
+                                            LinkedIn Personal Branding
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="b2b-marketing.html" class="dealifly-footer__link">
+                                            Ecommerce Growth Marketing
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="b2b-marketing.html" class="dealifly-footer__link">
+                                            B2B Growth Marketing
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="linkedin-lead-generation.html" class="dealifly-footer__link">
+                                            LinkedIn Lead Generation
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="email-marketing-outreach.html" class="dealifly-footer__link">
+                                            Email Marketing Outreach
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
                             <div class="col-6">
                                 <ul class="list-unstyled d-flex flex-column gap-2 mb-0 dealifly-footer__link-list">
-                                    <li><a href="lead-research.html" class="dealifly-footer__link">Lead Research</a></li>
-                                    <li><a href="seo-geo.html" class="dealifly-footer__link">SEO &amp; GEO</a></li>
-                                    <li><a href="content-marketing.html" class="dealifly-footer__link">Content Marketing</a></li>
-                                    <li><a href="brand-building.html" class="dealifly-footer__link">Brand Identity</a></li>
-                                    <li><a href="brand-building.html" class="dealifly-footer__link">Brand Storytelling</a></li>
+                                    <li>
+                                        <a href="lead-research.html" class="dealifly-footer__link">
+                                            Lead Research
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="seo-geo.html" class="dealifly-footer__link">
+                                            SEO &amp; GEO
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="content-marketing.html" class="dealifly-footer__link">
+                                            Content Marketing
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="brand-building.html" class="dealifly-footer__link">
+                                            Brand Identity
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="brand-building.html" class="dealifly-footer__link">
+                                            Brand Storytelling
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -809,12 +856,24 @@
                     <div class="col-6 col-md-6 col-lg-2 col-xl-2 dealifly-footer-col-company">
                         <h6 class="dealifly-footer__col-title fs-16 fw-semibold text-light">Company</h6>
                         <ul class="list-unstyled d-flex flex-column gap-2 mb-0 dealifly-footer__link-list">
-                            <li><a href="index.html" class="dealifly-footer__link">Home</a></li>
-                            <li><a href="pricing.html" class="dealifly-footer__link">Pricing</a></li>
-                            <li><a href="blog.html" class="dealifly-footer__link">Blog</a></li>
-                            <li><a href="case-study.html" class="dealifly-footer__link">Case Studies</a></li>
-                            <li><a href="contact.html" class="dealifly-footer__link">Contact</a></li>
-                            <li><a href="contact.html" class="dealifly-footer__link">Privacy Policy</a></li>
+                            <li>
+                                <a href="index.html" class="dealifly-footer__link">Home</a>
+                            </li>
+                            <li>
+                                <a href="pricing.html" class="dealifly-footer__link">Pricing</a>
+                            </li>
+                            <li>
+                                <a href="blog.html" class="dealifly-footer__link">Blog</a>
+                            </li>
+                            <li>
+                                <a href="case-study.html" class="dealifly-footer__link">Case Studies</a>
+                            </li>
+                            <li>
+                                <a href="contact.html" class="dealifly-footer__link">Contact</a>
+                            </li>
+                            <li>
+                                <a href="contact.html" class="dealifly-footer__link">Privacy Policy</a>
+                            </li>
                         </ul>
                     </div>
 
@@ -824,29 +883,41 @@
                         <div class="d-flex flex-column gap-3 dealifly-footer__contact-list">
                             <div class="dealifly-footer__contact-item">
                                 <span class="dealifly-footer__contact-label text-light text-opacity-50 fs-13 d-block">Email</span>
-                                <a href="mailto:contact@dealifly.com" class="dealifly-footer__contact-val dealifly-footer__link">contact@dealifly.com</a>
+                                <a href="mailto:contact@dealifly.com" class="dealifly-footer__contact-val dealifly-footer__link">
+                                    contact@dealifly.com
+                                </a>
                             </div>
                             <div class="dealifly-footer__contact-item">
                                 <span class="dealifly-footer__contact-label text-light text-opacity-50 fs-13 d-block">Call us</span>
-                                <a href="tel:+31684986062" class="dealifly-footer__contact-val dealifly-footer__link">06-84986062</a>
+                                <a href="tel:+31684986062" class="dealifly-footer__contact-val dealifly-footer__link">
+                                    06-84986062
+                                </a>
                             </div>
                             <div class="dealifly-footer__contact-item">
                                 <span class="dealifly-footer__contact-label text-light text-opacity-50 fs-13 d-block">Address</span>
-                                <span class="dealifly-footer__contact-val text-light text-opacity-70 fs-14 fw-medium d-block">Binnendelta 11M, 1261 WZ Blaricum</span>
+                                <span class="dealifly-footer__contact-val text-light text-opacity-70 fs-14 fw-medium d-block">
+                                    Binnendelta 11M, 1261 WZ Blaricum
+                                </span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Divider -->
+                <!-- Thin Clean Full-Width Divider -->
                 <div class="dealifly-footer__divider"></div>
 
-                <!-- Bottom Legal -->
+                <!-- Bottom Legal & Copyright Row -->
                 <div class="dealifly-footer__bottom d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
                     <ul class="list-unstyled d-flex align-items-center flex-wrap gap-4 mb-0 dealifly-footer__legal-list">
-                        <li><a href="contact.html" class="dealifly-footer__legal-link">Privacy policy</a></li>
-                        <li><a href="contact.html" class="dealifly-footer__legal-link">Terms of use</a></li>
-                        <li><a href="contact.html" class="dealifly-footer__legal-link">Site map</a></li>
+                        <li>
+                            <a href="contact.html" class="dealifly-footer__legal-link">Privacy policy</a>
+                        </li>
+                        <li>
+                            <a href="contact.html" class="dealifly-footer__legal-link">Terms of use</a>
+                        </li>
+                        <li>
+                            <a href="contact.html" class="dealifly-footer__legal-link">Site map</a>
+                        </li>
                     </ul>
                     <p class="mb-0 text-light text-opacity-70 fs-14 text-center text-md-end dealifly-footer__copyright">
                         Copyright 2026 All Rights Reserved By Dealifly | KVK number: 97804444
