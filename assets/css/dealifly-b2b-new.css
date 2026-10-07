@@ -158,41 +158,6 @@
   align-items: center;
   gap: 1.15rem;
 }
-.b2b-nav-search-btn {
-  background: none;
-  border: none;
-  color: #A5A5B5;
-  font-size: 1.1rem;
-  cursor: pointer;
-  padding: 0.25rem;
-  display: flex;
-  align-items: center;
-  transition: color 0.2s ease;
-}
-.b2b-nav-search-btn:hover {
-  color: #FFFFFF;
-}
-
-.b2b-btn-pill-primary {
-  background: #FFFFFF;
-  color: #000000 !important;
-  font-weight: 600;
-  font-size: 0.9rem;
-  padding: 0.6rem 1.4rem;
-  border-radius: 9999px;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  transition: all 0.25s ease;
-  border: none;
-}
-.b2b-btn-pill-primary:hover {
-  background: #F0F0F0;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.25);
-}
-
 .b2b-btn-pill-purple {
   background: var(--df-purple-gradient);
   color: #FFFFFF !important;
@@ -342,7 +307,6 @@
   height: 460px;
 }
 
-/* Background Radiant Flare & Horizon Ray */
 .b2b-eclipse-beam {
   position: absolute;
   top: 50%;
@@ -368,7 +332,6 @@
   z-index: 1;
 }
 
-/* Central Black Sphere with Luminous Aperture */
 .b2b-eclipse-sphere {
   position: absolute;
   top: 50%;
@@ -387,7 +350,6 @@
   overflow: hidden;
 }
 
-/* Glowing Inner Overlapping Aperture Crescents */
 .b2b-eclipse-inner-aperture {
   position: relative;
   width: 74px;
@@ -418,7 +380,6 @@
   box-shadow: 0 0 16px #8F7AE8, inset 0 0 8px #8F7AE8;
 }
 
-/* Radiating Circuit Lines SVG Canvas */
 .b2b-circuit-svg {
   position: absolute;
   top: 0;
@@ -429,7 +390,6 @@
   z-index: 2;
 }
 
-/* Floating Capsule Node Badges */
 .b2b-floating-node {
   position: absolute;
   background: rgba(16, 14, 24, 0.88);
@@ -457,68 +417,16 @@
   box-shadow: 0 8px 25px rgba(124, 58, 237, 0.35);
 }
 
-/* Specific Node Positions */
-.b2b-node--top-center {
-  top: 5%;
-  left: 42%;
-}
-.b2b-node--top-right {
-  top: 12%;
-  right: 5%;
-}
-.b2b-node--mid-left {
-  top: 36%;
-  left: 15%;
-}
-.b2b-node--mid-right {
-  top: 48%;
-  right: 0%;
-}
-.b2b-node--bot-left {
-  bottom: 20%;
-  left: 20%;
-}
-.b2b-node--bot-right {
-  bottom: 12%;
-  right: 10%;
-}
+.b2b-node--top-center { top: 5%; left: 42%; }
+.b2b-node--top-right { top: 12%; right: 5%; }
+.b2b-node--mid-left { top: 36%; left: 15%; }
+.b2b-node--mid-right { top: 48%; right: 0%; }
+.b2b-node--bot-left { bottom: 20%; left: 20%; }
+.b2b-node--bot-right { bottom: 12%; right: 10%; }
 
 /* ==========================================================================
-   3. SECTION: BROWSE PATTERNS / CATEGORY GRID
+   3. 2x3 INTERACTIVE GRID
    ========================================================================== */
-.b2b-section-browse {
-  padding: 6rem 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  position: relative;
-}
-
-.b2b-kicker {
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #FF6A00;
-  margin-bottom: 0.85rem;
-  display: block;
-}
-
-.b2b-section-heading {
-  font-size: clamp(2rem, 3.8vw, 2.75rem);
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.025em;
-  color: #FFFFFF;
-  margin-bottom: 1.25rem;
-}
-
-.b2b-section-sub {
-  font-size: 1.05rem;
-  line-height: 1.65;
-  color: var(--df-text-muted);
-  max-width: 440px;
-}
-
-/* 2x3 Interactive Grid */
 .b2b-category-card {
   background: var(--df-bg-card);
   border: 1px solid var(--df-card-border);
@@ -580,50 +488,30 @@
 }
 
 /* ==========================================================================
-   4. SECTION: FEATURED PATTERNS / MOCKUP ROW
+   4. NEW PATTERN CARDS WITH UI MOCKUP PREVIEWS (4 & 3 Column Grids)
    ========================================================================== */
-.b2b-section-featured {
-  padding: 6rem 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  position: relative;
-}
-
-.b2b-featured-header {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  margin-bottom: 2.75rem;
-}
-.b2b-view-all-link {
-  color: #FF6A00;
-  text-decoration: none;
-  font-size: 0.95rem;
-  font-weight: 600;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  transition: gap 0.2s ease, color 0.2s ease;
-}
-.b2b-view-all-link:hover {
-  color: #FF8533;
-  gap: 0.55rem;
-}
-
-/* Horizontal 5-card row */
-.b2b-featured-row {
+.b2b-pattern-grid-4 {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 1.25rem;
-  position: relative;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.35rem;
+}
+.b2b-pattern-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.35rem;
 }
 
 @media (max-width: 1200px) {
-  .b2b-featured-row {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+  .b2b-pattern-grid-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .b2b-pattern-grid-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 @media (max-width: 768px) {
-  .b2b-featured-row {
+  .b2b-pattern-grid-4,
+  .b2b-pattern-grid-3 {
     grid-template-columns: 1fr;
   }
 }
@@ -633,7 +521,7 @@
   background: var(--df-bg-card);
   border: 1px solid var(--df-card-border);
   border-radius: 16px;
-  padding: 1.2rem;
+  padding: 1.25rem;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -662,7 +550,7 @@
   overflow: hidden;
 }
 
-/* Mockup 1: Smart Prompts */
+/* Mockup UI Elements */
 .b2b-mock-prompt__title {
   font-size: 0.72rem;
   color: #8E8E9E;
@@ -680,7 +568,6 @@
   justify-content: space-between;
 }
 
-/* Mockup 2: Graceful Error */
 .b2b-mock-error__header {
   display: flex;
   align-items: center;
@@ -712,7 +599,6 @@
   width: fit-content;
 }
 
-/* Mockup 3: Progressive Disclosure Steps */
 .b2b-mock-stepper {
   display: flex;
   align-items: center;
@@ -758,7 +644,6 @@
   color: #8E8E9E;
 }
 
-/* Mockup 4: Transparent Reasoning */
 .b2b-mock-thought {
   background: #12101C;
   border: 1px solid rgba(143, 122, 232, 0.18);
@@ -779,7 +664,6 @@
   font-style: italic;
 }
 
-/* Mockup 5: AI Suggestion */
 .b2b-mock-suggest {
   background: #13111E;
   border: 1px solid rgba(255, 106, 0, 0.2);
@@ -804,18 +688,18 @@
   margin-bottom: 0.2rem;
 }
 
-/* Pattern Card Content */
+/* Card Typography */
 .b2b-pattern-card__title {
-  font-size: 0.98rem;
+  font-size: 1.05rem;
   font-weight: 600;
   color: #FFFFFF;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.45rem;
 }
 .b2b-pattern-card__desc {
-  font-size: 0.8rem;
-  line-height: 1.45;
+  font-size: 0.85rem;
+  line-height: 1.5;
   color: var(--df-text-muted);
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
   flex-grow: 1;
 }
 .b2b-pattern-card__tag {
@@ -824,63 +708,32 @@
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 9999px;
-  padding: 0.2rem 0.65rem;
+  padding: 0.25rem 0.75rem;
   width: fit-content;
 }
 
-/* Carousel right arrow float */
-.b2b-carousel-next-btn {
-  position: absolute;
-  right: -1.25rem;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  background: rgba(20, 18, 30, 0.9);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #FFFFFF;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 10;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6);
-  transition: all 0.25s ease;
-}
-.b2b-carousel-next-btn:hover {
-  background: #28243C;
-  border-color: var(--df-purple-primary);
-  transform: translateY(-50%) scale(1.05);
-}
-
 /* ==========================================================================
-   5. SECTION: BUILT FOR & STATS
+   5. STATS & BUILT FOR SECTION
    ========================================================================== */
-.b2b-section-builtfor {
-  padding: 6.5rem 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  position: relative;
-}
-
 .b2b-stats-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
-
 .b2b-stat-item {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 1rem;
+  padding: 1.25rem;
   border-radius: 16px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--df-card-border);
   transition: all 0.25s ease;
 }
 .b2b-stat-item:hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.04);
+  border-color: var(--df-card-border-hover);
   transform: translateY(-3px);
 }
 .b2b-stat-item__icon {
@@ -907,124 +760,9 @@
   color: var(--df-text-muted);
 }
 
-/* ==========================================================================
-   6. SECTION: COMPARISON TIMELINE TABLE & VALUE PILLARS
-   ========================================================================== */
-.b2b-section-deepdive {
-  padding: 6rem 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  position: relative;
-}
-
-.b2b-timeline-card {
-  background: var(--df-bg-card);
-  border: 1px solid var(--df-card-border);
-  border-radius: 18px;
-  padding: 2rem;
-  transition: all 0.25s ease;
-}
-.b2b-timeline-card:hover {
-  border-color: var(--df-card-border-hover);
-}
-
-.b2b-timeline-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-.b2b-timeline-table th {
-  padding: 1.1rem 1.4rem;
-  color: var(--df-purple-primary);
-  font-size: 0.95rem;
-  font-weight: 600;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  text-align: left;
-}
-.b2b-timeline-table td {
-  padding: 1.25rem 1.4rem;
-  color: var(--df-text-muted);
-  font-size: 0.92rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  line-height: 1.55;
-}
-.b2b-timeline-table tr:last-child td {
-  border-bottom: none;
-}
-.b2b-timeline-table tr:hover td {
-  color: #FFFFFF;
-  background: rgba(255, 255, 255, 0.02);
-}
-
-/* ==========================================================================
-   7. SECTION: FAQ ACCORDION
-   ========================================================================== */
-.b2b-section-faq {
-  padding: 6rem 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.b2b-faq-accordion .accordion-item {
-  background: var(--df-bg-card);
-  border: 1px solid var(--df-card-border);
-  border-radius: 14px !important;
-  margin-bottom: 1rem;
-  overflow: hidden;
-  transition: all 0.25s ease;
-}
-.b2b-faq-accordion .accordion-item:hover {
-  border-color: var(--df-card-border-hover);
-}
-.b2b-faq-accordion .accordion-button {
-  background: transparent;
-  color: #FFFFFF;
-  font-weight: 600;
-  font-size: 1.05rem;
-  padding: 1.35rem 1.5rem;
-  box-shadow: none !important;
-}
-.b2b-faq-accordion .accordion-button:not(.collapsed) {
-  color: var(--df-purple-primary);
-  background: rgba(143, 122, 232, 0.05);
-}
-.b2b-faq-accordion .accordion-body {
-  color: var(--df-text-muted);
-  font-size: 0.95rem;
-  line-height: 1.65;
-  padding: 0 1.5rem 1.5rem 1.5rem;
-}
-
-/* ==========================================================================
-   RESPONSIVENESS
-   ========================================================================== */
-@media (max-width: 991px) {
-  .b2b-nav-pill {
-    padding: 0.5rem 1rem;
-  }
-  .b2b-nav-links {
-    display: none;
-  }
-  .b2b-hero-section {
-    padding-top: 7rem;
-    padding-bottom: 3.5rem;
-    text-align: center;
-  }
-  .b2b-hero-desc {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .b2b-hero-actions {
-    justify-content: center;
-  }
-  .b2b-social-proof-row {
-    justify-content: center;
-  }
-  .b2b-stats-grid {
-    margin-top: 3rem;
-  }
-}
-
 @media (max-width: 576px) {
   .b2b-stats-grid {
     grid-template-columns: 1fr;
-    gap: 1.75rem;
+    gap: 1.5rem;
   }
 }
