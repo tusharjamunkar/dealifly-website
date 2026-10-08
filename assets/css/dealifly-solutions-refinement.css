@@ -1772,8 +1772,8 @@ a.dealifly-contact-info-value:hover {
 .dealifly-process-flow-track {
     position: absolute;
     top: 9px;
-    left: 20px;
-    right: 20px;
+    left: 0;
+    right: 0;
     height: 2px;
     background: linear-gradient(90deg, #EC4899 0%, #A855F7 35%, #6366F1 70%, #38BDF8 100%);
     box-shadow: 0 0 12px rgba(168, 85, 247, 0.65), 0 0 24px rgba(236, 72, 153, 0.4);
@@ -1786,7 +1786,7 @@ a.dealifly-contact-info-value:hover {
 .dealifly-process-flow-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: clamp(1rem, 1.8vw, 1.5rem);
+    gap: clamp(1.5rem, 2.5vw, 2.5rem);
     width: 100%;
     position: relative;
     z-index: 2;
@@ -1796,7 +1796,7 @@ a.dealifly-contact-info-value:hover {
 .dealifly-process-flow-grid-3 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: clamp(1rem, 1.8vw, 1.5rem);
+    gap: clamp(1.5rem, 2.5vw, 2.5rem);
     width: 100%;
     position: relative;
     z-index: 2;
@@ -1806,6 +1806,22 @@ a.dealifly-contact-info-value:hover {
     display: flex;
     flex-direction: column;
     height: 100%;
+    position: relative;
+    padding-right: clamp(0.75rem, 1.5vw, 1.5rem);
+}
+
+/* Vertical divider line between steps on desktop */
+@media (min-width: 992px) {
+    .dealifly-process-flow-grid-3 .dealifly-process-flow-item:not(:last-child)::after,
+    .dealifly-process-flow-grid .dealifly-process-flow-item:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 36px;
+        bottom: 8px;
+        width: 1px;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.05) 75%, transparent 100%);
+    }
 }
 
 /* Top glowing node container & dot */
@@ -1813,9 +1829,9 @@ a.dealifly-contact-info-value:hover {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    padding-left: 1.5rem;
+    padding-left: 0;
     height: 20px;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.35rem;
     position: relative;
 }
 
@@ -1831,32 +1847,33 @@ a.dealifly-contact-info-value:hover {
     transition: transform 240ms ease, box-shadow 240ms ease;
 }
 
-/* Card Body */
+/* Step Body - Clean borderless layout */
 .dealifly-process-flow-card {
-    background: rgba(14, 13, 22, 0.78);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 18px;
-    padding: clamp(1.4rem, 2vw, 1.85rem);
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    transition: transform 220ms ease, border-color 220ms ease, background-color 220ms ease, box-shadow 220ms ease;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    position: relative;
-    overflow: hidden;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    transition: transform 220ms ease;
 }
 
 .dealifly-process-flow-item:hover .dealifly-process-flow-dot {
     transform: scale(1.25);
-    box-shadow: 0 0 0 4px rgba(217, 70, 239, 0.5), 0 0 22px 6px rgba(217, 70, 239, 0.95);
+    box-shadow: 0 0 0 4px rgba(217, 70, 239, 0.5), 0 0 24px 6px rgba(217, 70, 239, 0.95);
 }
 
 .dealifly-process-flow-item:hover .dealifly-process-flow-card {
-    transform: translateY(-3px);
-    border-color: rgba(168, 85, 247, 0.4);
-    background: rgba(20, 18, 30, 0.92);
-    box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.8), 0 0 24px rgba(168, 85, 247, 0.15);
+    transform: translateY(-2px);
+}
+
+.dealifly-process-flow-item:hover .dealifly-process-flow-pill {
+    border-color: rgba(183, 165, 245, 0.7);
+    box-shadow: 0 0 16px rgba(147, 51, 234, 0.45);
 }
 
 /* Step Pill Badge */
@@ -1876,22 +1893,23 @@ a.dealifly-contact-info-value:hover {
     border-radius: 8px;
     margin-bottom: 1.15rem;
     box-shadow: 0 0 12px rgba(147, 51, 234, 0.25);
+    transition: border-color 200ms ease, box-shadow 200ms ease;
 }
 
 /* Title & Text */
 .dealifly-process-flow-title {
-    font-size: 1.0625rem;
-    font-weight: 600;
+    font-size: 1.15rem;
+    font-weight: 700;
     color: #FFFFFF;
-    margin: 0 0 0.65rem;
+    margin: 0 0 0.75rem;
     line-height: 1.35;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.015em;
 }
 
 .dealifly-process-flow-text {
     font-size: 0.875rem;
     color: rgba(245, 245, 247, 0.75);
-    line-height: 1.6;
+    line-height: 1.65;
     margin: 0;
 }
 
