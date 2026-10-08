@@ -1792,6 +1792,16 @@ a.dealifly-contact-info-value:hover {
     z-index: 2;
 }
 
+/* 3-column step cards grid for Inbound Authority */
+.dealifly-process-flow-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(1rem, 1.8vw, 1.5rem);
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
 .dealifly-process-flow-item {
     display: flex;
     flex-direction: column;
@@ -1895,8 +1905,18 @@ a.dealifly-contact-info-value:hover {
     }
 }
 
+@media (max-width: 991.98px) and (min-width: 680px) {
+    .dealifly-process-flow-grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .dealifly-process-flow-track {
+        display: none;
+    }
+}
+
 @media (max-width: 767.98px) {
-    .dealifly-process-flow-grid {
+    .dealifly-process-flow-grid,
+    .dealifly-process-flow-grid-3 {
         grid-template-columns: 1fr;
     }
     .dealifly-process-flow-track {
