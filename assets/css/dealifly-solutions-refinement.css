@@ -1802,6 +1802,16 @@ a.dealifly-contact-info-value:hover {
     z-index: 2;
 }
 
+/* 5-column step cards grid for Content Marketing Process */
+.dealifly-process-flow-grid-5 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: clamp(1rem, 1.8vw, 1.75rem);
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
 .dealifly-process-flow-item {
     display: flex;
     flex-direction: column;
@@ -1813,7 +1823,8 @@ a.dealifly-contact-info-value:hover {
 /* Vertical divider line between steps on desktop */
 @media (min-width: 992px) {
     .dealifly-process-flow-grid-3 .dealifly-process-flow-item:not(:last-child)::after,
-    .dealifly-process-flow-grid .dealifly-process-flow-item:not(:last-child)::after {
+    .dealifly-process-flow-grid .dealifly-process-flow-item:not(:last-child)::after,
+    .dealifly-process-flow-grid-5 .dealifly-process-flow-item:not(:last-child)::after {
         content: '';
         position: absolute;
         right: 0;
@@ -1914,6 +1925,16 @@ a.dealifly-contact-info-value:hover {
 }
 
 /* Responsive queries */
+@media (max-width: 1199.98px) and (min-width: 768px) {
+    .dealifly-process-flow-grid-5 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .dealifly-process-flow-grid-5 + .dealifly-process-flow-track,
+    .dealifly-process-flow-wrap:has(.dealifly-process-flow-grid-5) .dealifly-process-flow-track {
+        display: none;
+    }
+}
+
 @media (max-width: 1140px) and (min-width: 768px) {
     .dealifly-process-flow-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -1934,7 +1955,8 @@ a.dealifly-contact-info-value:hover {
 
 @media (max-width: 767.98px) {
     .dealifly-process-flow-grid,
-    .dealifly-process-flow-grid-3 {
+    .dealifly-process-flow-grid-3,
+    .dealifly-process-flow-grid-5 {
         grid-template-columns: 1fr;
     }
     .dealifly-process-flow-track {
