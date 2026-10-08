@@ -1903,3 +1903,105 @@ a.dealifly-contact-info-value:hover {
         display: none;
     }
 }
+
+/* ================================================================
+   Dealifly 2x Growth 2x2 Grid (Outbound + Inbound = 2x Growth)
+   ================================================================ */
+.dealifly-growth-2x-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(1.25rem, 2.5vw, 2rem);
+    width: 100%;
+}
+
+.dealifly-growth-2x-card {
+    background: rgba(14, 13, 22, 0.82);
+    border: 1px solid rgba(255, 255, 255, 0.085);
+    border-radius: 20px;
+    padding: clamp(1.75rem, 3vw, 2.5rem);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease, background-color 220ms ease;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.dealifly-growth-2x-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(155, 130, 232, 0.35);
+    background: rgba(18, 16, 28, 0.95);
+    box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.75), 0 0 20px rgba(118, 87, 217, 0.12);
+}
+
+.dealifly-growth-2x-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    background: rgba(118, 87, 217, 0.15);
+    border: 1px solid rgba(155, 130, 232, 0.3);
+    color: #B7A5F5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.35rem;
+    margin-bottom: 1.5rem;
+    flex-shrink: 0;
+    transition: transform 200ms ease, background-color 200ms ease, border-color 200ms ease, color 200ms ease;
+}
+
+.dealifly-growth-2x-card:hover .dealifly-growth-2x-icon {
+    transform: scale(1.08);
+    background: rgba(118, 87, 217, 0.25);
+    border-color: rgba(155, 130, 232, 0.5);
+    color: #FFFFFF;
+}
+
+.dealifly-growth-2x-title {
+    font-size: clamp(1.25rem, 1.8vw, 1.5rem);
+    font-weight: 700;
+    color: #FFFFFF;
+    margin: 0 0 0.75rem;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+}
+
+.dealifly-growth-2x-text {
+    font-size: 0.9375rem;
+    color: rgba(245, 245, 247, 0.78);
+    line-height: 1.65;
+    margin: 0 0 1.5rem;
+    flex-grow: 1;
+}
+
+.dealifly-growth-2x-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #9B82E8;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 180ms ease, gap 180ms ease;
+    align-self: flex-start;
+}
+
+.dealifly-growth-2x-link i {
+    font-size: 1rem;
+    transition: transform 180ms ease;
+}
+
+.dealifly-growth-2x-card:hover .dealifly-growth-2x-link {
+    color: #FFFFFF;
+}
+
+.dealifly-growth-2x-card:hover .dealifly-growth-2x-link i {
+    transform: translateX(4px);
+}
+
+@media (max-width: 860px) {
+    .dealifly-growth-2x-grid {
+        grid-template-columns: 1fr;
+    }
+}
