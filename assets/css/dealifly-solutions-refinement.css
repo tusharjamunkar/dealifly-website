@@ -36,34 +36,23 @@ body.dealifly-solutions-page .container {
     margin-inline: auto !important;
 }
 
-/* --- Hero Section Refinements (Expansive Hero Height ~88vh) --- */
+/* --- Hero Section Refinements --- */
 body.dealifly-solutions-page .dealifly-solution-hero {
-    min-height: 88vh !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
-    padding: clamp(8rem, 12vw, 12.5rem) 0 clamp(5.5rem, 8vw, 8.5rem) !important;
-    position: relative !important;
+    padding: clamp(5rem, 8vw, 7.5rem) 0 clamp(3rem, 5vw, 4.5rem) !important;
 }
 
 body.dealifly-solutions-page .dealifly-solution-title {
-    font-size: clamp(2.75rem, 5vw, 4.4rem) !important;
+    font-size: clamp(2.35rem, 4.2vw, 3.75rem) !important;
     letter-spacing: -0.035em !important;
-    line-height: 1.1 !important;
+    line-height: 1.12 !important;
     max-width: 24ch;
-    margin-bottom: 1.35rem !important;
 }
 
 body.dealifly-solutions-page .dealifly-solution-lede {
-    max-width: 62rem !important;
-    font-size: clamp(1.15rem, 1.45vw, 1.32rem) !important;
+    max-width: 58rem !important;
+    font-size: clamp(1.05rem, 1.25vw, 1.2rem) !important;
     line-height: 1.7 !important;
-    color: rgba(245, 245, 247, 0.85) !important;
-    margin-bottom: 2.25rem !important;
-}
-
-body.dealifly-solutions-page .dealifly-solution-breadcrumbs {
-    margin-bottom: 1.25rem !important;
+    color: rgba(245, 245, 247, 0.8) !important;
 }
 
 /* Hero Stats Strip - Spans Full Width Cleanly */
