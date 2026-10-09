@@ -2235,3 +2235,64 @@ a.dealifly-contact-info-value:hover {
     }
 }
 
+/* ================================================================
+   Dealifly 2x2 Problem Grid (The Problem We Solve)
+   - 2-column, 2-row rounded cards matching modern dark theme
+   ================================================================ */
+.dealifly-problem-2x2-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    width: 100%;
+}
+
+.dealifly-problem-2x2-card {
+    background: rgba(14, 13, 22, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 18px;
+    padding: 1.6rem 1.85rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: transform 220ms ease, border-color 220ms ease, background-color 220ms ease, box-shadow 220ms ease;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 8px 24px -10px rgba(0, 0, 0, 0.6);
+}
+
+.dealifly-problem-2x2-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(168, 85, 247, 0.45);
+    background: rgba(20, 18, 30, 0.95);
+    box-shadow: 0 14px 34px -10px rgba(0, 0, 0, 0.8), 0 0 24px rgba(168, 85, 247, 0.15);
+}
+
+.dealifly-problem-2x2-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin: 0 0 0.45rem;
+    letter-spacing: -0.015em;
+    line-height: 1.35;
+    font-family: var(--dealifly-font-sans, "Plus Jakarta Sans", sans-serif);
+}
+
+.dealifly-problem-2x2-text {
+    font-size: 0.9375rem;
+    color: rgba(245, 245, 247, 0.75);
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media (max-width: 767.98px) {
+    .dealifly-problem-2x2-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .dealifly-problem-2x2-card {
+        padding: 1.35rem 1.25rem;
+    }
+}
+
+
