@@ -29,49 +29,132 @@
                 <img src="assets/img/dealifly-logo.png" alt="" class="dealifly-nav-logo__mark" width="40" height="40">
                 <span class="dealifly-nav-logo__name">Dealifly</span>
             </a>
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbar0" aria-controls="navbar0" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbar0"
+                aria-controls="navbar0" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="bi bi-list" aria-hidden="true"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbar0">
                 <ul class="navbar-nav flex-grow-1 justify-content-center mx-lg-4 mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="./"> Home </a>
-                    </li>
-                    <li class="nav-item has-sub-menu navigation-1">
-                        <a class="nav-link" href="b2b-marketing">Services</a>
-                        <ul class="navigation-1__menu">
+                    <!-- Services Dropdown (5 Services) -->
+                    <li class="nav-item has-sub-menu navigation-1 dealifly-nav-dropdown">
+                        <a class="nav-link" href="b2b-marketing">
+                            Services <i class="bi bi-chevron-down dealifly-nav-caret ms-1"></i>
+                        </a>
+                        <ul class="navigation-1__menu dealifly-dropdown-menu dealifly-dropdown-menu--solutions">
                             <li class="navigation-1__menu-list">
-                                <a href="b2b-marketing" class="link navigation-1__menu-link"> B2B Growth Marketing </a>
+                                <a href="b2b-marketing" class="link navigation-1__menu-link">
+                                    <span class="dealifly-drop-title">B2B Marketing</span>
+                                    <span class="dealifly-drop-sub">Acquisition &amp; outbound funnels</span>
+                                </a>
                             </li>
                             <li class="navigation-1__menu-list">
-                                <a href="content-marketing" class="link navigation-1__menu-link"> Content Marketing </a>
+                                <a href="content-marketing" class="link navigation-1__menu-link">
+                                    <span class="dealifly-drop-title">Content Marketing</span>
+                                    <span class="dealifly-drop-sub">Demand gen &amp; thought leadership</span>
+                                </a>
                             </li>
                             <li class="navigation-1__menu-list">
-                                <a href="email-marketing-outreach" class="link navigation-1__menu-link"> Email Marketing </a>
+                                <a href="email-marketing-outreach" class="link navigation-1__menu-link">
+                                    <span class="dealifly-drop-title">Email Marketing</span>
+                                    <span class="dealifly-drop-sub">Cold outreach &amp; lifecycle sequences</span>
+                                </a>
                             </li>
                             <li class="navigation-1__menu-list">
-                                <a href="lead-research" class="link navigation-1__menu-link"> Lead Generation </a>
+                                <a href="lead-research" class="link navigation-1__menu-link">
+                                    <span class="dealifly-drop-title">Lead Generation</span>
+                                    <span class="dealifly-drop-sub">ICP enrichment &amp; research</span>
+                                </a>
                             </li>
                             <li class="navigation-1__menu-list">
-                                <a href="linkedin-lead-generation" class="link navigation-1__menu-link"> LinkedIn Lead Generation </a>
+                                <a href="linkedin-lead-generation" class="link navigation-1__menu-link">
+                                    <span class="dealifly-drop-title">LinkedIn Lead Generation</span>
+                                    <span class="dealifly-drop-sub">High-intent pipeline generation</span>
+                                </a>
+                            </li>
+                            <li class="navigation-1__menu-list">
+                                <a href="seo-geo" class="link navigation-1__menu-link">
+                                    <span class="dealifly-drop-title">SEO &amp; Search Authority</span>
+                                    <span class="dealifly-drop-sub">Organic rankings &amp; search traffic</span>
+                                </a>
+                            </li>
+                            <li class="navigation-1__menu-list">
+                                <a href="brand-building" class="link navigation-1__menu-link">
+                                    <span class="dealifly-drop-title">Brand Building</span>
+                                    <span class="dealifly-drop-sub">Identity, trust &amp; positioning</span>
+                                </a>
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pricing">Pricing</a>
+
+                    <!-- Industries Dropdown -->
+                    <li class="nav-item has-sub-menu navigation-1 dealifly-nav-dropdown">
+                        <a class="nav-link" href="javascript:void(0)">
+                            Industries <i class="bi bi-chevron-down dealifly-nav-caret ms-1"></i>
+                        </a>
+                        <ul class="navigation-1__menu dealifly-dropdown-menu dealifly-dropdown-menu--industries">
+                            <li class="navigation-1__menu-list">
+                                <a href="industries/b2b-companies" class="link navigation-1__menu-link">
+                                    <span class="dealifly-drop-title">B2B Companies</span>
+                                    <span class="dealifly-drop-sub">SaaS, tech & professional services</span>
+                                </a>
+                            </li>
+                            <li class="navigation-1__menu-list">
+                                <a href="industries/ecommerce" class="link navigation-1__menu-link">
+                                    <span class="dealifly-drop-title">E-commerce</span>
+                                    <span class="dealifly-drop-sub">Direct-to-consumer & digital brands</span>
+                                </a>
+                            </li>
+                            <li class="navigation-1__menu-list">
+                                <a href="industries/recruitment-agencies"
+                                    class="link navigation-1__menu-link">
+                                    <span class="dealifly-drop-title">Recruitment</span>
+                                    <span class="dealifly-drop-sub">Staffing agencies & executive search</span>
+                                </a>
+                            </li>
+                            <li class="navigation-1__menu-list">
+                                <a href="industries/accounting-firm" class="link navigation-1__menu-link">
+                                    <span class="dealifly-drop-title">Accounting Firms</span>
+                                    <span class="dealifly-drop-sub">Bespoke advisory acquisition</span>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="blog">Blog</a>
+
+                    <!-- Resources Dropdown -->
+                    <li class="nav-item has-sub-menu navigation-1 dealifly-nav-dropdown">
+                        <a class="nav-link" href="blog">
+                            Resources <i class="bi bi-chevron-down dealifly-nav-caret ms-1"></i>
+                        </a>
+                        <ul class="navigation-1__menu dealifly-dropdown-menu dealifly-dropdown-menu--resources">
+                            <li class="navigation-1__menu-list">
+                                <a href="blog" class="link navigation-1__menu-link">
+                                    <span class="dealifly-drop-title">Blog</span>
+                                    <span class="dealifly-drop-sub">Tactics, frameworks & playbooks</span>
+                                </a>
+                            </li>
+                            <li class="navigation-1__menu-list">
+                                <a href="case-study" class="link navigation-1__menu-link">
+                                    <span class="dealifly-drop-title">Case Studies</span>
+                                    <span class="dealifly-drop-sub">Proven B2B client acquisition proof</span>
+                                </a>
+                            </li>
+                            <li class="navigation-1__menu-list">
+                                <a href="#about" class="link navigation-1__menu-link">
+                                    <span class="dealifly-drop-title">About Us</span>
+                                    <span class="dealifly-drop-sub">Our team, methodology & mission</span>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="case-study">Case Studies</a>
-                    </li>
+
+                    <!-- Contact Link -->
                     <li class="nav-item">
                         <a class="nav-link" href="contact">Contact</a>
                     </li>
                 </ul>
                 <div class="d-flex align-items-center gap-3 ms-lg-auto">
-                    <a href="contact" class="btn btn-sm btn-primary order-lg-2  text-light fw-medium rounded-pill "> Get Started </a>
+                    <a href="contact"
+                        class="btn btn-sm btn-primary order-lg-2  text-light fw-medium rounded-pill "> Get Started </a>
                 </div>
             </div>
         </div>

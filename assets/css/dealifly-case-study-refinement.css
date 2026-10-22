@@ -1051,7 +1051,8 @@ body.dealifly-case-study-page .dealifly-takeaway p {
         margin-bottom: 0;
         align-self: center;
     }
-    body.dealifly-case-study-page .dealifly-takeaway p {
+    body.dealifly-case-study-page .dealifly-takeaway p,
+    body.dealifly-case-study-page .dealifly-takeaway .dealifly-takeaway__content p {
         font-size: clamp(1.2rem, 1.6vw, 1.35rem);
         line-height: 1.75;
         max-width: 65ch;
