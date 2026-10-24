@@ -1008,83 +1008,215 @@ body.dealifly-case-study-page .dealifly-insight-card p {
     }
 }
 
-/* Takeaway Card (Refined calm atmospheric gradient matching homepage) */
+/* Anchor Offset: Prevents floating navbar from overlapping section headers on anchor click */
+body.dealifly-case-study-page section[id],
+body.dealifly-case-study-page .dealifly-content-panel,
 body.dealifly-case-study-page .dealifly-takeaway {
-    border: 1px solid rgba(118, 87, 217, 0.25);
-    border-radius: var(--cs-radius-card);
-    background: radial-gradient(circle at 90% 10%, rgba(118, 87, 217, 0.12), transparent 22rem),
-                linear-gradient(135deg, rgba(118, 87, 217, 0.08) 0%, rgba(12, 11, 18, 0.95) 100%);
-    padding: clamp(2rem, 4vw, 3.25rem);
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.5);
+    scroll-margin-top: clamp(6.5rem, 8.5vw, 8rem) !important;
 }
 
-body.dealifly-case-study-page .dealifly-takeaway span {
-    color: #B7A5F5;
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+/* ====================================================================
+   CONCLUSION / STRATEGIC TAKEAWAY PANEL
+   Executive dark glassmorphic styling matching Dealifly design tokens
+   ==================================================================== */
+body.dealifly-case-study-page .dealifly-takeaway {
+    position: relative !important;
+    border: 1px solid rgba(143, 122, 232, 0.24) !important;
+    border-radius: 1.25rem !important;
+    background: radial-gradient(ellipse at 90% 10%, rgba(118, 87, 217, 0.16) 0%, transparent 60%),
+                linear-gradient(145deg, #0D0C15 0%, #060609 100%) !important;
+    padding: clamp(2rem, 3.5vw, 3rem) clamp(2rem, 4vw, 3.5rem) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.25rem !important;
+    box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.04) inset !important;
+    margin-top: 1.5rem !important;
 }
 
-body.dealifly-case-study-page .dealifly-takeaway p {
-    color: #FFFFFF;
-    font-family: var(--ff-1, "Plus Jakarta Sans", sans-serif);
-    font-size: clamp(1.15rem, 1.8vw, 1.45rem);
-    font-weight: 500;
-    letter-spacing: -0.02em;
-    line-height: 1.55;
-    margin: 0;
+/* Styled Pill Badge for "CONCLUSION" */
+body.dealifly-case-study-page .dealifly-takeaway span#heading-conclusion,
+body.dealifly-case-study-page .dealifly-takeaway > span {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    width: -webkit-fit-content !important;
+    width: -moz-fit-content !important;
+    width: fit-content !important;
+    padding: 0.45rem 1.1rem !important;
+    border-radius: 999px !important;
+    background: rgba(118, 87, 217, 0.14) !important;
+    border: 1px solid rgba(183, 165, 245, 0.3) !important;
+    color: #B7A5F5 !important;
+    font-family: var(--ff-1, "Plus Jakarta Sans", sans-serif) !important;
+    font-size: 0.75rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.12em !important;
+    text-transform: uppercase !important;
+    box-shadow: 0 2px 10px rgba(118, 87, 217, 0.15) !important;
+}
+
+body.dealifly-case-study-page .dealifly-takeaway span#heading-conclusion::before,
+body.dealifly-case-study-page .dealifly-takeaway > span::before {
+    content: "" !important;
+    display: inline-block !important;
+    width: 6px !important;
+    height: 6px !important;
+    border-radius: 50% !important;
+    background: #A855F7 !important;
+    box-shadow: 0 0 8px #A855F7 !important;
+}
+
+/* High-contrast, clean-reading takeaway text */
+body.dealifly-case-study-page .dealifly-takeaway p,
+body.dealifly-case-study-page .dealifly-takeaway .dealifly-takeaway__content p {
+    color: rgba(255, 255, 255, 0.92) !important;
+    font-family: var(--ff-1, "Plus Jakarta Sans", sans-serif) !important;
+    font-size: clamp(1.05rem, 1.35vw, 1.1875rem) !important;
+    font-weight: 400 !important;
+    letter-spacing: -0.01em !important;
+    line-height: 1.8 !important;
+    max-width: 68ch !important;
+    margin: 0 !important;
+}
+
+body.dealifly-case-study-page .dealifly-takeaway .dealifly-takeaway__content p + p {
+    margin-top: 1.15rem !important;
 }
 
 @media (min-width: 992px) {
     body.dealifly-case-study-page .dealifly-takeaway {
         display: grid !important;
-        grid-template-columns: 220px 1fr !important;
-        align-items: center !important;
+        grid-template-columns: 180px 1fr !important;
+        align-items: start !important;
         column-gap: clamp(2rem, 3.5vw, 3.5rem) !important;
         padding: clamp(2.5rem, 3.5vw, 3.5rem) clamp(2.5rem, 4vw, 4rem) !important;
     }
-    body.dealifly-case-study-page .dealifly-takeaway span {
-        margin-bottom: 0;
-        align-self: center;
-    }
-    body.dealifly-case-study-page .dealifly-takeaway p,
-    body.dealifly-case-study-page .dealifly-takeaway .dealifly-takeaway__content p {
-        font-size: clamp(1.2rem, 1.6vw, 1.35rem);
-        line-height: 1.75;
-        max-width: 65ch;
+
+    body.dealifly-case-study-page .dealifly-takeaway span#heading-conclusion,
+    body.dealifly-case-study-page .dealifly-takeaway > span {
+        margin-top: 0.35rem !important;
+        align-self: start !important;
     }
 }
 
-/* Service CTA Banner (Refined to match Homepage CTA) */
+/* ====================================================================
+   SERVICE CONVERSION CTA BANNER
+   Resolves layout constraints, word-wrapping (e-commerce), and button alignment
+   ==================================================================== */
 body.dealifly-case-study-page .dealifly-service-cta {
-    border: 1px solid var(--cs-border);
-    border-radius: var(--cs-radius-card);
-    background: #08080C;
-    box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.7);
-    min-height: auto;
-    padding: clamp(2rem, 4.5vw, 3.5rem);
+    position: relative !important;
+    display: block !important; /* Overrides display: flex from style.css */
+    min-height: auto !important; /* Overrides min-height: clamp(...) from style.css */
+    width: 100% !important;
+    padding: clamp(2.5rem, 4vw, 3.5rem) clamp(2rem, 4vw, 3.5rem) !important;
+    border: 1px solid rgba(143, 122, 232, 0.25) !important;
+    border-radius: 1.25rem !important;
+    background: radial-gradient(ellipse at 92% 50%, rgba(118, 87, 217, 0.22) 0%, transparent 60%),
+                linear-gradient(135deg, #0D0C15 0%, #060609 100%) !important;
+    box-shadow: 0 20px 48px -12px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.05) inset !important;
+    overflow: hidden !important;
+    margin-top: 2rem !important;
 }
 
 body.dealifly-case-study-page .dealifly-service-cta::after {
-    background: linear-gradient(105deg, rgba(8, 8, 12, 0.96) 0%, rgba(8, 8, 12, 0.85) 45%, rgba(8, 8, 12, 0.35) 100%);
+    display: none !important; /* Removes dark overlay from style.css that obscured text */
 }
 
+body.dealifly-case-study-page .dealifly-service-cta .row {
+    width: 100% !important;
+    margin: 0 !important;
+}
+
+body.dealifly-case-study-page .dealifly-service-cta__content {
+    max-width: 100% !important; /* Overrides max-width: 30rem from style.css */
+    position: relative;
+    z-index: 2;
+}
+
+/* Headline: Fixes max-width: 9ch bug that caused "luxury e- / commerce" split */
+body.dealifly-case-study-page .dealifly-service-cta h2,
 body.dealifly-case-study-page .dealifly-service-cta__content h2 {
-    color: #FFFFFF;
-    font-size: clamp(2rem, 3.8vw, 3.2rem);
-    font-weight: 600;
-    letter-spacing: -0.04em;
-    line-height: 1.08;
+    max-width: 100% !important; /* Completely removes max-width: 9ch */
+    font-family: var(--ff-1, "Plus Jakarta Sans", sans-serif) !important;
+    font-size: clamp(1.85rem, 2.75vw, 2.5rem) !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.035em !important;
+    line-height: 1.2 !important;
+    color: #FFFFFF !important;
+    margin-bottom: 0.85rem !important;
+    word-break: normal !important;
+    hyphens: none !important;
+    -webkit-hyphens: none !important;
 }
 
-body.dealifly-case-study-page .dealifly-service-cta__content .btn {
-    border-radius: 36px;
-    padding: 0.75rem 1.6rem;
-    font-weight: 600;
+/* Descriptive paragraph: High-contrast, clean typography */
+body.dealifly-case-study-page .dealifly-service-cta p,
+body.dealifly-case-study-page .dealifly-service-cta__content p,
+body.dealifly-case-study-page .dealifly-service-cta__content > p:not(.dealifly-section-kicker) {
+    max-width: 54ch !important; /* Overrides max-width: 26rem from style.css */
+    font-family: var(--ff-1, "Plus Jakarta Sans", sans-serif) !important;
+    font-size: clamp(0.98rem, 1.15vw, 1.0625rem) !important;
+    line-height: 1.65 !important;
+    color: rgba(255, 255, 255, 0.82) !important; /* Much more readable and attractive */
+    margin-bottom: 0 !important;
+}
+
+/* Action buttons wrapper: Side-by-side, right-aligned on desktop */
+body.dealifly-case-study-page .dealifly-cta-actions,
+body.dealifly-case-study-page .dealifly-service-cta__content:has(.btn) {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.85rem !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+}
+
+@media (max-width: 991.98px) {
+    body.dealifly-case-study-page .dealifly-cta-actions,
+    body.dealifly-case-study-page .dealifly-service-cta__content:has(.btn) {
+        justify-content: flex-start !important;
+        margin-top: 1.25rem !important;
+    }
+}
+
+/* Button aesthetics: Signature Dealifly purple glow and pill border */
+body.dealifly-case-study-page .dealifly-service-cta .btn {
+    border-radius: 999px !important;
+    padding: 0.75rem 1.65rem !important;
+    font-family: var(--ff-1, "Plus Jakarta Sans", sans-serif) !important;
+    font-size: 0.95rem !important;
+    font-weight: 600 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    white-space: nowrap !important;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+body.dealifly-case-study-page .dealifly-service-cta .btn-primary {
+    background: linear-gradient(135deg, #7657D9 0%, #5B3EC6 100%) !important;
+    border: 1px solid rgba(183, 165, 245, 0.35) !important;
+    box-shadow: 0 4px 18px rgba(118, 87, 217, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.12) inset !important;
+    color: #FFFFFF !important;
+}
+
+body.dealifly-case-study-page .dealifly-service-cta .btn-primary:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 26px rgba(118, 87, 217, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.2) inset !important;
+    color: #FFFFFF !important;
+}
+
+body.dealifly-case-study-page .dealifly-service-cta .btn-outline-light {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
+    color: #FFFFFF !important;
+}
+
+body.dealifly-case-study-page .dealifly-service-cta .btn-outline-light:hover {
+    background: rgba(255, 255, 255, 0.12) !important;
+    border-color: rgba(255, 255, 255, 0.35) !important;
+    color: #FFFFFF !important;
+    transform: translateY(-2px) !important;
 }
 
 /* --- Responsive Adjustments --- */
