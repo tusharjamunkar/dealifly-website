@@ -19,6 +19,14 @@
     <link rel="stylesheet" href="assets/css/prism.css?v=20261014_mobile_fix_v11">
     <link rel="stylesheet" href="assets/css/style.css?v=20261014_mobile_fix_v11">
     <link rel="stylesheet" href="assets/css/dealifly-theme.css?v=20261014_mobile_fix_v11">
+    <script>
+        (function () {
+            try {
+                var l = sessionStorage.getItem('dealifly_lang') || (new URLSearchParams(window.location.search)).get('lang');
+                if (l === 'nl') { document.documentElement.lang = 'nl'; }
+            } catch (e) {}
+        })();
+    </script>
 </head>
 
 <body class="bg-dark-saas dealifly-theme-page dealifly-pricing-page">

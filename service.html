@@ -20,6 +20,14 @@
 <link href="assets/css/dealifly-theme.css?v=20261014_mobile_fix_v11" rel="stylesheet"/>
 <link href="assets/css/dealifly-home-refinement.css?v=20261014_mobile_fix_v11" rel="stylesheet"/>
 <link href="assets/css/dealifly-solutions.css?v=20261014_mobile_fix_v11" rel="stylesheet"/><link href="assets/css/dealifly-solutions-refinement.css?v=20261014_mobile_fix_v11" rel="stylesheet"/>
+    <script>
+        (function () {
+            try {
+                var l = sessionStorage.getItem('dealifly_lang') || (new URLSearchParams(window.location.search)).get('lang');
+                if (l === 'nl') { document.documentElement.lang = 'nl'; }
+            } catch (e) {}
+        })();
+    </script>
 </head>
 <body class="bg-dark-saas dealifly-solutions-page dealifly-homepage">
 <!-- Floating Navbar -->

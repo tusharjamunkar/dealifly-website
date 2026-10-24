@@ -23,6 +23,14 @@
     <link rel="stylesheet" href="../assets/css/dealifly-theme.css?v=20261014_rounded_sq_v12">
     <link rel="stylesheet" href="../assets/css/dealifly-home-refinement.css?v=20261014_rounded_sq_v12">
     <link rel="stylesheet" href="industries.css?v=20261014_rounded_sq_v12">
+    <script>
+        (function () {
+            try {
+                var l = sessionStorage.getItem('dealifly_lang') || (new URLSearchParams(window.location.search)).get('lang');
+                if (l === 'nl') { document.documentElement.lang = 'nl'; }
+            } catch (e) {}
+        })();
+    </script>
 </head>
 
 <body class="bg-dark-saas ind-ecom-theme dealifly-homepage">

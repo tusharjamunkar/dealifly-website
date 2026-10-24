@@ -1,12 +1,22 @@
 /**
- * Dealifly Internationalization (i18n) Engine
+ * Dealifly Internationalization (i18n) Engine - Version 2.0 (Session-Wide Architecture)
  * Supports bidirectional English <-> Nederlands (Dutch) switching
+ * 
  * Features:
- * - Persistent language selection across all pages via localStorage & URL parameters (?lang=nl)
- * - Dynamic live DOM translation with zero page reload
- * - Reversible: full English restoration from cached in-memory nodes
- * - High-accessibility UI switcher with keyboard navigation and ARIA attributes
- * - Injected seamlessly into desktop nav, mobile nav, and footer
+ * 1. Session-Based Persistence:
+ *    - Uses sessionStorage to isolate language preference to the current tab/session.
+ *    - Persists across all internal page navigations, page refreshes, and browser back/forward (bfcache/pageshow).
+ *    - Supports shareable URL parameter (?lang=nl).
+ *    - New tabs/sessions start in clean default English.
+ * 2. Zero-Flash Initialization:
+ *    - Sets <html lang="nl"> and translates immediately as DOM nodes load.
+ * 3. Dynamic Content Support:
+ *    - MutationObserver monitors dynamically rendered elements, modals, popups, and form validations.
+ *    - Safe translation locking prevents infinite loops or double-translations.
+ * 4. Reversible In-Memory Cache:
+ *    - Caches original English strings on text nodes so switching back to EN is 100% faithful and instant.
+ * 5. High-Accessibility Switcher UI:
+ *    - Injected into desktop header, mobile navigation bar, and footer.
  */
 
 (function () {
@@ -14,33 +24,38 @@
 
     const STORAGE_KEY = 'dealifly_lang';
     const DEFAULT_LANG = 'en';
+    let isTranslating = false;
 
-    // Determine initial language: URL parameter > localStorage > default
+    // Determine initial language: URL query parameter > sessionStorage > default
     function getInitialLanguage() {
         try {
             const params = new URLSearchParams(window.location.search);
             const urlLang = params.get('lang');
             if (urlLang === 'nl' || urlLang === 'en') {
+                sessionStorage.setItem(STORAGE_KEY, urlLang);
                 return urlLang;
             }
-            const stored = localStorage.getItem(STORAGE_KEY);
-            if (stored === 'nl' || stored === 'en') {
-                return stored;
+            const sessionLang = sessionStorage.getItem(STORAGE_KEY);
+            if (sessionLang === 'nl' || sessionLang === 'en') {
+                return sessionLang;
             }
         } catch (e) {
-            console.warn('dealifly-i18n: localStorage inaccessible', e);
+            console.warn('dealifly-i18n: sessionStorage inaccessible', e);
         }
         return DEFAULT_LANG;
     }
 
     let currentLang = getInitialLanguage();
 
-    // Dictionary reference
+    // Fast-apply lang attribute to documentElement immediately
+    document.documentElement.lang = currentLang;
+
+    // Translation dictionary accessor
     function getTranslations() {
         return window.DEALIFLY_TRANSLATIONS || {};
     }
 
-    // Injected CSS for the language switcher
+    // Inject styles for the switcher
     function injectStyles() {
         if (document.getElementById('dealifly-i18n-styles')) return;
 
@@ -59,6 +74,7 @@
                 transition: all 0.2s ease;
                 font-family: var(--ff-1, "Plus Jakarta Sans", sans-serif);
                 user-select: none;
+                z-index: 10;
             }
             .dealifly-lang-switcher:hover {
                 border-color: rgba(143, 122, 232, 0.45);
@@ -100,12 +116,10 @@
                 font-size: 0.75rem;
                 margin: 0 1px;
             }
-            /* Mobile switcher styling */
             .dealifly-lang-switcher--mobile-bar {
                 margin-left: auto;
                 margin-right: 0.75rem;
             }
-            /* Footer switcher */
             .dealifly-lang-switcher--footer {
                 margin-top: 0.5rem;
             }
@@ -119,7 +133,7 @@
         document.head.appendChild(style);
     }
 
-    // Create a switcher element
+    // Switcher Component Builder
     function createSwitcherElement(variant) {
         const wrapper = document.createElement('div');
         wrapper.className = `dealifly-lang-switcher dealifly-lang-switcher--${variant}`;
@@ -148,15 +162,14 @@
         return wrapper;
     }
 
-    // Inject switchers into DOM
+    // Inject switchers into Header, Mobile Bar, and Footer
     function injectSwitchers() {
         injectStyles();
 
-        // 1. Desktop Header (inside actions container next to Get Started button)
+        // 1. Desktop Header
         const headerActions = document.querySelector('.primary-header .d-flex.align-items-center.ms-lg-auto, .dealifly-floating-nav .d-flex.align-items-center.ms-lg-auto, nav .ms-lg-auto.d-flex, nav .d-flex.gap-3');
         if (headerActions && !headerActions.querySelector('.dealifly-lang-switcher')) {
             const desktopSwitcher = createSwitcherElement('desktop');
-            // Insert before the primary button
             const ctaBtn = headerActions.querySelector('.btn, a');
             if (ctaBtn) {
                 headerActions.insertBefore(desktopSwitcher, ctaBtn);
@@ -165,7 +178,7 @@
             }
         }
 
-        // 2. Mobile Bar (visible right before the navbar toggler on mobile)
+        // 2. Mobile Bar
         const toggler = document.querySelector('.navbar-toggler');
         if (toggler && toggler.parentElement && !toggler.parentElement.querySelector('.dealifly-lang-switcher--mobile-bar')) {
             const mobileBarSwitcher = createSwitcherElement('mobile-bar');
@@ -173,7 +186,7 @@
             toggler.parentElement.insertBefore(mobileBarSwitcher, toggler);
         }
 
-        // 3. Footer (in footer bottom copyright/legal container)
+        // 3. Footer
         const footerBottom = document.querySelector('.dealifly-footer__bottom .d-flex, .dealifly-footer-main-row');
         if (footerBottom && !document.querySelector('.dealifly-lang-switcher--footer')) {
             const footerSwitcher = createSwitcherElement('footer');
@@ -183,7 +196,7 @@
         updateSwitcherUI();
     }
 
-    // Update active button state on all switchers
+    // Update active states
     function updateSwitcherUI() {
         document.querySelectorAll('.dealifly-lang-switcher').forEach(switcher => {
             switcher.querySelectorAll('.dealifly-lang-btn').forEach(btn => {
@@ -199,17 +212,17 @@
         });
     }
 
-    // Node walker for translating text nodes
-    function translateDOM(targetLang) {
+    // Recursive text translator for a root element
+    function translateRoot(root, targetLang) {
+        if (!root || !root.ownerDocument) return;
         const dict = getTranslations();
         const isDutch = targetLang === 'nl';
 
-        // Update document lang attribute
-        document.documentElement.lang = targetLang;
+        isTranslating = true;
 
-        // TreeWalker ignoring scripts, styles, code, svg, etc.
+        // TreeWalker
         const walker = document.createTreeWalker(
-            document.body,
+            root,
             NodeFilter.SHOW_TEXT,
             {
                 acceptNode: function (node) {
@@ -222,7 +235,6 @@
                     if (parent.closest('.dealifly-lang-switcher')) {
                         return NodeFilter.FILTER_REJECT;
                     }
-                    // Reject whitespace-only
                     if (!node.nodeValue || !node.nodeValue.trim()) {
                         return NodeFilter.FILTER_REJECT;
                     }
@@ -231,13 +243,13 @@
             }
         );
 
-        const nodesToProcess = [];
-        let currentNode;
-        while ((currentNode = walker.nextNode())) {
-            nodesToProcess.push(currentNode);
+        const nodes = [];
+        let cur;
+        while ((cur = walker.nextNode())) {
+            nodes.push(cur);
         }
 
-        nodesToProcess.forEach(node => {
+        nodes.forEach(node => {
             const raw = node.nodeValue;
             const trimmed = raw.trim();
 
@@ -246,10 +258,8 @@
             }
 
             if (isDutch) {
-                // Look up in dictionary
                 if (dict[trimmed]) {
                     const translation = dict[trimmed];
-                    // Preserve leading & trailing whitespace
                     const leadingMatch = raw.match(/^\s*/);
                     const trailingMatch = raw.match(/\s*$/);
                     const leading = leadingMatch ? leadingMatch[0] : '';
@@ -257,15 +267,14 @@
                     node.nodeValue = leading + translation + trailing;
                 }
             } else {
-                // Restore English
                 if (node._dealiflyOrigText) {
                     node.nodeValue = node._dealiflyOrigText;
                 }
             }
         });
 
-        // Translate placeholders & titles
-        const inputs = document.querySelectorAll('input[placeholder], textarea[placeholder]');
+        // Translate placeholders
+        const inputs = (root.querySelectorAll ? root.querySelectorAll('input[placeholder], textarea[placeholder]') : []);
         inputs.forEach(input => {
             if (!input._dealiflyOrigPlaceholder) {
                 input._dealiflyOrigPlaceholder = input.getAttribute('placeholder');
@@ -280,7 +289,7 @@
             }
         });
 
-        // Translate document title if present in dict
+        // Translate document title
         if (!document._dealiflyOrigTitle) {
             document._dealiflyOrigTitle = document.title;
         }
@@ -294,44 +303,92 @@
                 document.title = document._dealiflyOrigTitle;
             }
         }
+
+        isTranslating = false;
     }
 
-    // Set language function
+    // Set and persist language
     function setLanguage(lang) {
         if (lang !== 'nl' && lang !== 'en') return;
         currentLang = lang;
+
+        // Persist to sessionStorage for the session
         try {
-            localStorage.setItem(STORAGE_KEY, lang);
+            sessionStorage.setItem(STORAGE_KEY, lang);
         } catch (e) { }
 
-        // Update URL search param without reloading
-        const url = new URL(window.location.href);
-        url.searchParams.set('lang', lang);
-        window.history.replaceState({}, '', url.toString());
+        // Update HTML lang attribute
+        document.documentElement.lang = lang;
 
         updateSwitcherUI();
-        translateDOM(lang);
+        translateRoot(document.body, lang);
 
-        // Dispatch custom event for dynamic components if needed
         window.dispatchEvent(new CustomEvent('dealifly:languageChange', { detail: { lang } }));
     }
 
-    // Expose global API
+    // Dynamic content observer
+    function setupMutationObserver() {
+        if (!window.MutationObserver) return;
+
+        const observer = new MutationObserver(mutations => {
+            if (isTranslating || currentLang !== 'nl') return;
+
+            mutations.forEach(mutation => {
+                mutation.addedNodes.forEach(node => {
+                    if (node.nodeType === Node.ELEMENT_NODE) {
+                        translateRoot(node, 'nl');
+                    } else if (node.nodeType === Node.TEXT_NODE && node.nodeValue && node.nodeValue.trim()) {
+                        const parent = node.parentElement;
+                        if (parent && !['script', 'style', 'noscript', 'code'].includes(parent.tagName.toLowerCase())) {
+                            const trimmed = node.nodeValue.trim();
+                            const dict = getTranslations();
+                            if (dict[trimmed]) {
+                                if (!node._dealiflyOrigText) node._dealiflyOrigText = node.nodeValue;
+                                isTranslating = true;
+                                node.nodeValue = dict[trimmed];
+                                isTranslating = false;
+                            }
+                        }
+                    }
+                });
+            });
+        });
+
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true
+        });
+    }
+
+    // Handle bfcache / back-forward navigation
+    window.addEventListener('pageshow', function (event) {
+        const activeLang = getInitialLanguage();
+        if (activeLang !== currentLang) {
+            setLanguage(activeLang);
+        } else if (activeLang === 'nl') {
+            translateRoot(document.body, 'nl');
+        }
+    });
+
+    // Main initialization
+    function init() {
+        injectSwitchers();
+        if (currentLang === 'nl') {
+            translateRoot(document.body, 'nl');
+        }
+        setupMutationObserver();
+    }
+
+    // Global DealiflyI18n API
     window.DealiflyI18n = {
         getLanguage: () => currentLang,
         setLanguage: setLanguage,
-        init: function () {
-            injectSwitchers();
-            if (currentLang === 'nl') {
-                translateDOM('nl');
-            }
-        }
+        init: init
     };
 
-    // Auto-init on DOMContentLoaded or immediate if ready
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', window.DealiflyI18n.init);
+        document.addEventListener('DOMContentLoaded', init);
     } else {
-        window.DealiflyI18n.init();
+        init();
     }
 })();

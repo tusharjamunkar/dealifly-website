@@ -39,6 +39,14 @@
       "publisher": { "@type": "Organization", "name": "Dealifly", "url": "https://dealifly.com/" }
     }
     </script>
+    <script>
+        (function () {
+            try {
+                var l = sessionStorage.getItem('dealifly_lang') || (new URLSearchParams(window.location.search)).get('lang');
+                if (l === 'nl') { document.documentElement.lang = 'nl'; }
+            } catch (e) {}
+        })();
+    </script>
 </head>
 
 <body class="bg-dark-saas dealifly-homepage">
