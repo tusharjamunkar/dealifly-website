@@ -45,7 +45,7 @@
         <!-- Navbar -->
     <nav class="navbar navbar-expand-lg primary-header primary-header--transparent-light-alt dealifly-floating-nav">
         <div class="container align-items-lg-center">
-            <a class="logo dealifly-nav-logo" href="../" aria-label="Dealifly home">
+            <a class="logo dealifly-nav-logo" href="/" aria-label="Dealifly home">
                 <img src="../assets/img/dealifly-logo.png" alt="" class="dealifly-nav-logo__mark" width="40" height="40">
                 <span class="dealifly-nav-logo__name">Dealifly</span>
             </a>
@@ -159,7 +159,7 @@
                                 </a>
                             </li>
                             <li class="navigation-1__menu-list">
-                                <a href="../#about" class="link navigation-1__menu-link">
+                                <a href="/#about" class="link navigation-1__menu-link">
                                     <span class="dealifly-drop-title">About Us</span>
                                     <span class="dealifly-drop-sub">Our team, methodology & mission</span>
                                 </a>
@@ -242,12 +242,8 @@
 
                             <!-- Primary Action Buttons -->
                             <div class="ind-hero__buttons">
-                                <a href="#contact-section" class="dealifly-btn-primary">
-                                    Start Your Growth <i class="bi bi-arrow-right-short fs-5"></i>
-                                </a>
-                                <a href="https://wa.me/31684986062?text=Hi%2C%20I%20want%20to%20discuss%20B2B%20Companies%20Growth%20Marketing" target="_blank" rel="noopener" class="dealifly-btn-secondary">
-                                    <i class="bi bi-whatsapp"></i> Chat on WhatsApp
-                                </a>
+                                <a href="#contact-section" class="dealifly-btn-primary">Book a Strategy Call</a>
+                                <a href="#b2b-system" class="dealifly-btn-secondary">See How It Works <i class="bi bi-arrow-down-short fs-5"></i></a>
                             </div>
 
                             <!-- Key Growth & Trust Indicators (Content, Lead Generation, Outreach, Appointment Booking & Automation Focused) -->
@@ -732,7 +728,7 @@
                         <div class="row g-4 g-lg-5 justify-content-between align-items-start dealifly-footer-main-row">
                             <!-- Column 1: Brand -->
                             <div class="col-12 col-md-6 col-lg-3 col-xl-3 dealifly-footer-col-brand">
-                                <a class="logo dealifly-footer__brand" href="../" aria-label="Dealifly home">
+                                <a class="logo dealifly-footer__brand" href="/" aria-label="Dealifly home">
                                     <img src="../assets/img/dealifly-logo.png" alt="Dealifly logo" class="dealifly-footer__brand-mark">
                                     <span class="dealifly-footer__brand-name">Dealifly</span>
                                 </a>
@@ -827,7 +823,7 @@
                                 <h6 class="dealifly-footer__col-title fs-16 fw-semibold text-light">Company</h6>
                                 <ul class="list-unstyled d-flex flex-column gap-2 mb-0 dealifly-footer__link-list">
                                     <li>
-                                        <a href="../" class="dealifly-footer__link">Home</a>
+                                        <a href="/" class="dealifly-footer__link">Home</a>
                                     </li>
                                     <li>
                                         <a href="../pricing" class="dealifly-footer__link">Pricing</a>
@@ -917,6 +913,43 @@
     <script src="../assets/js/dealifly-solutions.js?v=20261014_rounded_sq_v12"></script>
     <script src="../assets/js/app.js?v=20261014_rounded_sq_v12"></script>
     <script src="b2b-companies.js?v=20261014_rounded_sq_v12"></script>
+
+
+<style id="b2b-left-space-fix">
+  #hero > .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: clamp(16px, 2vw, 28px) !important;
+    padding-right: clamp(16px, 2vw, 28px) !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box;
+  }
+
+  #hero .ind-hero-left-content {
+    width: 100%;
+    max-width: 880px;
+    margin: 0 !important;
+    box-sizing: border-box;
+  }
+
+  @media (max-width: 767px) {
+    #hero .ind-hero-left-content {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      transform: none !important;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+  
+  }
+</style>
+
+
+
 </body>
 
 </html>

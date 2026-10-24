@@ -1702,3 +1702,219 @@ body.dealifly-case-study-page .dealifly-footer .container {
 }
 
 
+/* Footer styling for individual case study pages */
+body.dealifly-case-study-page .dealifly-footer {
+    background: #08080C;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    color: #F5F5F7;
+}
+
+body.dealifly-case-study-page .dealifly-footer a {
+    text-decoration: none;
+}
+
+body.dealifly-case-study-page .dealifly-footer__col-title {
+    color: #FFFFFF;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+body.dealifly-case-study-page .dealifly-footer__link {
+    color: rgba(245, 245, 247, 0.65);
+    font-size: 0.86rem;
+    line-height: 1.5;
+}
+
+body.dealifly-case-study-page .dealifly-footer__link:hover {
+    color: #FFFFFF;
+}
+
+body.dealifly-case-study-page .dealifly-footer__legal-link {
+    color: rgba(245, 245, 247, 0.55);
+}
+
+body.dealifly-case-study-page .dealifly-footer__copyright {
+    color: rgba(245, 245, 247, 0.45);
+}
+
+/* Match homepage footer logo styling on case study pages */
+body.dealifly-case-study-page .dealifly-footer__brand-mark {
+    width: 2.25rem !important;
+    height: 2.25rem !important;
+    object-fit: contain !important;
+    display: block !important;
+}
+
+/* Match homepage footer tagline styling */
+body.dealifly-case-study-page .dealifly-footer__tagline {
+    font-size: 0.88rem !important;
+    line-height: 1.6 !important;
+    color: rgba(245, 245, 247, 0.65) !important;
+    margin-top: 0.85rem !important;
+    margin-bottom: 1.25rem !important;
+    max-width: 310px;
+}
+
+/* Match homepage footer brand name */
+body.dealifly-case-study-page .dealifly-footer__brand-name {
+    font-size: 1.35rem !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.025em !important;
+    color: #FFFFFF !important;
+    line-height: 1 !important;
+}
+
+/* Match homepage footer email form */
+body.dealifly-case-study-page .dealifly-footer__form {
+    max-width: 300px;
+    width: 100%;
+    margin-bottom: 0.75rem !important;
+}
+
+/* Match homepage footer email input */
+body.dealifly-case-study-page .dealifly-footer__input {
+    background-color: rgba(255, 255, 255, 0.04) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: #FFFFFF !important;
+    border-radius: 8px !important;
+    padding: 0.52rem 0.85rem !important;
+    font-size: 0.86rem !important;
+    transition: border-color 180ms ease, background-color 180ms ease !important;
+}
+
+body.dealifly-case-study-page .dealifly-footer__input:focus {
+    border-color: rgba(143, 122, 232, 0.5) !important;
+    background-color: rgba(255, 255, 255, 0.06) !important;
+    outline: none !important;
+    box-shadow: 0 0 0 2px rgba(118, 87, 217, 0.15) !important;
+}
+
+/* Match homepage footer email submit button */
+body.dealifly-case-study-page .dealifly-footer__submit {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    color: #FFFFFF !important;
+    width: 33px !important;
+    height: 33px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: background-color 180ms ease, border-color 180ms ease !important;
+}
+
+body.dealifly-case-study-page .dealifly-footer__submit:hover {
+    background-color: rgba(143, 122, 232, 0.25) !important;
+    border-color: rgba(143, 122, 232, 0.45) !important;
+    color: #FFFFFF !important;
+}
+
+/* Match homepage footer WhatsApp button */
+body.dealifly-case-study-page .dealifly-footer__whatsapp {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    padding: 0.45rem 0.9rem !important;
+    border: 1px solid rgba(37, 211, 102, 0.22) !important;
+    border-radius: 999px !important;
+    background: rgba(37, 211, 102, 0.06) !important;
+    color: #8ff0b1 !important;
+    font-size: 0.8125rem !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    margin-top: 0.35rem !important;
+    transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease !important;
+}
+
+body.dealifly-case-study-page .dealifly-footer__whatsapp:hover {
+    background: rgba(37, 211, 102, 0.14) !important;
+    border-color: rgba(37, 211, 102, 0.4) !important;
+    color: #bbf7d0 !important;
+}
+
+/* Match homepage footer links */
+body.dealifly-case-study-page .dealifly-footer__link {
+    font-size: 0.86rem !important;
+    font-weight: 400 !important;
+    color: rgba(245, 245, 247, 0.65) !important;
+    text-decoration: none !important;
+    line-height: 1.5 !important;
+    transition: color 180ms ease, transform 180ms ease !important;
+    display: inline-block !important;
+}
+
+body.dealifly-case-study-page .dealifly-footer__link:hover {
+    color: #FFFFFF !important;
+    transform: translateX(2px);
+}
+
+/* Match homepage footer legal links */
+body.dealifly-case-study-page .dealifly-footer__legal-link {
+    font-size: 0.8125rem !important;
+    color: rgba(245, 245, 247, 0.55) !important;
+    text-decoration: none !important;
+    transition: color 180ms ease !important;
+}
+
+body.dealifly-case-study-page .dealifly-footer__legal-link:hover {
+    color: #FFFFFF !important;
+}
+
+/* Match homepage footer copyright */
+body.dealifly-case-study-page .dealifly-footer__copyright {
+    font-size: 0.8125rem !important;
+    color: rgba(245, 245, 247, 0.45) !important;
+}
+
+/* Match homepage footer contact section */
+body.dealifly-case-study-page .dealifly-footer__contact-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+body.dealifly-case-study-page .dealifly-footer__contact-label {
+    font-size: 0.72rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.06em !important;
+    color: rgba(245, 245, 247, 0.45) !important;
+}
+
+body.dealifly-case-study-page .dealifly-footer__contact-val {
+    font-size: 0.88rem !important;
+    font-weight: 500 !important;
+    line-height: 1.45 !important;
+}
+
+/* Match homepage footer divider spacing */
+body.dealifly-case-study-page .dealifly-footer__divider {
+    margin-top: 40px !important;
+    margin-bottom: 24px !important;
+    height: 1px !important;
+}
+
+/* Match homepage footer bottom spacing */
+body.dealifly-case-study-page .dealifly-footer__bottom {
+    padding-top: 4px !important;
+    padding-bottom: 0 !important;
+}
+
+/* Match homepage footer bottom spacing */
+body.dealifly-case-study-page .dealifly-footer-inner {
+    padding-bottom: 2rem !important;
+}
+
+body.dealifly-case-study-page .dealifly-footer__divider {
+    margin-top: 40px !important;
+    margin-bottom: 24px !important;
+    height: 1px !important;
+}
+
+/* Make the footer divider visible */
+body.dealifly-case-study-page .dealifly-footer__divider {
+    height: 1px !important;
+    background-color: rgba(245, 245, 247, 0.12) !important;
+    border: none !important;
+    margin-top: 40px !important;
+    margin-bottom: 24px !important;
+}
