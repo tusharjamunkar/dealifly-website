@@ -1702,6 +1702,161 @@ body.dealifly-case-study-page .dealifly-footer .container {
 }
 
 
+
+/* ====================================================================
+   EXECUTIVE PANELS: OBJECTIVE & CHALLENGE (Modern Full-Width Layout)
+   ==================================================================== */
+body.dealifly-case-study-page .dealifly-content-panel--objective {
+    border: 1px solid rgba(143, 122, 232, 0.22) !important;
+    border-left: 4px solid var(--cs-purple) !important;
+    background: radial-gradient(ellipse at 10% 20%, rgba(118, 87, 217, 0.08) 0%, transparent 60%),
+                linear-gradient(145deg, rgba(16, 14, 24, 0.9) 0%, rgba(10, 9, 15, 0.98) 100%) !important;
+    border-radius: 1.25rem !important;
+    box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.6) !important;
+    padding: clamp(1.75rem, 3vw, 2.75rem) !important;
+}
+
+body.dealifly-case-study-page .dealifly-content-panel--challenge {
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-left: 4px solid #E11D48 !important; /* Rose accent indicating obstacles/challenges */
+    background: radial-gradient(ellipse at 10% 20%, rgba(225, 29, 72, 0.06) 0%, transparent 60%),
+                linear-gradient(145deg, rgba(16, 14, 24, 0.9) 0%, rgba(10, 9, 15, 0.98) 100%) !important;
+    border-radius: 1.25rem !important;
+    box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.6) !important;
+    padding: clamp(1.75rem, 3vw, 2.75rem) !important;
+}
+
+@media (min-width: 992px) {
+    /* Objective Executive 2-Column Split */
+    body.dealifly-case-study-page .dealifly-content-panel--objective {
+        display: grid !important;
+        grid-template-columns: minmax(280px, 340px) 1fr !important;
+        column-gap: clamp(2.5rem, 4vw, 4rem) !important;
+        align-items: start !important;
+        padding: clamp(2.25rem, 3.5vw, 3.25rem) !important;
+    }
+    body.dealifly-case-study-page .dealifly-content-panel--objective .dealifly-section-kicker {
+        grid-column: 1;
+        grid-row: 1;
+        margin-bottom: 0.35rem !important;
+    }
+    body.dealifly-case-study-page .dealifly-content-panel--objective h2 {
+        grid-column: 1;
+        grid-row: 2;
+        margin-bottom: 0.85rem !important;
+        font-size: clamp(1.85rem, 2.5vw, 2.35rem) !important;
+        font-weight: 700 !important;
+        letter-spacing: -0.03em !important;
+        color: #FFFFFF !important;
+    }
+    body.dealifly-case-study-page .dealifly-content-panel--objective > p:not(.dealifly-section-kicker) {
+        grid-column: 1;
+        grid-row: 3;
+        font-size: 1.05rem !important;
+        line-height: 1.65 !important;
+        color: rgba(245, 245, 247, 0.8) !important;
+        margin-bottom: 0 !important;
+    }
+    body.dealifly-case-study-page .dealifly-content-panel--objective .dealifly-check-list {
+        grid-column: 2;
+        grid-row: 1 / span 4;
+        margin-top: 0 !important;
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 0.85rem 1.15rem !important;
+    }
+    body.dealifly-case-study-page .dealifly-content-panel--objective .dealifly-check-list li:last-child:nth-child(odd) {
+        grid-column: 1 / -1 !important;
+    }
+
+    /* Challenge Executive 2-Column Split */
+    body.dealifly-case-study-page .dealifly-content-panel--challenge {
+        display: grid !important;
+        grid-template-columns: minmax(280px, 340px) 1fr !important;
+        column-gap: clamp(2.5rem, 4vw, 4rem) !important;
+        align-items: start !important;
+        padding: clamp(2.25rem, 3.5vw, 3.25rem) !important;
+    }
+    body.dealifly-case-study-page .dealifly-content-panel--challenge .dealifly-section-kicker {
+        grid-column: 1;
+        grid-row: 1;
+        margin-bottom: 0.35rem !important;
+    }
+    body.dealifly-case-study-page .dealifly-content-panel--challenge h2 {
+        grid-column: 1;
+        grid-row: 2;
+        margin-bottom: 0.85rem !important;
+        font-size: clamp(1.85rem, 2.5vw, 2.35rem) !important;
+        font-weight: 700 !important;
+        letter-spacing: -0.03em !important;
+        color: #FFFFFF !important;
+    }
+    body.dealifly-case-study-page .dealifly-content-panel--challenge > p:first-of-type {
+        grid-column: 1;
+        grid-row: 3;
+        font-size: 1.05rem !important;
+        line-height: 1.65 !important;
+        color: rgba(245, 245, 247, 0.8) !important;
+        margin-bottom: 0 !important;
+    }
+    body.dealifly-case-study-page .dealifly-content-panel--challenge .dealifly-check-list {
+        grid-column: 2;
+        grid-row: 1 / span 3;
+        margin-top: 0 !important;
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 0.85rem 1.15rem !important;
+    }
+    body.dealifly-case-study-page .dealifly-content-panel--challenge .dealifly-check-list li:last-child:nth-child(odd) {
+        grid-column: 1 / -1 !important;
+    }
+    body.dealifly-case-study-page .dealifly-content-panel--challenge > p:last-of-type:not(:first-of-type),
+    body.dealifly-case-study-page .dealifly-content-panel--challenge > h3,
+    body.dealifly-case-study-page .dealifly-content-panel--challenge > h3 ~ p {
+        grid-column: 2;
+    }
+    body.dealifly-case-study-page .dealifly-content-panel--challenge > p:last-of-type:not(:first-of-type) {
+        margin-top: 1.25rem !important;
+        padding: 0.95rem 1.35rem !important;
+        border-left: 3px solid #8F7AE8 !important;
+        border-radius: 0 10px 10px 0 !important;
+        background: rgba(118, 87, 217, 0.08) !important;
+        font-size: 0.95rem !important;
+        line-height: 1.6 !important;
+        color: rgba(245, 245, 247, 0.92) !important;
+    }
+}
+
+/* Sleek compact check-list item styling */
+body.dealifly-case-study-page .dealifly-check-list li {
+    background: rgba(255, 255, 255, 0.025) !important;
+    border: 1px solid rgba(255, 255, 255, 0.07) !important;
+    border-radius: 10px !important;
+    padding: 0.85rem 1.15rem !important;
+    font-size: 0.92rem !important;
+    line-height: 1.5 !important;
+    color: rgba(245, 245, 247, 0.92) !important;
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 0.85rem !important;
+    transition: all 0.2s ease !important;
+}
+body.dealifly-case-study-page .dealifly-check-list li:hover {
+    background: rgba(143, 122, 232, 0.08) !important;
+    border-color: rgba(143, 122, 232, 0.3) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Ensure centered stack has modern proportions */
+body.dealifly-case-study-page .dealifly-case-study-centered-stack {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: clamp(2rem, 3.5vw, 3rem) !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+}
+
+
 /* Footer styling for individual case study pages */
 body.dealifly-case-study-page .dealifly-footer {
     background: #08080C;
