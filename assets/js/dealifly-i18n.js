@@ -1,22 +1,23 @@
 /**
- * Dealifly Internationalization (i18n) Engine - Version 2.0 (Session-Wide Architecture)
- * Supports bidirectional English <-> Nederlands (Dutch) switching
+ * Dealifly Internationalization (i18n) Engine - Version 3.0 (Enterprise Dual-Tier Architecture)
+ * Complete English <-> Nederlands (Dutch) Session Translation System
  * 
  * Features:
- * 1. Session-Based Persistence:
- *    - Uses sessionStorage to isolate language preference to the current tab/session.
- *    - Persists across all internal page navigations, page refreshes, and browser back/forward (bfcache/pageshow).
- *    - Supports shareable URL parameter (?lang=nl).
- *    - New tabs/sessions start in clean default English.
- * 2. Zero-Flash Initialization:
- *    - Sets <html lang="nl"> and translates immediately as DOM nodes load.
- * 3. Dynamic Content Support:
- *    - MutationObserver monitors dynamically rendered elements, modals, popups, and form validations.
- *    - Safe translation locking prevents infinite loops or double-translations.
- * 4. Reversible In-Memory Cache:
- *    - Caches original English strings on text nodes so switching back to EN is 100% faithful and instant.
- * 5. High-Accessibility Switcher UI:
- *    - Injected into desktop header, mobile navigation bar, and footer.
+ * 1. Dual-Tier Translation:
+ *    - Tier 1: Key-based [data-i18n] elements (preserves nested HTML, badges, colors, and line breaks).
+ *    - Tier 2: Universal DOM TreeWalker matching all text nodes against the 2,800+ entry master dictionary.
+ *    - Attribute translation: [data-i18n-placeholder], input/textarea placeholders, document.title, aria-labels.
+ * 2. 100% Reversible In-Memory Cache:
+ *    - Caches original English strings and innerHTML on nodes so switching back to EN is instant and lossless.
+ * 3. Session-Wide Persistence:
+ *    - Stores user preference in sessionStorage to maintain Dutch across all page navigations, reloads, and back/forward history.
+ *    - New tabs/sessions cleanly default to English. Supports URL parameter (?lang=nl) for direct sharing.
+ * 4. Zero-Flash Early Execution:
+ *    - Sets document.documentElement.lang before render to avoid FOUT.
+ * 5. Dynamic Content (MutationObserver):
+ *    - Translates dynamically inserted elements, modals, dropdowns, and form validation states automatically.
+ * 6. Accessible Responsive Switchers:
+ *    - Injected into Desktop Header, Mobile Navigation Bar, and Footer.
  */
 
 (function () {
@@ -50,9 +51,19 @@
     // Fast-apply lang attribute to documentElement immediately
     document.documentElement.lang = currentLang;
 
-    // Translation dictionary accessor
-    function getTranslations() {
-        return window.DEALIFLY_TRANSLATIONS || {};
+    // Translation data accessors
+    function getI18nData() {
+        return window.DEALIFLY_I18N_DATA || { keys: {}, text: window.DEALIFLY_TRANSLATIONS || {} };
+    }
+
+    function getTextDict() {
+        const data = getI18nData();
+        return data.text || window.DEALIFLY_TRANSLATIONS || {};
+    }
+
+    function getKeysDict() {
+        const data = getI18nData();
+        return data.keys || {};
     }
 
     // Inject styles for the switcher
@@ -98,21 +109,20 @@
                 text-decoration: none;
             }
             .dealifly-lang-btn:hover {
-                color: #FFFFFF;
+                color: #ffffff;
+                background: rgba(143, 122, 232, 0.15);
             }
             .dealifly-lang-btn.active {
-                background: linear-gradient(135deg, rgba(118, 87, 217, 0.35) 0%, rgba(91, 62, 198, 0.45) 100%);
-                color: #FFFFFF;
-                border: 1px solid rgba(183, 165, 245, 0.4);
-                box-shadow: 0 2px 8px rgba(118, 87, 217, 0.3);
+                background: #8f7ae8;
+                color: #ffffff;
+                box-shadow: 0 2px 8px rgba(143, 122, 232, 0.35);
             }
-            .dealifly-lang-globe {
-                font-size: 0.85rem;
-                opacity: 0.9;
-                display: inline-block;
+            .dealifly-lang-btn:focus-visible {
+                outline: 2px solid #8f7ae8;
+                outline-offset: 2px;
             }
             .dealifly-lang-divider {
-                color: rgba(255, 255, 255, 0.18);
+                color: rgba(255, 255, 255, 0.2);
                 font-size: 0.75rem;
                 margin: 0 1px;
             }
@@ -123,10 +133,9 @@
             .dealifly-lang-switcher--footer {
                 margin-top: 0.5rem;
             }
-            @media (max-width: 991.98px) {
+            @media (max-width: 991px) {
                 .dealifly-lang-switcher--desktop {
-                    margin-bottom: 0.85rem;
-                    width: fit-content;
+                    display: none !important;
                 }
             }
         `;
@@ -138,27 +147,41 @@
         const wrapper = document.createElement('div');
         wrapper.className = `dealifly-lang-switcher dealifly-lang-switcher--${variant}`;
         wrapper.setAttribute('role', 'group');
-        wrapper.setAttribute('aria-label', 'Language Selector / Taalkeuze');
+        wrapper.setAttribute('aria-label', 'Language Switcher');
 
-        wrapper.innerHTML = `
-            <button type="button" class="dealifly-lang-btn ${currentLang === 'en' ? 'active' : ''}" data-lang="en" aria-label="Switch to English" aria-pressed="${currentLang === 'en'}">
-                <span class="dealifly-lang-globe" aria-hidden="true">🌐</span> EN
-            </button>
-            <span class="dealifly-lang-divider" aria-hidden="true">/</span>
-            <button type="button" class="dealifly-lang-btn ${currentLang === 'nl' ? 'active' : ''}" data-lang="nl" aria-label="Schakel over naar Nederlands" aria-pressed="${currentLang === 'nl'}">
-                NL
-            </button>
-        `;
+        const btnEn = document.createElement('button');
+        btnEn.type = 'button';
+        btnEn.className = `dealifly-lang-btn ${currentLang === 'en' ? 'active' : ''}`;
+        btnEn.setAttribute('data-lang', 'en');
+        btnEn.setAttribute('aria-label', 'Switch to English');
+        btnEn.setAttribute('aria-pressed', currentLang === 'en' ? 'true' : 'false');
+        btnEn.textContent = 'EN';
 
-        wrapper.addEventListener('click', function (e) {
-            const btn = e.target.closest('.dealifly-lang-btn');
-            if (!btn) return;
-            const targetLang = btn.getAttribute('data-lang');
-            if (targetLang && targetLang !== currentLang) {
-                setLanguage(targetLang);
-            }
+        const divider = document.createElement('span');
+        divider.className = 'dealifly-lang-divider';
+        divider.textContent = '|';
+        divider.setAttribute('aria-hidden', 'true');
+
+        const btnNl = document.createElement('button');
+        btnNl.type = 'button';
+        btnNl.className = `dealifly-lang-btn ${currentLang === 'nl' ? 'active' : ''}`;
+        btnNl.setAttribute('data-lang', 'nl');
+        btnNl.setAttribute('aria-label', 'Wissel naar Nederlands');
+        btnNl.setAttribute('aria-pressed', currentLang === 'nl' ? 'true' : 'false');
+        btnNl.textContent = 'NL';
+
+        btnEn.addEventListener('click', (e) => {
+            e.preventDefault();
+            setLanguage('en');
+        });
+        btnNl.addEventListener('click', (e) => {
+            e.preventDefault();
+            setLanguage('nl');
         });
 
+        wrapper.appendChild(btnEn);
+        wrapper.appendChild(divider);
+        wrapper.appendChild(btnNl);
         return wrapper;
     }
 
@@ -167,36 +190,35 @@
         injectStyles();
 
         // 1. Desktop Header
-        const headerActions = document.querySelector('.primary-header .d-flex.align-items-center.ms-lg-auto, .dealifly-floating-nav .d-flex.align-items-center.ms-lg-auto, nav .ms-lg-auto.d-flex, nav .d-flex.gap-3');
-        if (headerActions && !headerActions.querySelector('.dealifly-lang-switcher')) {
-            const desktopSwitcher = createSwitcherElement('desktop');
-            const ctaBtn = headerActions.querySelector('.btn, a');
-            if (ctaBtn) {
-                headerActions.insertBefore(desktopSwitcher, ctaBtn);
+        const desktopNav = document.querySelector('#navbar0') || document.querySelector('.navbar-collapse');
+        if (desktopNav && !document.querySelector('.dealifly-lang-switcher--desktop')) {
+            const switcher = createSwitcherElement('desktop');
+            const ctaBtn = desktopNav.querySelector('.dealifly-btn-primary, .btn, a[href*="contact"]');
+            if (ctaBtn && ctaBtn.parentElement) {
+                ctaBtn.parentElement.insertBefore(switcher, ctaBtn);
+                switcher.style.marginRight = '0.75rem';
             } else {
-                headerActions.appendChild(desktopSwitcher);
+                desktopNav.appendChild(switcher);
             }
         }
 
-        // 2. Mobile Bar
-        const toggler = document.querySelector('.navbar-toggler');
-        if (toggler && toggler.parentElement && !toggler.parentElement.querySelector('.dealifly-lang-switcher--mobile-bar')) {
-            const mobileBarSwitcher = createSwitcherElement('mobile-bar');
-            mobileBarSwitcher.classList.add('d-lg-none');
-            toggler.parentElement.insertBefore(mobileBarSwitcher, toggler);
+        // 2. Mobile Navbar Bar
+        const mobileToggle = document.querySelector('.navbar-toggler');
+        if (mobileToggle && mobileToggle.parentElement && !document.querySelector('.dealifly-lang-switcher--mobile-bar')) {
+            const switcher = createSwitcherElement('mobile-bar');
+            switcher.classList.add('d-lg-none');
+            mobileToggle.parentElement.insertBefore(switcher, mobileToggle);
         }
 
         // 3. Footer
-        const footerBottom = document.querySelector('.dealifly-footer__bottom .d-flex, .dealifly-footer-main-row');
+        const footerBottom = document.querySelector('footer .footer-bottom, footer .footer-copyright, footer .row:last-child');
         if (footerBottom && !document.querySelector('.dealifly-lang-switcher--footer')) {
-            const footerSwitcher = createSwitcherElement('footer');
-            footerBottom.appendChild(footerSwitcher);
+            const switcher = createSwitcherElement('footer');
+            footerBottom.appendChild(switcher);
         }
-
-        updateSwitcherUI();
     }
 
-    // Update active states
+    // Update switcher buttons UI
     function updateSwitcherUI() {
         document.querySelectorAll('.dealifly-lang-switcher').forEach(switcher => {
             switcher.querySelectorAll('.dealifly-lang-btn').forEach(btn => {
@@ -212,15 +234,77 @@
         });
     }
 
-    // Recursive text translator for a root element
-    function translateRoot(root, targetLang) {
-        if (!root || !root.ownerDocument) return;
-        const dict = getTranslations();
+    // Tier 1: Translate [data-i18n] structured elements
+    function translateDataI18n(root, targetLang) {
+        if (!root) return;
+        const keysDict = getKeysDict();
         const isDutch = targetLang === 'nl';
 
-        isTranslating = true;
+        // Elements with data-i18n
+        const elements = root.querySelectorAll ? root.querySelectorAll('[data-i18n]') : [];
+        elements.forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (!key) return;
 
-        // TreeWalker
+            if (!el._dealiflyOrigHTML) {
+                el._dealiflyOrigHTML = el.innerHTML;
+            }
+
+            const item = keysDict[key];
+            if (item) {
+                if (isDutch) {
+                    el.innerHTML = item.nl;
+                } else {
+                    el.innerHTML = item.en || el._dealiflyOrigHTML;
+                }
+            }
+        });
+
+        // Elements with data-i18n-placeholder
+        const phElements = root.querySelectorAll ? root.querySelectorAll('[data-i18n-placeholder]') : [];
+        phElements.forEach(el => {
+            const key = el.getAttribute('data-i18n-placeholder');
+            if (!key) return;
+
+            if (!el._dealiflyOrigPH) {
+                el._dealiflyOrigPH = el.getAttribute('placeholder');
+            }
+
+            const item = keysDict[key];
+            if (item) {
+                if (isDutch) {
+                    el.setAttribute('placeholder', item.nl);
+                } else {
+                    el.setAttribute('placeholder', item.en || el._dealiflyOrigPH);
+                }
+            }
+        });
+
+        // Elements with data-i18n-title
+        const titleElements = root.querySelectorAll ? root.querySelectorAll('[data-i18n-title]') : [];
+        titleElements.forEach(el => {
+            const key = el.getAttribute('data-i18n-title');
+            if (!key) return;
+            if (!el._dealiflyOrigTitleAttr) {
+                el._dealiflyOrigTitleAttr = el.getAttribute('title');
+            }
+            const item = keysDict[key];
+            if (item) {
+                if (isDutch) {
+                    el.setAttribute('title', item.nl);
+                } else {
+                    el.setAttribute('title', item.en || el._dealiflyOrigTitleAttr);
+                }
+            }
+        });
+    }
+
+    // Tier 2: Universal DOM TreeWalker Translator
+    function translateTextNodes(root, targetLang) {
+        if (!root || !root.ownerDocument) return;
+        const dict = getTextDict();
+        const isDutch = targetLang === 'nl';
+
         const walker = document.createTreeWalker(
             root,
             NodeFilter.SHOW_TEXT,
@@ -233,6 +317,10 @@
                         return NodeFilter.FILTER_REJECT;
                     }
                     if (parent.closest('.dealifly-lang-switcher')) {
+                        return NodeFilter.FILTER_REJECT;
+                    }
+                    // Skip elements already translated via data-i18n
+                    if (parent.closest('[data-i18n]')) {
                         return NodeFilter.FILTER_REJECT;
                     }
                     if (!node.nodeValue || !node.nodeValue.trim()) {
@@ -276,6 +364,7 @@
         // Translate placeholders
         const inputs = (root.querySelectorAll ? root.querySelectorAll('input[placeholder], textarea[placeholder]') : []);
         inputs.forEach(input => {
+            if (input.hasAttribute('data-i18n-placeholder')) return;
             if (!input._dealiflyOrigPlaceholder) {
                 input._dealiflyOrigPlaceholder = input.getAttribute('placeholder');
             }
@@ -303,8 +392,20 @@
                 document.title = document._dealiflyOrigTitle;
             }
         }
+    }
 
-        isTranslating = false;
+    // Complete Root Translator
+    function translateRoot(root, targetLang) {
+        if (!root) return;
+        isTranslating = true;
+        try {
+            // Tier 1: structured data-i18n keys
+            translateDataI18n(root, targetLang);
+            // Tier 2: universal text node dictionary
+            translateTextNodes(root, targetLang);
+        } finally {
+            isTranslating = false;
+        }
     }
 
     // Set and persist language
@@ -340,13 +441,15 @@
                     } else if (node.nodeType === Node.TEXT_NODE && node.nodeValue && node.nodeValue.trim()) {
                         const parent = node.parentElement;
                         if (parent && !['script', 'style', 'noscript', 'code'].includes(parent.tagName.toLowerCase())) {
-                            const trimmed = node.nodeValue.trim();
-                            const dict = getTranslations();
-                            if (dict[trimmed]) {
-                                if (!node._dealiflyOrigText) node._dealiflyOrigText = node.nodeValue;
-                                isTranslating = true;
-                                node.nodeValue = dict[trimmed];
-                                isTranslating = false;
+                            if (!parent.closest('[data-i18n]')) {
+                                const trimmed = node.nodeValue.trim();
+                                const dict = getTextDict();
+                                if (dict[trimmed]) {
+                                    if (!node._dealiflyOrigText) node._dealiflyOrigText = node.nodeValue;
+                                    isTranslating = true;
+                                    node.nodeValue = dict[trimmed];
+                                    isTranslating = false;
+                                }
                             }
                         }
                     }
@@ -383,7 +486,8 @@
     window.DealiflyI18n = {
         getLanguage: () => currentLang,
         setLanguage: setLanguage,
-        init: init
+        init: init,
+        translateRoot: translateRoot
     };
 
     if (document.readyState === 'loading') {
