@@ -189,16 +189,25 @@
     function injectSwitchers() {
         injectStyles();
 
-        // 1. Desktop Header
-        const desktopNav = document.querySelector('#navbar0') || document.querySelector('.navbar-collapse');
-        if (desktopNav && !document.querySelector('.dealifly-lang-switcher--desktop')) {
+        // 1. Desktop Header (Positioned near the "Get Started" button)
+        const getStartedContainer = document.querySelector('.navbar .ms-lg-auto, #navbar0 .ms-lg-auto, .navbar-collapse .ms-lg-auto');
+        const getStartedBtn = getStartedContainer ? getStartedContainer.querySelector('a.btn, button.btn, a[href*="contact"]') : null;
+
+        if (getStartedContainer && getStartedBtn && !document.querySelector('.dealifly-lang-switcher--desktop')) {
             const switcher = createSwitcherElement('desktop');
-            const ctaBtn = desktopNav.querySelector('.dealifly-btn-primary, .btn, a[href*="contact"]');
-            if (ctaBtn && ctaBtn.parentElement) {
-                ctaBtn.parentElement.insertBefore(switcher, ctaBtn);
-                switcher.style.marginRight = '0.75rem';
-            } else {
-                desktopNav.appendChild(switcher);
+            switcher.classList.add('order-lg-1');
+            getStartedContainer.insertBefore(switcher, getStartedBtn);
+        } else {
+            // Fallback for pages with custom header structures
+            const desktopNav = document.querySelector('#navbar0') || document.querySelector('.navbar-collapse');
+            if (desktopNav && !document.querySelector('.dealifly-lang-switcher--desktop')) {
+                const switcher = createSwitcherElement('desktop');
+                const ctaBtn = desktopNav.querySelector('a.btn-primary, a.btn, .dealifly-btn-primary');
+                if (ctaBtn && ctaBtn.parentElement && !ctaBtn.parentElement.classList.contains('nav-item')) {
+                    ctaBtn.parentElement.insertBefore(switcher, ctaBtn);
+                } else {
+                    desktopNav.appendChild(switcher);
+                }
             }
         }
 
