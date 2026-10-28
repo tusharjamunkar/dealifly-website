@@ -1011,7 +1011,7 @@ window.DEALIFLY_I18N_DATA = {
     "html": "html",
     "Recruitment Clients.": "Wervingsklanten.",
     "The Execution": "De executie",
-    "06-84986062": "06-84986062",
+    "0684986062": "0684986062",
     "I monitor leads, responses, meetings, and campaign performance and continuously optimise your growth system.": "Ik monitor leads, reacties, meetings EN campagneprestaties EN optimaliseer continu uw groeisysteem.",
     "Column 2: Services with 2 sub-columns": "Kolom 2: Services met 2 subkolommen",
     "Dealifly began by defining who the client should be selling to. This covered target company types, size, location, product needs, and the specific roles responsible for purchasing decisions. A targeted database of U.S. companies and contacts was then built and verified against these criteria.": "Dealifly begon met het definiëren aan wie de klant zou moeten verkopen. Dit omvatte de typen doelbedrijven, de omvang, de locatie, de productbehoeften EN de specifieke rollen die verantwoordelijk zijn voor aankoopbeslissingen. Vervolgens werd een gerichte database van Amerikaanse bedrijven EN contacten opgebouwd EN gecontroleerd aan de hand van deze criteria.",
