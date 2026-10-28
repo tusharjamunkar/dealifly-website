@@ -993,3 +993,187 @@ margin-inline: auto;
         font-size: 0.9rem !important;
     }
 }
+
+/* ============================================================
+   DEALIFLY CUSTOM SELECT COMPONENT
+   Replaces native browser / Apple iOS dropdowns with authentic Dealifly UI
+   ============================================================ */
+.dealifly-custom-select-wrap {
+    position: relative;
+    width: 100%;
+    user-select: none;
+    -webkit-user-select: none;
+    font-family: var(--ff-1, "Plus Jakarta Sans", sans-serif);
+}
+
+/* Original select is visually hidden and blocked from pointer events to prevent iOS native picker */
+.dealifly-custom-select-wrap select {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    tabindex: -1 !important;
+}
+
+/* Custom Trigger Button */
+.dealifly-custom-select-trigger {
+    width: 100%;
+    min-height: 48px;
+    padding: 0.8rem 1.15rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px !important;
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 500;
+    font-family: var(--ff-1, "Plus Jakarta Sans", sans-serif);
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 200ms ease, box-shadow 200ms ease, background 200ms ease;
+    -webkit-appearance: none;
+    appearance: none;
+    box-sizing: border-box;
+}
+
+.dealifly-custom-select-trigger.is-placeholder {
+    color: rgba(148, 163, 184, 0.75);
+}
+
+.dealifly-custom-select-trigger:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(183, 165, 245, 0.3);
+}
+
+.dealifly-custom-select-wrap.is-open .dealifly-custom-select-trigger,
+.dealifly-custom-select-trigger:focus {
+    background: rgba(20, 16, 36, 0.95);
+    border-color: #8b5cf6;
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.25);
+    color: #ffffff;
+}
+
+.dealifly-custom-select-trigger.is-invalid {
+    border-color: #ef4444 !important;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.25) !important;
+}
+
+.dealifly-custom-select-label {
+    flex-grow: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.dealifly-custom-select-arrow {
+    font-size: 0.85rem;
+    color: #b7a5f5;
+    transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1), color 200ms ease;
+    flex-shrink: 0;
+}
+
+.dealifly-custom-select-wrap.is-open .dealifly-custom-select-arrow {
+    transform: rotate(180deg);
+    color: #c084fc;
+}
+
+/* Custom Dropdown Menu (Dealifly Glass Surface) */
+.dealifly-custom-select-menu {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    right: 0;
+    z-index: 99999;
+    background: #0e0c18;
+    border: 1px solid rgba(183, 165, 245, 0.3);
+    border-radius: 12px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.85), 0 0 32px rgba(108, 76, 238, 0.2);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    padding: 0.45rem;
+    max-height: 290px;
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity 180ms ease, transform 180ms cubic-bezier(0.16, 1, 0.3, 1), visibility 180ms ease;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(168, 85, 247, 0.4) transparent;
+}
+
+.dealifly-custom-select-wrap.is-dropup .dealifly-custom-select-menu {
+    top: auto;
+    bottom: calc(100% + 6px);
+    transform: translateY(8px);
+}
+
+.dealifly-custom-select-menu::-webkit-scrollbar {
+    width: 6px;
+}
+
+.dealifly-custom-select-menu::-webkit-scrollbar-thumb {
+    background: rgba(168, 85, 247, 0.4);
+    border-radius: 3px;
+}
+
+.dealifly-custom-select-wrap.is-open .dealifly-custom-select-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Dropdown Option Items */
+.dealifly-custom-select-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0.72rem 1rem;
+    border-radius: 8px;
+    font-size: 0.92rem;
+    color: #cbd5e1;
+    cursor: pointer;
+    transition: background 120ms ease, color 120ms ease;
+}
+
+.dealifly-custom-select-option:hover,
+.dealifly-custom-select-option.is-highlighted {
+    background: rgba(168, 85, 247, 0.16);
+    color: #ffffff;
+}
+
+.dealifly-custom-select-option.is-selected {
+    background: rgba(108, 76, 238, 0.24);
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.dealifly-custom-select-option .dealifly-option-check {
+    font-size: 0.95rem;
+    color: #c084fc;
+    opacity: 0;
+    transition: opacity 120ms ease;
+}
+
+.dealifly-custom-select-option.is-selected .dealifly-option-check {
+    opacity: 1;
+}
+
+.dealifly-custom-select-option.is-disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    pointer-events: none;
+}

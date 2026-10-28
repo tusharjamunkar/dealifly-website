@@ -489,6 +489,16 @@
             translateRoot(document.body, 'nl');
         }
         setupMutationObserver();
+
+        if (window.DealiflyCustomSelect && typeof window.DealiflyCustomSelect.init === 'function') {
+            window.DealiflyCustomSelect.init();
+        } else {
+            var isInSubdir = window.location.pathname.indexOf('/industries/') !== -1;
+            var scriptPath = (isInSubdir ? '../' : '') + 'assets/js/dealifly-custom-select.js';
+            var s = document.createElement('script');
+            s.src = scriptPath;
+            document.body.appendChild(s);
+        }
     }
 
     // Global DealiflyI18n API
