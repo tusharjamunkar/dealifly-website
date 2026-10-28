@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="light">
+<html lang="en" data-bs-theme="light" data-theme="home-7">
 
 <head>
     <meta charset="utf-8">
@@ -15,6 +15,8 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="assets/css/bootstrap.css?v=20261014_mobile_fix_v11">
     <link rel="stylesheet" href="assets/css/bootstrap-icons.css?v=20261014_mobile_fix_v11">
+    <link rel="stylesheet" href="assets/css/ff-1.css?v=20261014_mobile_fix_v11">
+    <link rel="stylesheet" href="assets/css/ff-2.css?v=20261014_mobile_fix_v11">
     <link rel="stylesheet" href="assets/css/style.css?v=20261014_mobile_fix_v11">
     <link rel="stylesheet" href="assets/css/dealifly-theme.css?v=20261014_mobile_fix_v11">
     <link rel="stylesheet" href="assets/css/dealifly-solutions.css?v=20261014_mobile_fix_v11">
@@ -22,7 +24,7 @@
 
     <style>
         /* ============================================================
-           GROWTH PLAN DOWNLOAD PAGE (Matching Reference Image 2)
+           GROWTH PLAN DOWNLOAD PAGE (Aligned to Dealifly Design System)
            ============================================================ */
         body.dealifly-download-page {
             background-color: #060609 !important;
@@ -30,12 +32,15 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            font-family: var(--ff-1, "Plus Jakarta Sans", sans-serif) !important;
+            -webkit-font-smoothing: antialiased;
         }
 
         .growth-download-hero {
             position: relative;
-            padding: clamp(3.5rem, 6vw, 5.5rem) 0 2rem;
+            padding: clamp(3.5rem, 6vw, 5.5rem) 0 3.5rem;
             overflow: hidden;
+            background: radial-gradient(circle at 50% 15%, rgba(99, 66, 255, 0.12) 0%, transparent 60%);
         }
 
         .growth-download-hero__canvas {
@@ -44,7 +49,7 @@
             width: 100%;
             height: 100%;
             pointer-events: none;
-            opacity: 0.75;
+            opacity: 0.65;
             z-index: 0;
         }
 
@@ -55,49 +60,92 @@
             margin: 0 auto;
         }
 
-        .growth-form-card {
-            background: rgba(18, 16, 28, 0.85);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 20px;
-            padding: clamp(2rem, 4vw, 3.25rem);
-            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.65), 0 0 32px rgba(168, 85, 247, 0.08);
-            backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
+        /* Breadcrumbs */
+        .dealifly-solution-breadcrumbs {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            font-size: 0.88rem;
+            color: #94a3b8;
+            margin-bottom: 1.25rem;
+            font-family: var(--ff-1, "Plus Jakarta Sans", sans-serif);
         }
 
+        .dealifly-solution-breadcrumbs a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 150ms ease;
+        }
+
+        .dealifly-solution-breadcrumbs a:hover {
+            color: #ffffff;
+        }
+
+        .dealifly-solution-breadcrumbs span.sep {
+            color: rgba(255, 255, 255, 0.25);
+            font-size: 0.78rem;
+        }
+
+        .dealifly-solution-breadcrumbs span.current {
+            color: #e2e8f0;
+            font-weight: 500;
+        }
+
+        /* Badge - Slightly Rounded Brand Eyebrow */
         .growth-plan-badge {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
             font-size: 0.78rem;
             font-weight: 700;
-            letter-spacing: 0.12em;
+            letter-spacing: 0.08em;
             text-transform: uppercase;
-            color: #b7a5f5;
+            color: #c084fc;
             background: rgba(168, 85, 247, 0.12);
-            border: 1px solid rgba(183, 165, 245, 0.35);
-            border-radius: 999px;
-            padding: 0.35rem 0.95rem;
-            margin-bottom: 1rem;
-            box-shadow: 0 0 14px rgba(168, 85, 247, 0.2);
+            border: 1px solid rgba(183, 165, 245, 0.32);
+            border-radius: 8px !important;
+            padding: 0.38rem 0.95rem;
+            margin-bottom: 1.25rem;
+            box-shadow: 0 0 16px rgba(168, 85, 247, 0.16);
+            font-family: var(--ff-1, "Plus Jakarta Sans", sans-serif);
         }
 
+        .growth-plan-badge i {
+            font-size: 0.88rem;
+            color: #b7a5f5;
+        }
+
+        /* Page Headings */
         .growth-page-title {
-            font-size: clamp(1.85rem, 3.4vw, 2.75rem);
-            font-weight: 750;
-            line-height: 1.2;
+            font-family: var(--ff-1, "Plus Jakarta Sans", sans-serif) !important;
+            font-size: clamp(2rem, 3.6vw, 2.9rem);
+            font-weight: 800;
+            line-height: 1.18;
+            letter-spacing: -0.025em;
             color: #ffffff;
-            margin-bottom: 0.65rem;
+            margin-bottom: 0.85rem;
         }
 
         .growth-page-subtitle {
+            font-family: var(--ff-1, "Plus Jakarta Sans", sans-serif);
             font-size: 1.02rem;
             color: #94a3b8;
             line-height: 1.6;
-            margin-bottom: 2rem;
+            margin-bottom: 2.25rem;
+            max-width: 680px;
         }
 
-        /* --- Input Fields (Styled exactly like Image 2 with brand purple underlines) --- */
+        /* Form Card */
+        .growth-form-card {
+            background: #0e0c18;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: clamp(2rem, 4vw, 3.25rem);
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.65), 0 0 35px rgba(99, 40, 255, 0.08);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+
         .growth-field-group {
             margin-bottom: 1.35rem;
         }
@@ -108,50 +156,54 @@
             font-weight: 600;
             color: #cbd5e1;
             margin-bottom: 0.45rem;
+            font-family: var(--ff-1, "Plus Jakarta Sans", sans-serif);
         }
 
         .growth-form-label .req {
-            color: #b7a5f5;
+            color: #a855f7;
             margin-left: 2px;
         }
 
+        /* Sleek Modern Input Styling (No neon pink line, consistent 10px radius) */
         .growth-form-input,
         .growth-form-select,
         .growth-form-textarea {
             width: 100%;
-            background: rgba(255, 255, 255, 0.035);
-            border: 1px solid rgba(255, 255, 255, 0.09);
-            border-bottom: 2.5px solid #a855f7;
-            border-radius: 10px 10px 4px 4px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px !important;
             padding: 0.85rem 1.15rem;
             color: #ffffff;
             font-size: 0.95rem;
+            font-family: var(--ff-1, "Plus Jakarta Sans", sans-serif);
             transition: all 200ms ease;
             outline: none;
+            box-shadow: none;
         }
 
         .growth-form-input::placeholder,
         .growth-form-textarea::placeholder {
-            color: rgba(148, 163, 184, 0.65);
+            color: rgba(148, 163, 184, 0.55);
+            font-family: var(--ff-1, "Plus Jakarta Sans", sans-serif);
         }
 
         .growth-form-input:focus,
         .growth-form-select:focus,
         .growth-form-textarea:focus {
-            background: rgba(255, 255, 255, 0.06);
-            border-color: rgba(183, 165, 245, 0.4);
-            border-bottom-color: #b7a5f5;
-            box-shadow: 0 4px 20px rgba(168, 85, 247, 0.25);
+            background: rgba(20, 16, 36, 0.92);
+            border-color: #8b5cf6;
+            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.25);
             color: #ffffff;
         }
 
         .growth-form-select {
             appearance: none;
-            background-image: url("data:svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23b7a5f5' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2394a3b8' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
             background-repeat: no-repeat;
             background-position: right 1.1rem center;
             background-size: 14px;
             cursor: pointer;
+            padding-right: 2.5rem;
         }
 
         .growth-form-select option {
@@ -175,12 +227,12 @@
         .growth-checkbox-wrap input[type="checkbox"] {
             width: 19px;
             height: 19px;
-            border-radius: 4px;
-            background: rgba(255, 255, 255, 0.06);
-            border: 1.5px solid rgba(183, 165, 245, 0.6);
-            accent-color: #a855f7;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1.5px solid rgba(183, 165, 245, 0.5);
+            accent-color: #6342ff;
             cursor: pointer;
-            margin-top: 0.2rem;
+            margin-top: 0.15rem;
             flex-shrink: 0;
         }
 
@@ -190,6 +242,7 @@
             cursor: pointer;
             user-select: none;
             line-height: 1.5;
+            font-family: var(--ff-1, "Plus Jakarta Sans", sans-serif);
         }
 
         .growth-checkbox-label a {
@@ -202,29 +255,33 @@
             color: #ffffff;
         }
 
-        /* Submit Button */
+        /* Submit Button - Dealifly Primary Action Button Styling */
         .dealifly-btn-download-action {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 0.6rem;
-            background: linear-gradient(135deg, #7657d9 0%, #a855f7 100%);
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            border-radius: 10px;
-            color: #ffffff;
-            font-size: 1.02rem;
-            font-weight: 700;
+            background: #6342ff;
+            background: linear-gradient(135deg, #6c4cee 0%, #5b3af0 100%);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 10px !important;
+            color: #ffffff !important;
+            font-size: 1rem;
+            font-weight: 600;
+            font-family: var(--ff-1, "Plus Jakarta Sans", sans-serif);
             padding: 0.85rem 2.5rem;
             cursor: pointer;
-            box-shadow: 0 4px 20px rgba(168, 85, 247, 0.45);
-            transition: all 250ms ease;
+            box-shadow: 0 4px 18px rgba(99, 66, 255, 0.45);
+            transition: transform 200ms ease, box-shadow 200ms ease, background 200ms ease;
+            text-decoration: none !important;
         }
 
         .dealifly-btn-download-action:hover {
-            background: linear-gradient(135deg, #8b68f5 0%, #b7a5f5 100%);
-            color: #ffffff;
-            box-shadow: 0 6px 28px rgba(183, 165, 245, 0.65);
             transform: translateY(-2px);
+            background: #7454ff;
+            background: linear-gradient(135deg, #7858ff 0%, #6846ff 100%);
+            box-shadow: 0 8px 24px rgba(99, 66, 255, 0.6);
+            color: #ffffff !important;
         }
 
         .dealifly-btn-download-action:active {
@@ -243,41 +300,44 @@
             visibility: hidden !important;
         }
 
-        /* Success & Feedback Containers */
+        /* Status Messages */
         .growth-status-msg {
             display: none;
-            padding: 1rem 1.25rem;
-            border-radius: 12px;
-            font-size: 0.95rem;
+            padding: 0.85rem 1.15rem;
+            border-radius: 10px;
+            font-size: 0.9rem;
             margin-bottom: 1.5rem;
+            font-family: var(--ff-1, "Plus Jakarta Sans", sans-serif);
         }
 
         .growth-status-msg.is-error {
             display: block;
-            background: rgba(239, 68, 68, 0.15);
+            background: rgba(239, 68, 68, 0.12);
             border: 1px solid rgba(239, 68, 68, 0.35);
             color: #fca5a5;
         }
 
+        /* Success Card */
         .growth-success-card {
             display: none;
             text-align: center;
-            padding: 2.5rem 1.5rem;
+            padding: 2rem 1rem;
+            font-family: var(--ff-1, "Plus Jakarta Sans", sans-serif);
         }
 
         .growth-success-icon {
             width: 72px;
             height: 72px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(168, 85, 247, 0.3) 0%, rgba(124, 58, 237, 0.1) 100%);
-            border: 2px solid #b7a5f5;
-            color: #ffffff;
+            background: rgba(168, 85, 247, 0.15);
+            border: 2px solid #a855f7;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.2rem;
+            font-size: 2.25rem;
+            color: #c084fc;
             margin-bottom: 1.5rem;
-            box-shadow: 0 0 30px rgba(168, 85, 247, 0.5);
+            box-shadow: 0 0 32px rgba(168, 85, 247, 0.4);
         }
     </style>
     <script>
@@ -370,12 +430,39 @@
                             </li>
                         </ul>
                     </li>
+                                        <!-- Resources Dropdown -->
+                    <li class="nav-item has-sub-menu navigation-1 dealifly-nav-dropdown">
+                        <a class="nav-link" href="blog">
+                            Resources <i class="bi bi-chevron-down dealifly-nav-caret ms-1"></i>
+                        </a>
+                        <ul class="navigation-1__menu dealifly-dropdown-menu dealifly-dropdown-menu--resources">
+                            <li class="navigation-1__menu-list">
+                                <a href="blog" class="link navigation-1__menu-link">
+                                    <span class="dealifly-drop-title">Blog</span>
+                                    <span class="dealifly-drop-sub">Tactics, frameworks & playbooks</span>
+                                </a>
+                            </li>
+                            <li class="navigation-1__menu-list">
+                                <a href="case-study" class="link navigation-1__menu-link">
+                                    <span class="dealifly-drop-title">Case Studies</span>
+                                    <span class="dealifly-drop-sub">Proven B2B client acquisition proof</span>
+                                </a>
+                            </li>
+                            <li class="navigation-1__menu-list">
+                                <a href="index#about" class="link navigation-1__menu-link">
+                                    <span class="dealifly-drop-title">About Us</span>
+                                    <span class="dealifly-drop-sub">Our team, methodology & mission</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
                     <li class="nav-item">
                         <a class="nav-link" href="contact">Contact</a>
                     </li>
                 </ul>
                 <div class="d-flex align-items-center gap-3 ms-lg-auto">
-                    <a href="contact" class="btn btn-sm btn-primary order-lg-2 text-light fw-medium rounded-pill">
+                    <a href="contact" class="btn btn-sm btn-primary order-lg-2 text-light fw-medium">
                         Get Started
                     </a>
                 </div>
