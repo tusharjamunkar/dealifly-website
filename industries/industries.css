@@ -5496,13 +5496,41 @@ a.ind-contact-info-val:hover {
   overflow: hidden;
 }
 
-.ind-hero-left-content {
-  max-width: 880px;
-  margin: 0;
+.ind-hero--left > .container,
+#hero > .container {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding-left: clamp(16px, 2vw, 28px) !important;
+  padding-right: clamp(16px, 2vw, 28px) !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.ind-hero-left-content,
+#hero .ind-hero-left-content {
+  width: 100% !important;
+  max-width: 880px !important;
+  margin: 0 !important;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 767px) {
+  .ind-hero-left-content,
+  #hero .ind-hero-left-content {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
 }
 
 .ind-hero--left .ind-hero__eyebrow {
