@@ -74,7 +74,7 @@
         style.id = 'dealifly-i18n-styles';
         style.textContent = `
             .dealifly-lang-switcher {
-                display: inline-flex !important;
+                display: inline-flex;
                 width: auto !important;
                 max-width: fit-content !important;
                 min-width: 0 !important;
@@ -131,7 +131,11 @@
                 font-size: 0.75rem;
                 margin: 0 1px;
             }
+            .dealifly-lang-switcher--desktop {
+                display: inline-flex !important;
+            }
             .dealifly-lang-switcher--mobile-bar {
+                display: none !important;
                 margin-left: auto;
                 margin-right: 0.75rem;
             }
@@ -144,9 +148,24 @@
                 flex: 0 0 auto !important;
                 margin-top: 1rem !important;
             }
-            @media (max-width: 991px) {
-                .dealifly-lang-switcher--desktop {
+            @media (min-width: 992px) {
+                .dealifly-lang-switcher--mobile-bar,
+                .dealifly-lang-switcher.dealifly-lang-switcher--mobile-bar {
                     display: none !important;
+                }
+                .dealifly-lang-switcher--desktop,
+                .dealifly-lang-switcher.dealifly-lang-switcher--desktop {
+                    display: inline-flex !important;
+                }
+            }
+            @media (max-width: 991.98px) {
+                .dealifly-lang-switcher--desktop,
+                .dealifly-lang-switcher.dealifly-lang-switcher--desktop {
+                    display: none !important;
+                }
+                .dealifly-lang-switcher--mobile-bar,
+                .dealifly-lang-switcher.dealifly-lang-switcher--mobile-bar {
+                    display: inline-flex !important;
                 }
             }
         `;

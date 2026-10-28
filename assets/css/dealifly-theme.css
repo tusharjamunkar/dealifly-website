@@ -1180,9 +1180,7 @@ margin-inline: auto;
 
 
 /* Language Switcher Compact Styling */
-.dealifly-lang-switcher,
-.dealifly-lang-switcher--footer {
-    display: inline-flex !important;
+.dealifly-lang-switcher {
     width: auto !important;
     max-width: fit-content !important;
     min-width: 0 !important;
@@ -1190,6 +1188,33 @@ margin-inline: auto;
     flex: 0 0 auto !important;
     border-radius: 8px !important;
 }
+.dealifly-lang-switcher--footer {
+    display: inline-flex !important;
+}
 .dealifly-lang-switcher .dealifly-lang-btn {
     border-radius: 6px !important;
+}
+
+/* Ensure mobile-bar switcher on the left is STRICTLY hidden on desktop */
+@media (min-width: 992px) {
+    .dealifly-lang-switcher--mobile-bar,
+    .dealifly-lang-switcher.dealifly-lang-switcher--mobile-bar {
+        display: none !important;
+    }
+    .dealifly-lang-switcher--desktop,
+    .dealifly-lang-switcher.dealifly-lang-switcher--desktop {
+        display: inline-flex !important;
+    }
+}
+
+/* Ensure desktop switcher is STRICTLY hidden on mobile */
+@media (max-width: 991.98px) {
+    .dealifly-lang-switcher--desktop,
+    .dealifly-lang-switcher.dealifly-lang-switcher--desktop {
+        display: none !important;
+    }
+    .dealifly-lang-switcher--mobile-bar,
+    .dealifly-lang-switcher.dealifly-lang-switcher--mobile-bar {
+        display: inline-flex !important;
+    }
 }
