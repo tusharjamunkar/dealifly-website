@@ -2868,3 +2868,52 @@ body.dealifly-homepage .dealifly-btn-secondary {
     }
 }
 
+
+
+/* ==========================================================================
+   HOMEPAGE HERO SECTION FULL-WIDTH FLUID EXPANSION
+   Utilizes full left and right screen space while preserving edge padding
+   ========================================================================== */
+body.dealifly-homepage .hero-8 > .container,
+body.dealifly-homepage .hero-8__content .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: clamp(20px, 4vw, 64px) !important;
+    padding-right: clamp(20px, 4vw, 64px) !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box !important;
+}
+
+body.dealifly-homepage .hero-8__content .row {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+body.dealifly-homepage .hero-8__content .col-12 {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+body.dealifly-homepage .dealifly-hero-title {
+    max-width: 1200px !important;
+    width: 100% !important;
+    margin-inline: auto !important;
+}
+
+body.dealifly-homepage .dealifly-hero-subheading {
+    max-width: 780px !important;
+    width: 100% !important;
+    margin-inline: auto !important;
+}
+
+body.dealifly-homepage .hero-8__partners {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
