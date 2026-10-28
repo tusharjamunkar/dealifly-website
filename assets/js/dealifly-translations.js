@@ -67,8 +67,8 @@ window.DEALIFLY_I18N_DATA = {
         "nl": "Boek een Strategiegesprek"
     },
     "home.hero.cta2": {
-        "en": "See How It Works <i class=\"bi bi-arrow-down-short fs-5\"></i>",
-        "nl": "Zie Hoe Het Werkt <i class=\"bi bi-arrow-down-short fs-5\"></i>"
+        "en": "<i class=\"bi bi-whatsapp\"></i> Contact Us",
+        "nl": "<i class=\"bi bi-whatsapp\"></i> Neem Contact Op"
     },
     "footer.rights": {
         "en": "© 2026 Dealifly. All rights reserved.",
