@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="light">
+<html lang="en" data-bs-theme="dark">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact Dealifly to discuss growth marketing, lead generation, content, SEO, GEO, brand identity, and demand-generation systems.">
-    <meta name="keywords" content="Dealifly, growth marketing, strategic marketing, outreach solutions, brand growth, lead generation, content marketing">
+    <meta name="description"
+        content="Contact Dealifly to explore your growth opportunities and build an AI-first marketing strategy tailored to your business goals.">
+    <meta name="keywords"
+        content="Dealifly, contact, growth marketing, lead generation, B2B marketing, strategic marketing, outreach solutions">
     <meta name="author" content="Dealifly">
-    <title>Contact Dealifly</title>
+    <title>Contact Us | Dealifly - Growth Marketing for Modern Brands</title>
     <link rel="icon" href="assets/img/dealifly-logo.png" type="image/png">
     <link rel="apple-touch-icon" href="assets/img/dealifly-logo.png">
     <link rel="stylesheet" href="assets/css/bootstrap.css?v=20261014_mobile_fix_v11">
@@ -19,6 +21,7 @@
     <link rel="stylesheet" href="assets/css/prism.css?v=20261014_mobile_fix_v11">
     <link rel="stylesheet" href="assets/css/style.css?v=20261014_mobile_fix_v11">
     <link rel="stylesheet" href="assets/css/dealifly-theme.css?v=20261014_mobile_fix_v11">
+    <link rel="stylesheet" href="industries/industries.css?v=20261014_mobile_fix_v11">
     <script>
         (function () {
             try {
@@ -27,62 +30,337 @@
             } catch (e) {}
         })();
     </script>
+    <style>
+        .contact-page-section {
+            padding-top: clamp(110px, 14vw, 160px);
+            padding-bottom: clamp(60px, 8vw, 100px);
+            min-height: calc(100vh - 400px);
+            position: relative;
+        }
+        .ind-contact-lead {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            color: #94a3b8;
+            max-width: 480px;
+        }
+        .ind-contact-title {
+            font-size: clamp(2.4rem, 4vw, 3.4rem);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: #ffffff;
+            margin-bottom: 0.75rem;
+        }
+        .ind-contact-checklist {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .ind-contact-check-item {
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+            font-size: 0.98rem;
+            font-weight: 500;
+            color: #e2e8f0;
+        }
+        .ind-contact-check-icon {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: rgba(108, 76, 238, 0.2);
+            border: 1px solid rgba(139, 92, 246, 0.45);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #c084fc;
+            font-size: 0.75rem;
+            flex-shrink: 0;
+        }
+        .ind-contact-info-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .ind-contact-info-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+        .ind-contact-info-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #64748b;
+        }
+        .ind-contact-info-val {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        a.ind-contact-info-val:hover {
+            color: #c084fc;
+        }
+        .ind-contact-form-card {
+            background: #0e0c18;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: clamp(1.75rem, 3.5vw, 2.75rem);
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6), 0 0 35px rgba(99, 40, 255, 0.08);
+        }
+        .ind-contact-form-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: #ffffff;
+            margin-bottom: 0.4rem;
+        }
+        .ind-contact-form-subtitle {
+            font-size: 0.88rem;
+            line-height: 1.5;
+            color: #94a3b8;
+        }
+        .ind-contact-label {
+            display: block;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: #cbd5e1;
+            margin-bottom: 0.4rem;
+        }
+        .ind-contact-label .req {
+            color: #a855f7;
+        }
+        .ind-contact-input,
+        .ind-contact-select,
+        .ind-contact-textarea {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.025);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: 10px;
+            padding: 0.75rem 1rem;
+            font-size: 0.92rem;
+            color: #ffffff;
+            transition: all 0.2s ease;
+            font-family: inherit;
+        }
+        .ind-contact-input::placeholder,
+        .ind-contact-textarea::placeholder {
+            color: rgba(148, 163, 184, 0.5);
+        }
+        .ind-contact-input:focus,
+        .ind-contact-select:focus,
+        .ind-contact-textarea:focus {
+            outline: none;
+            border-color: #8b5cf6;
+            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.25);
+            background: rgba(20, 16, 36, 0.9);
+        }
+        .ind-contact-select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2394a3b8' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 14px;
+            padding-right: 2.5rem;
+        }
+        .ind-contact-select option {
+            background: #0f0d1b;
+            color: #ffffff;
+        }
+        .ind-contact-submit-btn {
+            width: 100%;
+            background: #6c4cee;
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 12px;
+            padding: 0.95rem 1.75rem;
+            font-size: 1rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 4px 16px rgba(108, 76, 238, 0.4);
+            margin-top: 0.5rem;
+        }
+        .ind-contact-submit-btn:hover {
+            transform: translateY(-2px);
+            background: #7a5cf2;
+            box-shadow: 0 8px 24px rgba(108, 76, 238, 0.55);
+            color: #ffffff;
+        }
+        .ind-contact-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #b7a5f5;
+            background: rgba(183, 165, 245, 0.1);
+            border: 1px solid rgba(183, 165, 245, 0.3);
+            padding: 0.35rem 0.85rem;
+            border-radius: 999px;
+            width: fit-content;
+            line-height: 1;
+        }
+        .ind-contact-eyebrow .ind-contact-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #b7a5f5;
+            box-shadow: 0 0 8px rgba(183, 165, 245, 0.8);
+            display: inline-block;
+        }
+    </style>
 </head>
 
 <body class="bg-dark-saas dealifly-theme-page">
-    <nav class="navbar navbar-expand-lg primary-header primary-header--dark primary-header--fixed primary-header--boxed top-md-3 primary-header-crossed:top-0 primary-header-crossed:full-dark">
+    <!-- Floating Universal Navbar (Matches Design System) -->
+    <nav class="navbar navbar-expand-lg primary-header primary-header--transparent-light-alt dealifly-floating-nav">
         <div class="container align-items-lg-center">
             <a class="logo dealifly-nav-logo" href="./" aria-label="Dealifly home">
                 <img src="assets/img/dealifly-logo.png" alt="" class="dealifly-nav-logo__mark" width="40" height="40">
                 <span class="dealifly-nav-logo__name">Dealifly</span>
             </a>
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbar0" aria-controls="navbar0" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbar0"
+                aria-controls="navbar0" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="bi bi-list" aria-hidden="true"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbar0">
                 <ul class="navbar-nav flex-grow-1 justify-content-center mx-lg-4 mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="./"> Home </a>
-                    </li>
-                    <li class="nav-item has-sub-menu navigation-1">
-                        <a class="nav-link" href="b2b-marketing">Services</a>
-                        <ul class="navigation-1__menu">
+                    <!-- Services Dropdown -->
+                    <li class="nav-item has-sub-menu navigation-1 dealifly-nav-dropdown">
+                        <a class="nav-link" href="b2b-marketing">
+                            Services <i class="bi bi-chevron-down dealifly-nav-caret ms-1"></i>
+                        </a>
+                        <ul class="navigation-1__menu dealifly-dropdown-menu dealifly-dropdown-menu--solutions">
                             <li class="navigation-1__menu-list">
-                                <a href="b2b-marketing" class="link navigation-1__menu-link"> B2B Growth Marketing </a>
+                                <a href="b2b-marketing" class="link navigation-1__menu-link">
+                                    <span class="dealifly-drop-title">B2B Marketing</span>
+                                    <span class="dealifly-drop-sub">Acquisition &amp; outbound funnels</span>
+                                </a>
                             </li>
                             <li class="navigation-1__menu-list">
-                                <a href="content-marketing" class="link navigation-1__menu-link"> Content Marketing </a>
+                                <a href="content-marketing" class="link navigation-1__menu-link">
+                                    <span class="dealifly-drop-title">Content Marketing</span>
+                                    <span class="dealifly-drop-sub">Demand gen &amp; thought leadership</span>
+                                </a>
                             </li>
                             <li class="navigation-1__menu-list">
-                                <a href="email-marketing-outreach" class="link navigation-1__menu-link"> Email Marketing </a>
+                                <a href="email-marketing-outreach" class="link navigation-1__menu-link">
+                                    <span class="dealifly-drop-title">Email Marketing</span>
+                                    <span class="dealifly-drop-sub">Cold outreach &amp; lifecycle sequences</span>
+                                </a>
                             </li>
                             <li class="navigation-1__menu-list">
-                                <a href="lead-research" class="link navigation-1__menu-link"> Lead Generation </a>
+                                <a href="lead-research" class="link navigation-1__menu-link">
+                                    <span class="dealifly-drop-title">Lead Generation</span>
+                                    <span class="dealifly-drop-sub">ICP enrichment &amp; research</span>
+                                </a>
                             </li>
                             <li class="navigation-1__menu-list">
-                                <a href="linkedin-lead-generation" class="link navigation-1__menu-link"> LinkedIn Lead Generation </a>
+                                <a href="linkedin-lead-generation" class="link navigation-1__menu-link">
+                                    <span class="dealifly-drop-title">LinkedIn Lead Generation</span>
+                                    <span class="dealifly-drop-sub">High-intent pipeline generation</span>
+                                </a>
+                            </li>
+                            <li class="navigation-1__menu-list">
+                                <a href="seo-geo" class="link navigation-1__menu-link">
+                                    <span class="dealifly-drop-title">SEO &amp; Search Authority</span>
+                                    <span class="dealifly-drop-sub">Organic rankings &amp; search traffic</span>
+                                </a>
+                            </li>
+                            <li class="navigation-1__menu-list">
+                                <a href="brand-building" class="link navigation-1__menu-link">
+                                    <span class="dealifly-drop-title">Brand Building</span>
+                                    <span class="dealifly-drop-sub">Identity, trust &amp; positioning</span>
+                                </a>
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pricing">Pricing</a>
+
+                    <!-- Industries Dropdown -->
+                    <li class="nav-item has-sub-menu navigation-1 dealifly-nav-dropdown">
+                        <a class="nav-link" href="javascript:void(0)">
+                            Industries <i class="bi bi-chevron-down dealifly-nav-caret ms-1"></i>
+                        </a>
+                        <ul class="navigation-1__menu dealifly-dropdown-menu dealifly-dropdown-menu--industries">
+                            <li class="navigation-1__menu-list">
+                                <a href="industries/b2b-companies" class="link navigation-1__menu-link">
+                                    <span class="dealifly-drop-title">B2B Companies</span>
+                                    <span class="dealifly-drop-sub">SaaS, tech &amp; professional services</span>
+                                </a>
+                            </li>
+                            <li class="navigation-1__menu-list">
+                                <a href="industries/ecommerce" class="link navigation-1__menu-link">
+                                    <span class="dealifly-drop-title">E-commerce</span>
+                                    <span class="dealifly-drop-sub">Direct-to-consumer &amp; digital brands</span>
+                                </a>
+                            </li>
+                            <li class="navigation-1__menu-list">
+                                <a href="industries/recruitment-agencies" class="link navigation-1__menu-link">
+                                    <span class="dealifly-drop-title">Recruitment</span>
+                                    <span class="dealifly-drop-sub">Staffing agencies &amp; executive search</span>
+                                </a>
+                            </li>
+                            <li class="navigation-1__menu-list">
+                                <a href="industries/accounting-firm" class="link navigation-1__menu-link">
+                                    <span class="dealifly-drop-title">Accounting Firms</span>
+                                    <span class="dealifly-drop-sub">Bespoke advisory acquisition</span>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="blog">Blog</a>
+
+                    <!-- Resources Dropdown -->
+                    <li class="nav-item has-sub-menu navigation-1 dealifly-nav-dropdown">
+                        <a class="nav-link" href="blog">
+                            Resources <i class="bi bi-chevron-down dealifly-nav-caret ms-1"></i>
+                        </a>
+                        <ul class="navigation-1__menu dealifly-dropdown-menu dealifly-dropdown-menu--resources">
+                            <li class="navigation-1__menu-list">
+                                <a href="blog" class="link navigation-1__menu-link">
+                                    <span class="dealifly-drop-title">Blog</span>
+                                    <span class="dealifly-drop-sub">Tactics, frameworks &amp; playbooks</span>
+                                </a>
+                            </li>
+                            <li class="navigation-1__menu-list">
+                                <a href="case-study" class="link navigation-1__menu-link">
+                                    <span class="dealifly-drop-title">Case Studies</span>
+                                    <span class="dealifly-drop-sub">Proven B2B client acquisition proof</span>
+                                </a>
+                            </li>
+                            <li class="navigation-1__menu-list">
+                                <a href="./#about" class="link navigation-1__menu-link">
+                                    <span class="dealifly-drop-title">About Us</span>
+                                    <span class="dealifly-drop-sub">Our team, methodology &amp; mission</span>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
+
+                    <!-- Contact Link -->
                     <li class="nav-item">
-                        <a class="nav-link" href="case-study">Case Studies</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact">Contact</a>
+                        <a class="nav-link active" href="contact">Contact</a>
                     </li>
                 </ul>
                 <div class="d-flex align-items-center gap-3 ms-lg-auto">
-                    <a href="contact" class="btn btn-sm btn-primary order-lg-2 "> Get Started </a>
+                    <a href="contact" class="btn btn-sm btn-primary order-lg-2 text-light fw-medium rounded-pill"> Get Started </a>
                 </div>
             </div>
         </div>
     </nav>
+
     <div class="preloader" role="status" aria-label="Loading Dealifly">
         <div class="preloader__content">
             <div class="preloader__brand">
@@ -115,133 +393,128 @@
             setTimeout(dismiss, 700);
         })();
     </script>
+
     <div id="smooth-wrapper">
         <div id="smooth-content">
-            <main data-bs-theme="dark">
-                <div class="banner-1">
+            <main>
+                <!-- Contact Section (Matching Screenshot Structure & Design) -->
+                <section class="ind-contact-section contact-page-section" id="contact">
                     <div class="container">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="banner-1__content">
-                                    <div class="row">
-                                        <div class="col-md-8 col-xl-6">
-                                            <nav class="mb-3">
-                                                <ol class="breadcrumb breadcrumb-modifier">
-                                                    <li class="breadcrumb-item">
-                                                        <a href="#" class="link fs-14">Home</a>
-                                                    </li>
-                                                    <li class="breadcrumb-item">
-                                                        <iconify-icon icon="bi:chevron-right" class="align-middle fs-14"></iconify-icon>
-                                                    </li>
-                                                    <li class="breadcrumb-item active fs-14" aria-current="page"> Contact </li>
-                                                </ol>
-                                            </nav>
-                                            <h3>Tell us what you want to grow.</h3>
-                                            <p class="mb-0 max-text-12">Contact Dealifly to discuss growth marketing, lead generation, content, SEO, GEO, brand identity, and demand-generation systems.</p>
-                                        </div>
-                                    </div>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="1124" height="401" viewBox="0 0 1124 401" fill="none" class="banner-1__froster-svg">
-                                        <g filter="url(#filter0_f_8077_2641)">
-                                            <path d="M773.993 103.763C800.457 67.556 838.118 -16 889.598 -16C932.68 -16 925.405 109.955 850.192 214.4C676.015 417.658 548.024 427 432.419 427C316.814 427 267 368.356 267 332.149C267 295.942 301.82 244.415 489.854 244.415C677.886 244.415 747.529 139.97 773.993 103.763Z" fill="#6328FF" fill-opacity="0.5" class="banner-1__froster-svg-path" />
-                                        </g>
-                                        <defs>
-                                            <filter id="filter0_f_8077_2641" x="0.333405" y="-282.667" width="1182.33" height="976.333" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                                                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-                                                <feGaussianBlur stdDeviation="133.333" result="effect1_foregroundBlur_8077_2641" />
-                                            </filter>
-                                        </defs>
-                                    </svg>
+                        <div class="ind-contact-grid">
+                            <!-- Left Column: Value Proposition & Contact Details -->
+                            <div class="ind-contact-left">
+                                <div class="ind-contact-eyebrow mb-2">
+                                    <span class="ind-contact-dot"></span> LET'S CONNECT
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <section class="section-space-y bg-body-tertiary">
-                    <div class="container">
-                        <div class="row g-5 justify-content-between align-items-start">
-                            <div class="col-lg-5">
-                                <span class="badge bg-primary-emphasis text-primary-subtle mb-4"> Contact Dealifly </span>
-                                <h1 class="h3">Tell us what you want to grow.</h1>
-                                <div class="d-grid gap-4 mt-8">
-                                    <a href="tel:+31684986062" class="dealifly-contact-card link d-flex align-items-center gap-4 rounded-3 bg-body p-4 text-body hover:text-primary">
-                                        <span class="d-grid place-content-center w-12 h-12 border border-light border-opacity-20 bg-light bg-opacity-10 rounded-circle text-light fs-24 flex-shrink-0">
-                                            <iconify-icon icon="solar:phone-calling-linear" aria-hidden="true"></iconify-icon>
-                                        </span>
-                                        <span>
-                                            <small class="d-block text-body mb-1">Call us</small>
-                                            <strong class="d-block text-heading">+31684986062</strong>
-                                        </span>
-                                    </a>
-                                    <a href="mailto:contact@dealifly.com" class="dealifly-contact-card link d-flex align-items-center gap-4 rounded-3 bg-body p-4 text-body hover:text-primary">
-                                        <span class="d-grid place-content-center w-12 h-12 border border-light border-opacity-20 bg-light bg-opacity-10 rounded-circle text-light fs-24 flex-shrink-0">
-                                            <iconify-icon icon="solar:letter-linear" aria-hidden="true"></iconify-icon>
-                                        </span>
-                                        <span>
-                                            <small class="d-block text-body mb-1">Email</small>
-                                            <strong class="d-block text-heading">contact@dealifly.com</strong>
-                                        </span>
-                                    </a>
-                                    <div class="dealifly-contact-card d-flex align-items-center gap-4 rounded-3 bg-body p-4">
-                                        <span class="d-grid place-content-center w-12 h-12 border border-light border-opacity-20 bg-light bg-opacity-10 rounded-circle text-light fs-24 flex-shrink-0">
-                                            <iconify-icon icon="solar:map-point-linear" aria-hidden="true"></iconify-icon>
-                                        </span>
-                                        <span>
-                                            <small class="d-block text-body mb-1">Location</small>
-                                            <strong class="d-block text-heading">Netherlands</strong>
-                                        </span>
+                                <h1 class="ind-contact-title">Get Started</h1>
+                                <p class="ind-contact-lead mb-3">
+                                    Reach out to explore your growth opportunities and build a strategy tailored to your business goals.
+                                </p>
+
+                                <!-- 3 Checklist Points -->
+                                <ul class="ind-contact-checklist mb-4">
+                                    <li class="ind-contact-check-item">
+                                        <span class="ind-contact-check-icon"><i class="bi bi-check-lg"></i></span>
+                                        <span>Understand your growth opportunities</span>
+                                    </li>
+                                    <li class="ind-contact-check-item">
+                                        <span class="ind-contact-check-icon"><i class="bi bi-check-lg"></i></span>
+                                        <span>Explore AI-first marketing solutions</span>
+                                    </li>
+                                    <li class="ind-contact-check-item">
+                                        <span class="ind-contact-check-icon"><i class="bi bi-check-lg"></i></span>
+                                        <span>Build a strategy around your business goals</span>
+                                    </li>
+                                </ul>
+
+                                <div class="ind-contact-divider mb-4"></div>
+
+                                <!-- Contact Info List -->
+                                <div class="ind-contact-info-list">
+                                    <div class="ind-contact-info-item">
+                                        <div class="ind-contact-info-label">EMAIL</div>
+                                        <a href="mailto:contact@dealifly.com" class="ind-contact-info-val">contact@dealifly.com</a>
+                                    </div>
+                                    <div class="ind-contact-info-item">
+                                        <div class="ind-contact-info-label">ADDRESS</div>
+                                        <div class="ind-contact-info-val">Binnendelta 11M, 1261 WZ Blaricum</div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-7 col-xl-6">
-                                <div class="rounded-4 bg-body p-4 p-md-8 shadow-lg">
-                                    <p class="mb-6 fw-semibold text-heading"> Fill out the form and we will contact you </p>
-                                    <form action="contact-submit.php" method="post" id="contact-form" class="row g-4">
-                                        <div class="dealifly-contact-status form-message col-12" id="form-message" role="status" aria-live="polite"></div>
-                                        <div class="dealifly-contact-honeypot" aria-hidden="true">
-                                            <label for="website">Website</label>
+
+                            <!-- Right Column: Form Card -->
+                            <div class="ind-contact-right">
+                                <div class="ind-contact-form-card">
+                                    <div class="ind-contact-form-header mb-4">
+                                        <h2 class="ind-contact-form-title">BOOK A CALL WITH US</h2>
+                                        <p class="ind-contact-form-subtitle mb-0">Fill out the details below and we will follow up with practical recommendations.</p>
+                                    </div>
+
+                                    <form action="contact-submit.php" method="post" id="contact-form">
+                                        <div id="form-message" class="alert d-none mb-3" role="status" aria-live="polite"></div>
+
+                                        <!-- Honeypot -->
+                                        <div style="position: absolute; left: -9999px; opacity: 0;" aria-hidden="true">
+                                            <label for="website">Leave empty</label>
                                             <input type="text" name="website" id="website" tabindex="-1" autocomplete="off">
                                         </div>
-                                        <div class="col-md-6">
-                                            <label for="name" class="form-label fs-14 fw-medium text-heading"> Name </label>
-                                            <input type="text" name="name" id="name" class="form-control" placeholder="Name" maxlength="100" autocomplete="name" required>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label for="email2" class="form-label fs-14 fw-medium text-heading"> Email address </label>
-                                            <input type="email" name="email" id="email2" class="form-control" placeholder="Email address" maxlength="190" autocomplete="email" required>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label for="company" class="form-label fs-14 fw-medium text-heading"> Company or brand </label>
-                                            <input type="text" name="company" id="company" class="form-control" placeholder="Company or brand" maxlength="150" autocomplete="organization">
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label for="phone" class="form-label fs-14 fw-medium text-heading"> Phone number </label>
-                                            <input type="tel" name="phone" id="phone" class="form-control" placeholder="Phone number" maxlength="40" autocomplete="tel">
-                                        </div>
-                                        <div class="col-12">
-                                            <label for="service" class="form-label fs-14 fw-medium text-heading"> What do you need help with? </label>
-                                            <select name="service" id="service" class="form-select">
-                                                <option value="">What do you need help with?</option>
-                                                <option value="linkedin-personal-branding">LinkedIn Personal Branding</option>
-                                                <option value="ecommerce-growth-marketing">Ecommerce Growth Marketing</option>
-                                                <option value="company-growth-marketing">Company Growth Marketing</option>
-                                                <option value="linkedin">LinkedIn Lead Generation</option>
-                                                <option value="email">Email Marketing Outreach</option>
-                                                <option value="lead-research">Lead Research</option>
-                                                <option value="seo-geo">SEO &amp; GEO</option>
-                                                <option value="content">Content Marketing</option>
-                                                <option value="brand-identity">Brand Identity</option>
-                                                <option value="brand-storytelling">Brand Storytelling</option>
-                                                <option value="growth-program">Growth Program</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-12">
-                                            <label for="message" class="form-label fs-14 fw-medium text-heading"> Message </label>
-                                            <textarea name="message" id="message" class="form-control" rows="5" placeholder="Message" maxlength="5000" required></textarea>
-                                        </div>
-                                        <div class="col-12">
-                                            <button type="submit" class="btn btn-primary"> Send Message <iconify-icon icon="solar:arrow-right-linear" aria-hidden="true"></iconify-icon>
-                                            </button>
+
+                                        <div class="row g-3">
+                                            <!-- Name -->
+                                            <div class="col-md-6 ind-contact-field-group">
+                                                <label for="contactName" class="ind-contact-label">Name <span class="req">*</span></label>
+                                                <input type="text" class="ind-contact-input" id="contactName" name="name" placeholder="Your name" maxlength="100" autocomplete="name" required>
+                                            </div>
+
+                                            <!-- Business Email -->
+                                            <div class="col-md-6 ind-contact-field-group">
+                                                <label for="contactEmail" class="ind-contact-label">Business Email <span class="req">*</span></label>
+                                                <input type="email" class="ind-contact-input" id="contactEmail" name="email" placeholder="you@company.com" maxlength="190" autocomplete="email" required>
+                                            </div>
+
+                                            <!-- Company or Brand -->
+                                            <div class="col-md-6 ind-contact-field-group">
+                                                <label for="contactCompany" class="ind-contact-label">Company or Brand</label>
+                                                <input type="text" class="ind-contact-input" id="contactCompany" name="company" placeholder="Company name" maxlength="150" autocomplete="organization">
+                                            </div>
+
+                                            <!-- Phone Number -->
+                                            <div class="col-md-6 ind-contact-field-group">
+                                                <label for="contactPhone" class="ind-contact-label">Phone Number</label>
+                                                <input type="tel" class="ind-contact-input" id="contactPhone" name="phone" placeholder="Phone number" maxlength="40" autocomplete="tel">
+                                            </div>
+
+                                            <!-- What do you need help with? -->
+                                            <div class="col-12 ind-contact-field-group">
+                                                <label for="contactService" class="ind-contact-label">What do you need help with? <span class="req">*</span></label>
+                                                <select class="ind-contact-select" id="contactService" name="service" required>
+                                                    <option value="" disabled selected>Select an area of interest</option>
+                                                    <option value="company-growth-marketing">B2B Growth Marketing</option>
+                                                    <option value="ecommerce-growth-marketing">Ecommerce Growth Marketing</option>
+                                                    <option value="linkedin-personal-branding">LinkedIn Personal Branding</option>
+                                                    <option value="linkedin">LinkedIn Lead Generation</option>
+                                                    <option value="email">Email Marketing Outreach</option>
+                                                    <option value="lead-research">Lead Research</option>
+                                                    <option value="seo-geo">SEO &amp; GEO Authority</option>
+                                                    <option value="content">Content Marketing</option>
+                                                    <option value="brand-identity">Brand Identity</option>
+                                                    <option value="brand-storytelling">Brand Storytelling</option>
+                                                    <option value="growth-program">Growth Program &amp; Architecture</option>
+                                                </select>
+                                            </div>
+
+                                            <!-- Message -->
+                                            <div class="col-12 ind-contact-field-group">
+                                                <label for="contactMsg" class="ind-contact-label">Message <span class="req">*</span></label>
+                                                <textarea class="ind-contact-textarea" id="contactMsg" name="message" rows="4" placeholder="Tell us about your goals, current challenges, or timeline..." maxlength="5000" required></textarea>
+                                            </div>
+
+                                            <!-- Submit Button -->
+                                            <div class="col-12">
+                                                <button type="submit" class="ind-contact-submit-btn">
+                                                    Book a Strategy Call <i class="bi bi-arrow-right"></i>
+                                                </button>
+                                            </div>
                                         </div>
                                     </form>
                                 </div>
@@ -250,6 +523,8 @@
                     </div>
                 </section>
             </main>
+
+            <!-- Dealifly Global Footer -->
             <footer class="dealifly-footer" data-bs-theme="dark">
                 <div class="dealifly-footer-inner">
                     <div class="container">
@@ -272,7 +547,7 @@
                                     <button type="submit"
                                         class="btn btn-icon btn-dark-emphasis rounded-circle flex-shrink-0 dealifly-footer__submit"
                                         aria-label="Contact Dealifly">
-                                        <iconify-icon icon="solar:arrow-right-linear" aria-hidden="true"></iconify-icon>
+                                        <i class="bi bi-arrow-right" aria-hidden="true"></i>
                                     </button>
                                 </form>
                                 <a href="https://wa.me/31684986062?text=Hi%2C%20Contacting%20you%20from%20the%20website"
@@ -377,19 +652,13 @@
                                 <h6 class="dealifly-footer__col-title fs-16 fw-semibold text-light">Contact</h6>
                                 <div class="d-flex flex-column gap-3 dealifly-footer__contact-list">
                                     <div class="dealifly-footer__contact-item">
-                                        <span class="dealifly-footer__contact-label text-light text-opacity-50 fs-13 d-block">Email</span>
+                                        <span class="dealifly-footer__contact-label text-light text-opacity-50 fs-13 d-block">EMAIL</span>
                                         <a href="mailto:contact@dealifly.com" class="dealifly-footer__contact-val dealifly-footer__link">
                                             contact@dealifly.com
                                         </a>
                                     </div>
                                     <div class="dealifly-footer__contact-item">
-                                        <span class="dealifly-footer__contact-label text-light text-opacity-50 fs-13 d-block">Call us</span>
-                                        <a href="tel:+31684986062" class="dealifly-footer__contact-val dealifly-footer__link">
-                                            0684986062
-                                        </a>
-                                    </div>
-                                    <div class="dealifly-footer__contact-item">
-                                        <span class="dealifly-footer__contact-label text-light text-opacity-50 fs-13 d-block">Address</span>
+                                        <span class="dealifly-footer__contact-label text-light text-opacity-50 fs-13 d-block">ADDRESS</span>
                                         <span class="dealifly-footer__contact-val text-light text-opacity-70 fs-14 fw-medium d-block">
                                             Binnendelta 11M, 1261 WZ Blaricum
                                         </span>
@@ -423,27 +692,46 @@
             </footer>
         </div>
     </div>
+
+    <!-- WhatsApp Floating Action Button -->
     <a class="dealifly-whatsapp-float" href="https://wa.me/31684986062?text=Hi%2C%20Contacting%20you%20from%20the%20website" target="_blank" rel="noopener" aria-label="Chat with Dealifly on WhatsApp">
         <i class="bi bi-whatsapp" aria-hidden="true"></i>
     </a>
+
     <!-- Scripts -->
     <script src="assets/js/bootstrap.bundle.js?v=20261014_mobile_fix_v11"></script>
-    <script src="assets/js/iconify.js?v=20261014_mobile_fix_v11"></script>
     <script src="assets/js/simplebar.js?v=20261014_mobile_fix_v11"></script>
     <script src="assets/js/swiper.js?v=20261014_mobile_fix_v11"></script>
-    <script src="assets/js/prism.js?v=20261014_mobile_fix_v11"></script>
     <script src="assets/js/gsap.min.js?v=20261014_mobile_fix_v11"></script>
     <script src="assets/js/ScrollTrigger.min.js?v=20261014_mobile_fix_v11"></script>
-    <script src="assets/js/Flip.min.js?v=20261014_mobile_fix_v11"></script>
-    <script src="assets/js/DrawSVGPlugin.min.js?v=20261014_mobile_fix_v11"></script>
-    <script src="assets/js/SplitText.min.js?v=20261014_mobile_fix_v11"></script>
-    <script src="assets/js/ScrollSmoother.min.js?v=20261014_mobile_fix_v11"></script>
     <script src="assets/js/app.js?v=20261014_mobile_fix_v11"></script>
 
     <!-- Dealifly Multi-Language Engine (EN <-> NL) -->
     <script src="assets/js/dealifly-custom-select.js"></script>
     <script src="assets/js/dealifly-translations.js"></script>
     <script src="assets/js/dealifly-i18n.js"></script>
+
+    <!-- Contact Form Feedback Script -->
+    <script>
+        (function() {
+            var urlParams = new URLSearchParams(window.location.search);
+            var status = urlParams.get('status');
+            var msgBox = document.getElementById('form-message');
+            if (status && msgBox) {
+                msgBox.classList.remove('d-none', 'alert-success', 'alert-danger');
+                if (status === 'success') {
+                    msgBox.classList.add('alert-success');
+                    msgBox.textContent = 'Thank you! Your message has been received. We will get back to you shortly.';
+                } else if (status === 'invalid') {
+                    msgBox.classList.add('alert-danger');
+                    msgBox.textContent = 'Please check the form fields and try again.';
+                } else {
+                    msgBox.classList.add('alert-danger');
+                    msgBox.textContent = 'An error occurred while submitting your message. Please try again or reach out on WhatsApp.';
+                }
+            }
+        })();
+    </script>
 </body>
 
 </html>
