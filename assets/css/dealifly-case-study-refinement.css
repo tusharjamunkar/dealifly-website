@@ -238,12 +238,18 @@ body.dealifly-case-study-page .dealifly-route-hero__lede {
     margin: 0;
 }
 
+body.dealifly-case-study-page .dealifly-route-hero--listing .dealifly-route-hero__lede,
+body.dealifly-case-study-page .dealifly-route-hero--detail .dealifly-route-hero__lede {
+    max-width: 46rem;
+    margin-top: 1.25rem;
+    font-size: clamp(1rem, 1.25vw, 1.125rem);
+    line-height: 1.65;
+    color: rgba(245, 245, 247, 0.78);
+}
+
 body.dealifly-case-study-page .dealifly-route-hero--detail .dealifly-route-hero__lede {
     max-width: 64rem;
-    margin-top: 1.25rem;
-    font-size: clamp(1rem, 1.25vw, 1.1rem);
     line-height: 1.7;
-    color: rgba(245, 245, 247, 0.78);
 }
 
 /* --- Project Metadata (Clean, compact information block) --- */
