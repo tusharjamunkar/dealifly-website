@@ -1010,7 +1010,7 @@ body.dealifly-solutions-page .dealifly-footer .container {
 
 .dealifly-timeline-table th:nth-child(3) {
     width: 36%;
-    color: #43C98B;
+    color: #B7A5F5;
 }
 
 .dealifly-timeline-table td {
@@ -1046,7 +1046,7 @@ body.dealifly-solutions-page .dealifly-footer .container {
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(90deg, #8F7AE8, #B7A5F5, #43C98B);
+    background: linear-gradient(90deg, #8F7AE8, #B7A5F5, #6342FF);
 }
 
 .dealifly-pricing-banner__title {
