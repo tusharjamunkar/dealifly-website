@@ -1218,3 +1218,9 @@ margin-inline: auto;
         display: inline-flex !important;
     }
 }
+
+
+/* Utility font size 13px */
+.fs-13 {
+    font-size: 0.8125rem !important;
+}

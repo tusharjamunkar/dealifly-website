@@ -252,7 +252,21 @@ body.dealifly-case-study-page .dealifly-route-hero--detail .dealifly-route-hero_
     line-height: 1.7;
 }
 
-/* --- Project Metadata (Clean, compact information block) --- */
+/* --- Project Metadata Label & Block (Normalized label font size) --- */
+body.dealifly-case-study-page .dealifly-route-hero h2,
+body.dealifly-case-study-page .dealifly-route-hero h2.fs-13,
+body.dealifly-case-study-page .dealifly-project-meta-heading,
+body.dealifly-case-study-page h2.fs-13 {
+    font-size: 0.8125rem !important; /* Normal 13px label font size */
+    font-weight: 600 !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+    color: rgba(245, 245, 247, 0.55) !important;
+    margin-top: clamp(1.25rem, 2vw, 1.75rem) !important;
+    margin-bottom: 0.5rem !important;
+    line-height: 1.4 !important;
+}
+
 body.dealifly-case-study-page .dealifly-project-meta {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
