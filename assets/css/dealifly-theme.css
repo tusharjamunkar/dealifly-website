@@ -1177,3 +1177,19 @@ margin-inline: auto;
     cursor: not-allowed;
     pointer-events: none;
 }
+
+
+/* Language Switcher Compact Styling */
+.dealifly-lang-switcher,
+.dealifly-lang-switcher--footer {
+    display: inline-flex !important;
+    width: auto !important;
+    max-width: fit-content !important;
+    min-width: 0 !important;
+    align-self: flex-start !important;
+    flex: 0 0 auto !important;
+    border-radius: 8px !important;
+}
+.dealifly-lang-switcher .dealifly-lang-btn {
+    border-radius: 6px !important;
+}

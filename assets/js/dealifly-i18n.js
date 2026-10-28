@@ -74,14 +74,19 @@
         style.id = 'dealifly-i18n-styles';
         style.textContent = `
             .dealifly-lang-switcher {
-                display: inline-flex;
+                display: inline-flex !important;
+                width: auto !important;
+                max-width: fit-content !important;
+                min-width: 0 !important;
+                align-self: flex-start !important;
+                flex: 0 0 auto !important;
                 align-items: center;
                 background: rgba(255, 255, 255, 0.04);
-                border: 1px solid rgba(143, 122, 232, 0.25);
-                border-radius: 999px;
+                border: 1px solid rgba(143, 122, 232, 0.28);
+                border-radius: 8px !important;
                 padding: 2px 4px;
                 gap: 2px;
-                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
                 transition: all 0.2s ease;
                 font-family: var(--ff-1, "Plus Jakarta Sans", sans-serif);
                 user-select: none;
@@ -99,7 +104,7 @@
                 font-weight: 600;
                 letter-spacing: 0.04em;
                 padding: 0.25rem 0.6rem;
-                border-radius: 999px;
+                border-radius: 6px !important;
                 cursor: pointer;
                 transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
                 display: inline-flex;
@@ -131,7 +136,13 @@
                 margin-right: 0.75rem;
             }
             .dealifly-lang-switcher--footer {
-                margin-top: 0.5rem;
+                display: inline-flex !important;
+                width: auto !important;
+                max-width: fit-content !important;
+                min-width: 0 !important;
+                align-self: flex-start !important;
+                flex: 0 0 auto !important;
+                margin-top: 1rem !important;
             }
             @media (max-width: 991px) {
                 .dealifly-lang-switcher--desktop {
@@ -223,7 +234,14 @@
         const footerBottom = document.querySelector('footer .footer-bottom, footer .footer-copyright, footer .row:last-child');
         if (footerBottom && !document.querySelector('.dealifly-lang-switcher--footer')) {
             const switcher = createSwitcherElement('footer');
-            footerBottom.appendChild(switcher);
+            if (footerBottom.classList.contains('row')) {
+                const colWrap = document.createElement('div');
+                colWrap.className = 'col-12 d-flex justify-content-start';
+                colWrap.appendChild(switcher);
+                footerBottom.appendChild(colWrap);
+            } else {
+                footerBottom.appendChild(switcher);
+            }
         }
     }
 
