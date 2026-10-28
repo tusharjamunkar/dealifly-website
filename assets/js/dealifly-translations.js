@@ -2894,6 +2894,7 @@ window.DEALIFLY_I18N_DATA = {
     "See Case Studies": "Bekijk Casestudy's",
     "Download Now": "Nu Downloaden",
     "Download Free Growth Plan": "Download Gratis Groeiplan",
+    "Free Growth Plan": "Gratis Groeiplan",
     "Download Growth Plan": "Download Groeiplan",
     "Why Dealifly": "Waarom Dealifly",
     "Pricing Plans": "Tarieven & Pakketten",
